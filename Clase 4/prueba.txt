@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Sashimi",
+    "precio": 100,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 1
+  },
+  {
+    "title": "Tamuni",
+    "precio": 100,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 2
+  },
+  {
+    "title": "Sashimi",
+    "precio": 100,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 3
+  }
+]
