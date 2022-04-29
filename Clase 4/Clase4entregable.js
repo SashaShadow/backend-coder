@@ -11,7 +11,8 @@ class Contenedor {
         fs.promises.readFile(`./${archivo}`, "utf-8")
         .then( contenido => {
             if (contenido.length) { 
-                obj.id = JSON.parse(contenido).length + 1;
+                let longit = JSON.parse(contenido).length;
+                obj.id = JSON.parse(contenido)[longit - 1].id + 1;
                 async function agregar() {
                     try {
                         let contenidoNuevo = JSON.parse(contenido);
@@ -110,12 +111,12 @@ class Contenedor {
 
 const myCont = new Contenedor("prueba.txt");
 
-//myCont.save({ title: "Sashimi", precio: 100, thumbnail: "www.prueba.com/prueba.png"});
+myCont.save({ title: "Sashimi", precio: 100, thumbnail: "www.prueba.com/prueba.png"});
 
-myCont.getAll();
+//myCont.getAll();
 
 //myCont.getById(2);
 
-//myCont.deleteById(3);
+//myCont.deleteById(2);
 
 //myCont.deleteAll();

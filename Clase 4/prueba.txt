@@ -6,15 +6,21 @@
     "id": 1
   },
   {
-    "title": "Tamuni",
+    "title": "Sashimi",
     "precio": 100,
     "thumbnail": "www.prueba.com/prueba.png",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Sashimi",
     "precio": 100,
     "thumbnail": "www.prueba.com/prueba.png",
-    "id": 3
+    "id": 4
+  },
+  {
+    "title": "Sashimi",
+    "precio": 100,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 5
   }
 ]
