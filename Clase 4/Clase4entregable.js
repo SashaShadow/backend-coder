@@ -80,7 +80,7 @@ class Contenedor {
             let existeId = JSON.parse(contenido).some(elem => elem.id === id);
             async function eliminar() {
                 try {
-                    fs.promises.writeFile(`./${archivo}`, JSON.stringify(contenidoFiltrado, null, 2))
+                    await fs.promises.writeFile(`./${archivo}`, JSON.stringify(contenidoFiltrado, null, 2))
                     !existeId ? console.log("No se ha encontrado el objeto con la id indicada") : console.log("Objeto borrado");
                 }
                 catch(err) {
