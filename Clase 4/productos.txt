@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Fender Stratocaster",
+    "precio": 150000,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 1
+  },
+  {
+    "title": "Washburn T24 Taurus",
+    "precio": 80000,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 3
+  },
+  {
+    "title": "Fender Telecaster",
+    "precio": 110000,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 4
+  },
+  {
+    "title": "Rickenbacker 4001",
+    "precio": 250000,
+    "thumbnail": "www.prueba.com/prueba.png",
+    "id": 5
+  }
+]

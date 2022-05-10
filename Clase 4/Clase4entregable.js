@@ -90,7 +90,7 @@ class Contenedor {
             eliminar();
         })
         .catch(err => {
-            console.log("Algo falló", err)
+            console.log("Algo ha fallado", err)
         }) 
     }
 
