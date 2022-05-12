@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario POST Personas y Mascotas</title>
+</head>
+
+<style>
+    body {
+      background-color: aquamarine;
+    }
+
+    .form {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-style: solid;
+      border-color: black;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form2 {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-style: solid;
+      border-color: black;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+    }
+</style>
+
+<body>
+
+<div class="container">
+  
+  <form class="form" action="/api/personas" enctype="application/json" method="post">
+    <h2>Carga una persona:</h2>
+    <label for="fname">Nombre:</label>
+    <input type="text" id="fname" name="nombre"><br><br>
+    <label for="lname">Apellido:</label>
+    <input type="text" id="lname" name="apellido"><br><br>
+    <label for="lname">Edad:</label>
+    <input type="text" id="age" name="edad"><br><br>
+    <input type="submit" value="Enviar">
+  </form> 
+
+  <form class="form2" action="/api/mascotas" enctype="application/json" method="post">
+    <h2>Carga una mascota:</h2>
+    <label for="fname">Nombre:</label>
+    <input type="text" id="fname" name="nombre"><br><br>
+    <label for="lname">Raza:</label>
+    <input type="text" id="lname" name="raza"><br><br>
+    <label for="lname">Edad:</label>
+    <input type="text" id="age" name="edad"><br><br>
+    <input type="submit" value="Enviar">
+  </form> 
+
+
+</div>
+
+</body>
+
+
+<!--
+<script>
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  
+    const data = new FormData(event.target);
+  
+    const value = Object.fromEntries(data.entries());
+  
+    if ("raza" in value) {
+      console.log({mascota: value})
+      fetch(form.action, {
+      method:"POST", 
+      body: {mascota: value}
+      })
+    } else {
+      console.log({persona: value})
+      fetch(form.action, {
+      method:"POST", 
+      body: {persona: value}
+      })
+    }
+  
+    
+  }
+  
+  const form = document.querySelector('form');
+  const form2 = document.querySelector('.form2');
+  form.addEventListener('submit', handleSubmit);
+  form2.addEventListener('submit', handleSubmit);
+  
+  </script>-->
+</html>

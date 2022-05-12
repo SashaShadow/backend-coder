@@ -1,0 +1,12 @@
+{
+  "name": "clase-8",
+  "version": "1.0.0",
+  "description": "clase8",
+  "main": "Clase81.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Sasha",
+  "license": "ISC"
+}

@@ -12,7 +12,7 @@ const server = app.listen(PORT, () => {
 server.on("error", error => console.log(`Error en servidor ${error}`))
 
 let mascotas = [{nombre: "Nana", raza: "Carey", edad: 1}];
-let personas = [{nombre: "Tamunu", apellido: "Acosta", edad: 26}];
+let personas = [{nombre: "Juan", apellido: "Perez", edad: 26}];
 
 router.get('/mascotas', (req, res) => {
    res.send(mascotas)
@@ -20,13 +20,15 @@ router.get('/mascotas', (req, res) => {
 
 router.post('/mascotas', (req, res) => {
 
-   const pet = req.body.mascota;
+   const pet = req.body;
 
-   //console.log(pet);
+   if (pet.nombre && pet.raza && pet.edad) {
+      mascotas.push(pet);
+      res.send(mascotas);
+    } else {
+      return res.status(400).send({ error: "parametros incorrectos" });
+    }
 
-   mascotas.push(pet);
-
-   res.send('post ok')
 })
 
 router.get('/personas', (req, res) => {
@@ -34,11 +36,14 @@ router.get('/personas', (req, res) => {
  })
  
 router.post('/personas', (req, res) => {
-    res.send('post ok')
- })
 
+   const persona = req.body.persona;
+   personas.push(persona);
+   res.send('post ok')
+ })
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use("/static", express.static(__dirname + "/public"));
  
 app.use('/api', router)
