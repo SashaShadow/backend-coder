@@ -1,6 +1,6 @@
 const express = require('express');
 const { Router } = express;
-const Api = require("./apiFunc.js");
+const Api = require("../apiFunc.js");
 const handlebars = require("express-handlebars");
 
 const app = express()
@@ -15,18 +15,16 @@ server.on("error", error => console.log(`Error en servidor ${error}`));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.set("view engine", "ejs"); //cambiar la extensión por hbs, pug o ejs segun corresponda
-app.set("views", "./Ejs/views") //cambiar la carpeta por Hbs, Pug o Ejs según corresponda
+app.set("view engine", "hbs"); 
+app.set("views", "./views") 
 
-//Si se usa Handlebars descomentar esto:
-
-// app.engine("hbs", handlebars.engine({
-//     extname: ".hbs",
-//     defaultLayout: "index.hbs",
-//     layoutsDir: __dirname + "/Hbs/views/layouts",
-//     partialsDir: __dirname + "Hbs/views/partials",
-// })
-// );
+app.engine("hbs", handlebars.engine({
+    extname: ".hbs",
+    defaultLayout: "index.hbs",
+    layoutsDir: __dirname + "/views/layouts",
+    partialsDir: __dirname + "/views/partials",
+})
+);
 
 let productos = [
     {
@@ -40,8 +38,7 @@ let productos = [
 const myApi = new Api(productos);
 
 router.get('/productos', (req, res) => {
-    res.render("pages/productos", { productos: productos })
-    //res.render("productos", { productos: productos }) //descomentar si se usa handlebars
+    res.render("productos", { productos: productos }) 
  })
 
 router.get('/productos/:id', (req, res) => {
@@ -61,8 +58,7 @@ router.delete("/productos/:id", (req, res) => {
 })
 
 router.get("/", (req, res) => {
-    res.render("pages/index", { productos: productos});
-    //res.render("main", { productos: productos }) //descomentar en caso de usar handlebars
+    res.render("main", { productos: productos }) 
 });
 
 app.use(express.static("public"));
