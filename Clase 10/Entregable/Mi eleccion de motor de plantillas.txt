@@ -1,0 +1,10 @@
+Creo que cada motor tiene lo suyo, sus ventajas y desventajas.
+Ahora mismo que todavìa no estoy tan interiorizado en cada uno esta es mi opinion:
+
+-Pug: creo que su sintaxis es simple y si me acostumbrara mas a esa forma de escribir probablemente lo elegirìa. Pero ahora, viniendo de escribir con etiquetas desde siempre me fue anti-intuitivo y se me hizo mas lento para escribir de esa forma, ademàs que las funciones y recursos que hay cambian un poco a lo que venìa haciendo.
+
+-Handlebars: si bien la sintaxis me pareciò simple, ademàs de que no cambia mucho de escribir "como si fuera html" lo que no me gustò fue cierta complejidad en cuanto al orden de las carpetas y lo que hay que escribir desde el lado del servidor para hacerlo funcionar. Tuve mas problemas con este motor de plantillas para que el servidor corra que con pug y ejs.
+
+Por eso me voy a quedar, por ahora al menos, con EJS:
+
+-Ejs: me pareciò que la sintaxis es un poco mas rebuscada y compleja que handlebars, pero sin embargo mantiene un estructura casi identica a como si se estuviera escribiendo html y javascript puro, lo cual me fue atractivo ya que no tuve que aprender mucho nuevo, simplemente saber como ingresar cada codigo entre sus tags <%, etc. La organizaciòn de carpetas es de alguna forma similar a handlebars, pero se me hizo mas sencilla.
