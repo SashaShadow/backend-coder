@@ -1,0 +1,27 @@
+
+{{#if productos.length}}
+<h2>Productos ingresados</h2>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">ID</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each productos}}
+            <tr>
+                <th scope="row">{{this.title}}</th>
+                <th>{{this.price}}</th>
+                <th><img src="{{this.thumbnail}}"/></th>
+                <th>{{this.id}}</th>
+              </tr>
+            {{/each}}
+            </tbody>
+        </table>
+{{else}}
+<h2>No se encontraron productos</h2>
+{{/if}}
+<a href="/api/">Volver al formulario</a>

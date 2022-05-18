@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ingreso de personas</title>
+    <%- include("../partials/head.ejs"); %>
+</head>
+<body>
+    <h2>Formulario de ingreso de personas</h2>
+    <form action="/personas" method="post" class="myForm" enctype="application/json">
+        <div class="form-group">
+            <label for="nombre">Ingrese un nombre</label>
+            <input type="text" name="nombre" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Ingrese su apellido</label>
+            <input type="text" name="apellido" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="edad">Ingrese su edad</label>
+            <input type="number" name="edad" class="form-control" min="0" max="120"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+    <% if (personas.length) { %>
+    <h2>Historial</h2>
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% personas.forEach(elem => {  %>
+          <tr>
+            <th scope="row"><%-elem.nombre%></th>
+            <th scope="row"><%-elem.apellido%></th>
+            <th scope="row"><%-elem.edad%></th>
+          </tr>
+          <% } ) %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <h2>No se encontraron datos</h2>
+        <% } %>
+    
+</body>
+</html>

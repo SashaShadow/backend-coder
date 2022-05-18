@@ -1,0 +1,11 @@
+.myForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+
+body {
+    background-color: black;
+}

@@ -1,0 +1,17 @@
+<h2>Ingrese un producto</h2>
+    <form action="/api/productos" method="post" class="myForm" enctype="application/json">
+        <div class="form-group">
+            <label for="title">Nombre</label>
+            <input type="text" name="title" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="price">Precio</label>
+            <input type="number" name="price" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="thumbnail">Ingrese link a la imagen del producto</label>
+            <input type="text" name="thumbnail" class="form-control" min="0" max="120"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <a href="/api/productos">Ver productos ingresados</a>

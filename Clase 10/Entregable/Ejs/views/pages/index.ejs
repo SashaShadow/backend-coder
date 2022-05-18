@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ingreso de productos ejs</title>
+    <%- include("../partials/head.ejs"); %>
+</head>
+<body>
+    <h2>Ingrese un producto</h2>
+    <form action="/api/productos" method="post" class="myForm" enctype="application/json">
+        <div class="form-group">
+            <label for="title">Nombre</label>
+            <input type="text" name="title" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="price">Precio</label>
+            <input type="number" name="price" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="thumbnail">Ingrese link a la imagen del producto</label>
+            <input type="text" name="thumbnail" class="form-control" min="0" max="120"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <a href="/api/productos">Ver productos ingresados</a>
+    
+</body>
+</html>
