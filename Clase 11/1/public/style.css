@@ -1,0 +1,24 @@
+h1 {
+    color: blue;
+}
+
+ul {
+    margin-left:0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left:0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.chat {
+    width: 25vw;
+    height: auto;
+    background: rgb(60, 82, 38);
+    color:blueviolet;
+    border-style:groove;
+    border-color: black;
+}
+
