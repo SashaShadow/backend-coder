@@ -10,7 +10,6 @@
 
         <div class="Subcontainer">
             <h2>Ingrese un producto</h2>
-            <!-- <form class="myForm" enctype="application/json"> -->
             <form action="/productos" method="post" class="myForm" enctype="application/json">
                 <div class="form-group">
                     <label for="title">Nombre</label>
@@ -59,37 +58,5 @@
  
     <script src="./main.js"></script>
     <script src="./ejs.js"></script>
-    <script>
-        // const element = document.querySelector("#element");
-
-        // const getTemplate = async () => {
-        //     const template = await fetch("http://localhost:8080/template.html");
-        //     const templateData = await template.text();
-        //     return templateData;
-        // }
-
-        // (async () => {
-        //     const producFetch = await fetch("http://localhost:8080/productos");
-        //     const productos = await producFetch.json();
-            
-        //     const templateData = await getTemplate();
-
-        //     //console.log(productos.productos);
-
-        //     const template = ejs.compile(templateData);
-
-        //     productos.productos.forEach(elem => {
-        //         const templateRendered = template({
-        //             title: elem.title,
-        //             price: elem.price,
-        //             thumbnail: elem.thumbnail,
-        //             id: elem.id,
-        //         })
-
-        //         element.innerHTML += templateRendered;
-        //     })
-        // })()
-
-    </script>
 </body>
 </html>
