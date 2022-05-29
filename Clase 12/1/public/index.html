@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 12 Ejercicio 1</title>
+    <link rel="stylesheet" href="./static/style.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>Chat</h1>
+    <form onsubmit="return addMessage(this)">
+        <input type="text" id="username" placeholder="Tu nombre">
+        <input type="text" id="texto" placeholder="Envia un mensaje">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div class="mensajes"></div>
+
+    <script src="./static/main.js"></script>
+</body>
+</html>
