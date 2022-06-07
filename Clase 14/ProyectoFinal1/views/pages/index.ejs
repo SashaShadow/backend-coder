@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ingreso de productos ejs</title>
+    <%- include("../partials/head.ejs"); %>
+</head>
+<body>
+
+        <div class="Subcontainer">
+            <h2>Ingrese un producto</h2>
+            <form action="/productos" method="post" class="myForm" enctype="application/json">
+                <div class="form-group">
+                    <label for="title">Nombre</label>
+                    <input type="text" name="title" id="title" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio</label>
+                    <input type="number" name="price" id="price" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="thumbnail">Ingrese link a la imagen del producto</label>
+                    <input type="text" name="thumbnail" id="thumbnail" class="form-control" min="0" max="120"/>
+                </div>
+                <button type="submit" id="myButton" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+
+        <div class="Subcontainer">
+            <h2>Productos ingresados</h2>
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">ID</th>
+                </tr>
+                </thead>
+                <tbody id="element"></tbody>
+            </table>
+        </div>
+
+        <div class="Chat">
+            <h2>Chat</h2>
+            <form onsubmit="return addMessage(this)" class="chatForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Tu email (obligatorio)" required>
+                </div>
+                <div class="mensajes"></div>
+                <div class="form-group">
+                    <input type="text" id="texto" placeholder="Envia un mensaje">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>   
+        </div> 
+ 
+    <script src="./main.js"></script>
+    <script src="./ejs.js"></script>
+</body>
+</html>

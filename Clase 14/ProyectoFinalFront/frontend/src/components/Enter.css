@@ -1,0 +1,22 @@
+.Enter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 50vh;
+}
+
+.Box {
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+}
+
+a {
+    cursor: pointer;
+}

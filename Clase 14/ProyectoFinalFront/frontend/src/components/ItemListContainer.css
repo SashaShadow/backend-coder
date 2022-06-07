@@ -1,0 +1,14 @@
+.ItemListContainer {
+    background-color: rgba(238, 136, 136, 0.3);
+    border-style: solid;
+    border-style: dashed;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5rem;
+}
+
+img {
+    width: 70%;
+    height: 50%;
+}

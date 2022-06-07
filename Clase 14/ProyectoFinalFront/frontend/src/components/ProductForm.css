@@ -1,0 +1,5 @@
+.myForm {
+    display: grid;
+    width: 25vw;
+    grid-gap: 0.5rem;
+}

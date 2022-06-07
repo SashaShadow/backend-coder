@@ -1,0 +1,8 @@
+.CartProd {
+    background-color: rgba(56, 181, 197, 0.4);
+    border-style: solid;
+    border-color: rgb(200, 178, 221);
+    box-shadow: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+}

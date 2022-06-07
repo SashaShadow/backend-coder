@@ -1,0 +1,14 @@
+.Cart {
+    display: grid;
+    grid-template-rows: 0.05fr 1fr;
+    grid-template-areas: "cartinfo"
+    "prods";
+    width: 95vw;
+}
+
+.prodContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    background: rgba(155, 45, 45, 0.2);
+}
