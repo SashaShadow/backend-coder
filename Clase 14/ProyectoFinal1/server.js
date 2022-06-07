@@ -2,13 +2,11 @@ import express from "express";
 const { Router } = express;
 import Api from "./apiFunc.js";
 import Cart from "./Cart.js";
-import { Server as IOServer } from "socket.io";
 import { Server as HttpServer } from "http";
 import cors from "cors";
 
 const app = express()
 const httpServer = new HttpServer(app);
-const io = new IOServer(httpServer);
 
 const router = Router();
 
@@ -26,17 +24,6 @@ app.use(cors());
 
 const myApi = new Api("productos.json"); 
 const myCart = new Cart("carrito.json");
-
-io.on("connection", async socket => { 
-    
-    console.log("Un nuevo cliente se ha conectado");
-    socket.emit("Productos", await myApi.getProducts());
-
-    socket.on("nuevo-producto", data => {
-        //el posteo se tiene que hacer con una post request y fetch
-        io.sockets.emit("ProductoIndividual", data)
-    })
-})
 
 //CRUD PRODUCTOS
 router.get('/productos/:id', (req, res) => {
@@ -83,10 +70,6 @@ router.delete("/carrito/:id", (req, res) => {
 router.delete("/carrito/:id/productos/:id_prod", (req, res) => {
     return myCart.deleteCartProduct(req, res)
 })
-
-// router.get("/", (req, res) => {
-//     res.render("pages/index", { productos: productos});
-// });
 
 app.use('/api', router);
 app.use((req, res, next) => {
