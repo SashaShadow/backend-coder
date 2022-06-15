@@ -1,0 +1,49 @@
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .myForm {
+            display: grid;
+            width: 75vw;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+            background-color: blueviolet;
+        }
+
+        .Subcontainer {
+            width: 100%;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .myForm input {
+            width: 15rem;
+        }
+        .chatForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            background-image:url("https://www.transparenttextures.com/patterns/argyle.png");
+            background-color: rgb(10, 9, 10);
+        }
+
+        .Chat {
+            background-color: rgba(231, 165, 165, 0.050);
+            display: flex;
+            flex-direction: column;
+            width:fit-content;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 7rem;
+            height: 9rem;
+        }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>

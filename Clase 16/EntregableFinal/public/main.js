@@ -2,10 +2,26 @@ const socket = io.connect();
 
 const element = document.querySelector("#element");
 const myButton = document.querySelector("#myButton");
+const chatButton = document.querySelector("#chatButton");
+const chatForm = document.querySelector(".chatForm");
 const prodForm = document.querySelector(".myForm");
 
-prodForm.addEventListener("submit", (e) => {
+prodForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    return fetch(`http://localhost:8080/api/productos/`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({"name": event.target.name.value, "price":event.target.price.value,
+        "desc": event.target.desc.value, "photo": event.target.photo.value, "code": event.target.code.value,
+        "stock": event.target.stock.value, "pw": event.target.pw.value}),})
+})
+
+chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    return fetch(`http://localhost:8080/api/mensajes/`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({"texto": e.target.texto.value, "email": e.target.email.value}),})
 })
 
 const render = (data) => {
@@ -13,21 +29,21 @@ const render = (data) => {
         return (`<div style="display:flex; column-gap: 0.2rem;">
         <strong style="color:blue;">${elem.email}</strong> 
         <p style="color:brown;">[${elem.time}]</p>
-        <i style="color:green;">${elem.text}</i></div>`)}).join(" ");
+        <i style="color:green;">${elem.texto}</i></div>`)}).join(" ");
         document.querySelector(".mensajes").innerHTML = html;
 }
 
 const getTemplate = async () => {
-    const template = await fetch("http://localhost:8080/template.html");
+    const template = await fetch("http://localhost:8080/api/template.html");
     const templateData = await template.text();
     return templateData;
 }
 
 const addProducto = () => {
     const producto = {
-        title: document.querySelector("#title").value,
+        name: document.querySelector("#name").value,
         price: document.querySelector("#price").value,
-        thumbnail: document.querySelector("#thumbnail").value,
+        photo: document.querySelector("#photo").value,
     }
     socket.emit("nuevo-producto", producto);
     return false;
@@ -35,20 +51,21 @@ const addProducto = () => {
 
 myButton.addEventListener("click", () => addProducto());
 
-const addMessage = (e) => {
+const addMessage = () => {
     const mensaje = {
         email: document.querySelector("#email").value,
-        text: document.querySelector("#texto").value,
+        texto: document.querySelector("#texto").value,
     }
 
-    document.querySelector("#texto").value = "";
     socket.emit("new-message", mensaje);
+    //document.querySelector("#texto").value = "";
     return false;
 }
 
+chatButton.addEventListener("click", () => addMessage());
+
 socket.on("Mensajes", data => {
     render(data);
-    window.scrollTo(0, document.body.scrollHeight);
 });
 
 socket.on("MensajeIndividual", data => {
@@ -56,7 +73,7 @@ socket.on("MensajeIndividual", data => {
     <div style="display:flex; column-gap: 0.2rem;">
         <strong style="color:blue;">${data.email}</strong> 
         <p style="color:brown;">[${data.time}]</p>
-        <i style="color:green;">${data.text}</i></div>               
+        <i style="color:green;">${data.texto}</i></div>               
 `
     window.scrollTo(0, document.body.scrollHeight);
 });
@@ -67,9 +84,9 @@ socket.on("Productos", async data => {
 
     const templateRendered = data.map(elem => {
         return template({
-            title: elem.title,
+            name: elem.name,
             price: elem.price,
-            thumbnail: elem.thumbnail,
+            photo: elem.photo,
             id: elem.id,
         })
     }).join(" ");
@@ -82,9 +99,9 @@ socket.on("ProductoIndividual", async data => {
     const template = ejs.compile(templateData);
 
     const templateRendered = template({
-        title: data.title,
+        name: data.name,
         price: data.price,
-        thumbnail: data.thumbnail,
+        photo: data.photo,
         id: data.id,
     })
 
