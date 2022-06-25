@@ -3,6 +3,7 @@ const { Router } = express;
 import Api from "./apiFunc.js";
 import Cart from "./Cart.js";
 import { Server as HttpServer } from "http";
+import {validateDelete, validatePost, validatePut} from "./middlewares.js";
 import cors from "cors";
 
 const app = express()
@@ -34,15 +35,15 @@ router.get('/productos', async (req, res) => {
     return await myApi.getProducts(req, res)
  })
 
-router.post('/productos', (req, res) => {
+router.post('/productos', validatePost(), (req, res) => {
     return myApi.postProduct(req, res)
  })
 
-router.put("/productos/:id", (req, res) => {
+router.put("/productos/:id", validatePut(), (req, res) => {
     return myApi.putProduct(req, res)
 })
 
-router.delete("/productos/:id", (req, res) => {
+router.delete("/productos/:id", validateDelete(), (req, res) => {
     return myApi.deleteProduct(req, res)
 })
 
