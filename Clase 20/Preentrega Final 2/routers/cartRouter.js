@@ -14,35 +14,31 @@ cartRouter.get('', (req, res) => {
       return res.json({carritos})
     })
     .catch(err => {res.send(err); throw err})
-    .finally(() => process.exit())
 })
 
-cartRouter.get('/:id', (req, res) => {
-    return cartStorage.getElem(req, res)
-    .then(carrito => {
-        console.log(carrito)
-        return res.json({carrito})
-    })
-    .catch(err => {res.send(err); throw err})
-    .finally(() => process.exit())
-
+cartRouter.get('/:id/products', (req, res) => {
+    return cartStorage.getCartProds(req, res)
+   
 })
 
 cartRouter.post('', (req, res) => {
     return cartStorage.postElem(req, res)
     .then(carrito => {
         console.log('carrito guardado', carrito)
+        res.json({Mensaje: "Carrito creado"})
     })
     .catch(err => console.error(`Error: ${err.message}`))
-    .finally(_ => process.exit())
 })
 
-cartRouter.put('', (req, res) => {
-    return cartStorage.putElem(req, res);
-
+cartRouter.post('/:id/products', (req, res) => {
+    return cartStorage.addToCart(req, res)
 })
 
-cartRouter.delete('', (req, res) => {
+
+cartRouter.delete('/:id', (req, res) => {
     return cartStorage.deleteElem(req, res);
+})
 
+cartRouter.delete('/:id/products/:id_prod', (req, res) => {
+    return cartStorage.deleteCartProd(req, res);
 })

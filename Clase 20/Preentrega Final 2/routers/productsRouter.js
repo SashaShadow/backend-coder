@@ -14,35 +14,30 @@ productsRouter.get('', (req, res) => {
       return res.json({productos})
     })
     .catch(err => {res.send(err); throw err})
-    .finally(() => process.exit())
 })
 
 productsRouter.get('/:id', (req, res) => {
     return productsStorage.getElem(req, res)
     .then(producto => {
-        console.log(producto)
         return res.json({producto})
     })
     .catch(err => {res.send(err); throw err})
-    .finally(() => process.exit())
-
 })
 
 productsRouter.post('', (req, res) => {
     return productsStorage.postElem(req, res)
     .then(producto => {
-        console.log('Producto guardado', producto)
+        res.json({Mensaje: "Producto guardado"})
     })
     .catch(err => console.error(`Error: ${err.message}`))
-    .finally(_ => process.exit())
 })
 
-productsRouter.put('', (req, res) => {
+productsRouter.put('/:id', (req, res) => {
     return productsStorage.putElem(req, res);
 
 })
 
-productsRouter.delete('', (req, res) => {
+productsRouter.delete('/:id', (req, res) => {
     return productsStorage.deleteElem(req, res);
 
 })

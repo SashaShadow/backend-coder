@@ -15,7 +15,7 @@ class contenedorMongo {
 
     async getElem(req, res) {
         return this.db
-        .then(_ => this.model.find({id: Number(req.params.id)}))
+        .then(_ => this.model.find({_id: req.params.id}))
         .then(data => {
             return data
         })
@@ -36,7 +36,7 @@ class contenedorMongo {
         const elemMod = req.body;
 
         return this.db
-        .then(_ => this.model.findOne({id: Number(req.params.id)}))
+        .then(_ => this.model.findOne({_id: req.params.id}))
         .then(elem => {
             console.log(elem)
             elem = elemMod
@@ -44,18 +44,15 @@ class contenedorMongo {
             console.log(elem);
         })
         .catch(err => console.log("Hubo un error", err))
-        .finally(() => process.exit())
     }
 
     async deleteElem(req, res) { 
         this.db
-        .then(_ => this.model.findOne({id: Number(req.params.id)}))
+        .then(_ => this.model.findOne({_id: req.params.id}))
         .then(elem => {
-            console.log(elem)
             return elem.remove()
         })
-        .catch(err => console.log("Hubo un error", err))
-        .finally(() => process.exit())
+        .catch(err => console.log("No se encontró el elemento con dicha id", err))
     }
 }
 
