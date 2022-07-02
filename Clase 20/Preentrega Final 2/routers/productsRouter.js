@@ -1,9 +1,11 @@
 import getStorage from "../daos/index.js";
 
+import express from "express";
 const { Router } = express;
 const productsRouter = Router()
 const productsStorage = getStorage().products
 
+export default productsRouter;
 
 productsRouter.get('', (req, res) => {
     return productsStorage.getElems(req, res)
@@ -36,11 +38,11 @@ productsRouter.post('', (req, res) => {
 })
 
 productsRouter.put('', (req, res) => {
-
+    return productsStorage.putElem(req, res);
 
 })
 
 productsRouter.delete('', (req, res) => {
-
+    return productsStorage.deleteElem(req, res);
 
 })

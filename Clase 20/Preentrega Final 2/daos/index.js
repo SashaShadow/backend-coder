@@ -1,7 +1,10 @@
 import ProductsDAOMongoDB from "./productsDAOMongoDB.js";
-import ProductsDAOFirebase from "./productsDAOFirebase.js";
+//import ProductsDAOFirebase from "./productsDAOFirebase.js";
 import CartDAOMongoDB from "./cartDAOMongoDB.js";
-import CartDAOFirebase from "./cartDAOFirebase.js";
+//import CartDAOFirebase from "./cartDAOFirebase.js";
+
+const ProductsDAOFirebase = () => "xd";
+const CartDAOFirebase = () => "xd";
 
 const getStorage = () => {
     const storage = process.env.STORAGE || 'mongodb'
@@ -14,8 +17,8 @@ const getStorage = () => {
         break
       default:
         return {
-          products: new ProductsDAOFirebase(),
-          users: new CartDAOFirebase()
+          products: ProductsDAOFirebase(),
+          users: CartDAOFirebase()
         }
         break
     }
