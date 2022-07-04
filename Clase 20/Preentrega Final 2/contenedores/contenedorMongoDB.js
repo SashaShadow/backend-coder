@@ -40,7 +40,7 @@ class contenedorMongo {
         const elemMod = req.body;
 
         return this.db
-        .then(_ => this.model.update({_id: req.params.id}, {$set: elemMod }))
+        .then(_ => this.model.updateOne({_id: req.params.id}, {$set: elemMod }))
         .then(_=> {
             if (this.model.modelName === 'Products') {
                 return res.json({Mensaje: "Producto modificado"})

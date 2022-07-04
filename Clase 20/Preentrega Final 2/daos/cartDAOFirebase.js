@@ -6,7 +6,6 @@ class CartDAOFirebase extends contenedorFirebase {
       super(dbFb, queryCart)
     }
 
-
     async getCartProds(req, res) {
       const myId = req.params.id;
 
@@ -46,7 +45,7 @@ class CartDAOFirebase extends contenedorFirebase {
         try {
           const doc = this.collection.doc(`${cartId}`) 
           const item = await doc.get()
-          const prodToDelete = item.data().products.find(elem => elem.id === prodId);
+          const prodToDelete = item.data().products.find(elem => elem.id == prodId);
 
           if (!prodToDelete) {
             return res.json({Mensaje: "Producto no encontrado en el carrito"})

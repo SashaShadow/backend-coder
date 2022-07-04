@@ -24,7 +24,6 @@ cartRouter.post('', async (req, res) => {
     return cartStorage.postElem(req, res)
     .then(carrito => {
         console.log('carrito guardado')
-        res.json({Mensaje: "Carrito creado"})
     })
     .catch(err => console.error(`Error: ${err.message}`))
 })
