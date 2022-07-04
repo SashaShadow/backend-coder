@@ -22,6 +22,7 @@ export const validatePut = () => {
         const format = prodMod.name && prodMod.price && prodMod.photo && 
         prodMod.desc && prodMod.code && prodMod.stock && prodMod.pw === "fx88fx" &&
         Object.keys(prodMod).length === 7 ? true : null;
+        
         const producto = objetos.find(elem => elem.id === Number(req.params.id));
 
         if (format && producto) {

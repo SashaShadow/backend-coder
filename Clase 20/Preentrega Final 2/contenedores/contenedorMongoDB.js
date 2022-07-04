@@ -27,8 +27,12 @@ class contenedorMongo {
 
         return this.db
         .then(_ => elemNuevo.save())
-        .then(document => {
-            return document
+        .then(_=> {
+            if (this.model.modelName === 'Products') {
+                return res.json({Mensaje: "Producto creado"})
+            } else {
+                return res.json({Mensaje: "Carrito creado"})
+            }
         })
     }
 
@@ -36,12 +40,11 @@ class contenedorMongo {
         const elemMod = req.body;
 
         return this.db
-        .then(_ => this.model.findOne({_id: req.params.id}))
-        .then(elem => {
-            console.log(elem)
-            elem = elemMod
-            elem.save()
-            console.log(elem);
+        .then(_ => this.model.update({_id: req.params.id}, {$set: elemMod }))
+        .then(_=> {
+            if (this.model.modelName === 'Products') {
+                return res.json({Mensaje: "Producto modificado"})
+            } 
         })
         .catch(err => console.log("Hubo un error", err))
     }
@@ -51,6 +54,13 @@ class contenedorMongo {
         .then(_ => this.model.findOne({_id: req.params.id}))
         .then(elem => {
             return elem.remove()
+        })
+        .then(_=> {
+            if (this.model.modelName === 'Products') {
+                return res.json({Mensaje: "Producto eliminado"})
+            } else {
+                return res.json({Mensaje: "Carrito eliminado"})
+            }
         })
         .catch(err => console.log("No se encontró el elemento con dicha id", err))
     }

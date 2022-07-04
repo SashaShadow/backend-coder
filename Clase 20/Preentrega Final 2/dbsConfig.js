@@ -1,4 +1,24 @@
 import mongoose from "mongoose";
+import admin from "firebase-admin";
+import { readFile } from "fs/promises";
+export const FieldValue = admin.firestore.FieldValue;
+
+const serviceAccount = JSON.parse(
+    await readFile(
+        new URL("./firebaseSA.json", import.meta.url)
+    )
+) 
+
+//FIREBASE CONFIG
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+
+
+export const dbFb = admin.firestore();
+export const queryProds = dbFb.collection("products");
+export const queryCart = dbFb.collection("cart");
+
 
 //MONGODB CONFIG
 export const db = mongoose.connect("mongodb+srv://Sasha:745431@cluster0.hzrgp.mongodb.net/gente?retryWrites=true&w=majority", 

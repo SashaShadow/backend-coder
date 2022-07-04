@@ -18,3 +18,6 @@ app.use(express.static("./public"));
 
 app.use('/api/products', productsRouter)
 app.use('/api/cart', cartRouter)
+app.use((req, res, next) => {
+    res.status(404).send({error: -2, descripcion: `ruta ${req.originalUrl} método ${req.method} no implementada`});
+  });

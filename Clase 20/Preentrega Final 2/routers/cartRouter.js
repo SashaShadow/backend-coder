@@ -1,36 +1,35 @@
 import getStorage from "../daos/index.js";
-
 import express from "express";
+import { validateAddToCart } from "../middlewares.js";
+
 const { Router } = express;
 const cartRouter = Router()
 const cartStorage = getStorage().cart
 
 export default cartRouter;
 
-cartRouter.get('', (req, res) => {
+cartRouter.get('', async (req, res) => {
     return cartStorage.getElems(req, res)
     .then(carritos => {
-      console.log(carritos)
-      return res.json({carritos})
+        return res.json({carritos})
     })
     .catch(err => {res.send(err); throw err})
 })
 
 cartRouter.get('/:id/products', (req, res) => {
     return cartStorage.getCartProds(req, res)
-   
 })
 
-cartRouter.post('', (req, res) => {
+cartRouter.post('', async (req, res) => {
     return cartStorage.postElem(req, res)
     .then(carrito => {
-        console.log('carrito guardado', carrito)
+        console.log('carrito guardado')
         res.json({Mensaje: "Carrito creado"})
     })
     .catch(err => console.error(`Error: ${err.message}`))
 })
 
-cartRouter.post('/:id/products', (req, res) => {
+cartRouter.post('/:id/products', validateAddToCart(), async (req, res) => {
     return cartStorage.addToCart(req, res)
 })
 

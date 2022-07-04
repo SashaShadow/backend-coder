@@ -1,7 +1,7 @@
 import contenedorMongoDB from "../contenedores/contenedorMongoDB.js";
 import { db, cartModel} from "../dbsConfig.js";
 
-class ProductsDAOMongoDB extends contenedorMongoDB {
+class CartDAOMongoDB extends contenedorMongoDB {
     constructor() {
       super(db, cartModel)
     }
@@ -45,4 +45,4 @@ class ProductsDAOMongoDB extends contenedorMongoDB {
     }
   }
 
-export default ProductsDAOMongoDB;
+export default CartDAOMongoDB;

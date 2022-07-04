@@ -1,129 +1,100 @@
-import knex from 'knex';
-
-class Api {
-    constructor(tabla, options) {
-        this.tabla = tabla;
-        this.knex = knex(options);
+class contenedorFirebase {
+    constructor(db, collection) {
+        this.db = db;
+        this.collection = collection;
     }
 
-    //JSON response
-    async getProducts(req, res) {
-        let knex = this.knex;
-        let productos = [];
-        return knex.from(this.tabla).select("*")
-        .then((rows) => {
-            for (let row of rows) {
-                productos.push({
-                    id: row["id"],
-                    name: row["name"],
-                    price: row["price"],
-                    code: row["code"],
-                    stock: row["stock"],
-                    photo: row["photo"],
-                    desc: row["desc"]
-                })
+    async getElems(req, res) {
+        try {
+            const querySnapshot = await this.collection.get()
+            const docs = querySnapshot.docs
+    
+            const response = docs.map(doc => ({
+                id: doc.id,
+                name: doc.data().name,
+                price: doc.data().price,
+                stock: doc.data().stock,
+                desc: doc.data().desc,
+                photo: doc.data().photo,
+                code: doc.data().code
+            }))
+            if (this.collection._queryOptions.collectionId === 'products') {
+                return response
+            } else {
+                return docs.map(doc => ({
+                    id: doc.id,
+                    timestamp: doc.data().timestamp,
+                    products: doc.data().products
+                }))
             }
-        })
-        .then(() => res.json({productos: productos}))
-        .catch(err => {res.send(err); throw err})
-    }
-
-    //ARRAY response
-    async getAll(req, res) {
-        let productos = [];
-        let knex = this.knex;
-        return knex.from(this.tabla).select("*")
-        .then((rows) => {
-            for (let row of rows) {
-                productos.push({
-                    id: row["id"],
-                    name: row["name"],
-                    price: row["price"],
-                    code: row["code"],
-                    stock: row["stock"],
-                    photo: row["photo"],
-                    desc: row["desc"]
-                })
-            }
-            return productos;
-        })
-        .then((data) => {
-            return data })
-        .catch(err => {res.send(err); throw err})
-    }
-
-
-    async getProduct(req, res) {
-        let knex = this.knex;
-        let producto = "";
-        return knex.from(this.tabla).select("*").where("id", "=", Number(req.params.id))
-        .then((rows) => {
-            for (let row of rows) {
-                producto = {
-                    id: row["id"],
-                    name: row["name"],
-                    price: row["price"],
-                    code: row["code"],
-                    stock: row["stock"],
-                    photo: row["photo"],
-                    desc: row["desc"]
-                }
-            }
-            res.json({producto})
-        }).catch(err => {console.log(err); throw err})
-    }
-
-    async postProduct(req, res) {
-        let knex = this.knex;
-        const productoNuevo = req.body;
-        let tabla = this.tabla;
-
-        if (productoNuevo.name && productoNuevo.price && productoNuevo.photo && 
-            productoNuevo.desc && productoNuevo.code && productoNuevo.stock && productoNuevo.pw === "fx88fx" && 
-            Object.keys(productoNuevo).length === 7) {
-                delete productoNuevo.pw;
-                knex(tabla).insert(productoNuevo)
-                .then(() => res.json({Mensaje: "datos insertados"}))
-                .catch(err => {console.log(err); throw err})
-        } else {
-            return res.status(400).send({ error: "parametros incorrectos" });
+        } catch (err){
+            console.log(err);
         }
     }
 
-    async putProduct(req, res) {
-        let tabla = this.tabla;
-        let knex = this.knex;
-        const prodMod = req.body;
-
-        const format = prodMod.name && prodMod.price && prodMod.photo && 
-        prodMod.desc && prodMod.code && prodMod.stock && prodMod.pw === "fx88fx" &&
-        Object.keys(prodMod).length === 7 ? true : null;
-
-        if (format) {
-            delete prodMod.pw;
-            knex.from(tabla).where("id", "=", Number(req.params.id)).update(prodMod)
-            .then(() => res.json({Mensaje: "Producto actualizado"}))
-            .catch(err => {res.status(404).send({Mensaje: `${err} Producto no encontrado`}); throw err})
+    async getElem(req, res) {
+        try {   
+            let id = req.params.id;
+            const doc = this.collection.doc(`${id}`)
+            const item = await doc.get()
+            const response = item.data()
+            return response
+    
+        } catch (err){
+            console.log(err);
         }
+    
+    }
+
+    async postElem(req, res) {
+        const elemento = this.collection._queryOptions.collectionId === 'products' ? req.body : 
+            {timestamp: new Date(), products: []};
+
+            delete elemento.pw;
         
-        if (!format) {
-            res.send({error: "El formato del producto no es correcto"})
+        try {
+            const doc = this.collection.doc() 
+            await doc.create(elemento)
+            if (this.collection._queryOptions.collectionId === 'products') {
+                return res.json({Mensaje: "Producto creado"})
+            } else {
+                return res.json({Mensaje: "Carrito creado"})
+            }
+        } catch (err){
+            console.log(err);
         }
     }
 
-    async deleteProduct(req, res) { 
-        let knex = this.knex;
-        const pw = req.body.pw;
-        const tabla = this.tabla;
+    async putElem(req, res) {
+        const elemMod = req.body;
 
-        if (pw === "fx88fx") {
-            knex.from(tabla).where("id", "=", Number(req.params.id)).del()
-            .then(() => res.json({ Mensaje: "Producto eliminado"}))
-            .catch(err => {res.status(404).send({Mensaje: `${err} Producto no encontrado`}); throw err})
-        } else {
-            res.json({Mensaje: "No estás autorizado a acceder a esta ruta"});
+        delete elemMod.pw;
+
+        try {
+            const doc = this.collection.doc(`${req.params.id}`)
+            let item = await doc.update(elemMod)
+            if (this.collection._queryOptions.collectionId === 'products') {
+                return res.json({Mensaje: "Producto actualizado"})
+            }
+        } catch (err){
+            console.log(err);
+        }
+
+    }
+
+    async deleteElem(req, res) { 
+        const doc = this.collection.doc(`${req.params.id}`)
+        try {
+            const item = await doc.delete()
+            if (this.collection._queryOptions.collectionId === 'products') {
+                return res.json({Mensaje: "Producto eliminado"})
+            } else {
+                return res.json({Mensaje: "Carrito eliminado"})
+            }
+        } catch (err){
+            console.log(err);
         }
     }
 }
 
-export default Api;
+export default contenedorFirebase;
