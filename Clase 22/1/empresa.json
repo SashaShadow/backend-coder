@@ -1,0 +1,11 @@
+{
+    "empresa": {
+        "empleados": {
+            "gerente": {"nombre": "Raul", "Apellido": "Fernandez", "id": 1},
+            "encargado": {"nombre": "Marcos", "Apellido": "Fernandez", "id": 2}
+        },
+        "reuniones": {
+            "viernes": {"id": 2}
+        }
+    }
+}
