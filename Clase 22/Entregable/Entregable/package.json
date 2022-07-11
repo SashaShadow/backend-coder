@@ -17,6 +17,7 @@
     "knex": "^2.1.0",
     "mongoose": "^6.4.3",
     "mysql": "^2.18.1",
+    "node-fetch": "^3.2.6",
     "socket.io": "^4.5.1",
     "sqlite3": "^5.0.8"
   }

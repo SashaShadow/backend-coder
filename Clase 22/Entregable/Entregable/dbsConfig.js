@@ -5,9 +5,12 @@ export const db = mongoose.connect("mongodb+srv://Sasha:745431@cluster0.hzrgp.mo
 { useNewUrlParser: true })
 
 const chatSchema = new mongoose.Schema({
-    author: { type: Object, required: true },
-    text: {type: String, required: true, max: 100}
-}, { timestamps: true })
+    author: {type: Object, required: true },
+    text: {type: String, required: true},
+    time: {type: String, required: true}
+}, {
+    versionKey: false 
+})
 
 export const msgsModel = mongoose.model("Msgs", chatSchema);
 

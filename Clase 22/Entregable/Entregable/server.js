@@ -6,7 +6,6 @@ import { Server as IOServer } from "socket.io";
 import { Server as HttpServer } from "http";
 import cors from "cors";
 import {randomData} from "./fakerRP.js";
-import {normalizedMessages} from "./normalizr.js";
 import { readFile, writeFile } from "fs/promises";
 
 const app = express()
@@ -36,11 +35,10 @@ io.on("connection", async socket => {
  
     socket.emit("Mensajes", await myChat.getElems());
 
-    //console.log(await myChat.getElems());
+    const data = await myChat.getElems();
 
-    //console.log(JSON.stringify(normalizedMessages(await myChat.getElems())).length);
-
-//     await writeFile('./mensajes.json', JSON.stringify(normalizedMessages(await myChat.getElems()), null, 2))
+//ACÁ PASO LOS DATOS COMO VIENEN DE LA BASE DE DATOS A UN JSON. LE AGREGO EL ID GENERAL DEL ARRAY UNICAMENTE:
+//     await writeFile('./mensajesOriginal.json', JSON.stringify({id: "mensajes", mensajes: data}, null, 2))
 //  .then(_ => console.log('ok'))
 
     socket.on("new-message", async data => { 
@@ -49,14 +47,13 @@ io.on("connection", async socket => {
     })
 })
 
-
 router.get('/productos-test', async (req, res) => {
     return res.json(randomData(5));
  })
 
 //RUTAS MENSAJES CHAT
 router.get('/mensajes', async (req, res) => {
-    return await myChat.getElems(req, res)
+    return res.json(await myChat.getElems(req, res))
  })
 
 router.post('/mensajes', async (req, res) => {

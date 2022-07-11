@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "author": {
+      "SashaRC": {
+        "email": "caballerosasha@hotmail.com",
+        "nombre": "Sasha",
+        "apellido": "Rodriguez",
+        "edad": "27",
+        "alias": "SashaRC",
+        "avatar": "no"
+      },
+      "Tamunu": {
+        "email": "tamara@hotmail.com",
+        "nombre": "Tamara",
+        "apellido": "Acosta",
+        "edad": "26",
+        "alias": "Tamunu",
+        "avatar": "no"
+      },
+      "Nana": {
+        "email": "nanalagata@hotmail.com",
+        "nombre": "Nana",
+        "apellido": "Rodriguez Acosta",
+        "edad": "1",
+        "alias": "Nana",
+        "avatar": "no"
+      }
+    },
+    "text": {
+      "62cc1126cb475a21a4fd5a6e": {
+        "_id": "62cc1126cb475a21a4fd5a6e",
+        "author": "SashaRC",
+        "text": "Hola",
+        "time": "11/7/2022, 09:01:42"
+      },
+      "62cc112ecb475a21a4fd5a70": {
+        "_id": "62cc112ecb475a21a4fd5a70",
+        "author": "SashaRC",
+        "text": "probando",
+        "time": "11/7/2022, 09:01:50"
+      },
+      "62cc117eeec032884c1d24ff": {
+        "_id": "62cc117eeec032884c1d24ff",
+        "author": "Tamunu",
+        "text": "holitas",
+        "time": "11/7/2022, 09:03:10"
+      },
+      "62cc1185eec032884c1d2501": {
+        "_id": "62cc1185eec032884c1d2501",
+        "author": "Tamunu",
+        "text": "bb",
+        "time": "11/7/2022, 09:03:17"
+      },
+      "62cc43befcd933a174acab23": {
+        "_id": "62cc43befcd933a174acab23",
+        "author": "SashaRC",
+        "text": "acá de nuevo",
+        "time": "11/7/2022, 12:37:34"
+      },
+      "62cc47a4d6b3dc405cd3d568": {
+        "_id": "62cc47a4d6b3dc405cd3d568",
+        "author": "Nana",
+        "text": "miau",
+        "time": "11/7/2022, 12:54:12"
+      }
+    },
+    "mensajes": {
+      "mensajes": {
+        "id": "mensajes",
+        "mensajes": [
+          "62cc1126cb475a21a4fd5a6e",
+          "62cc112ecb475a21a4fd5a70",
+          "62cc117eeec032884c1d24ff",
+          "62cc1185eec032884c1d2501",
+          "62cc43befcd933a174acab23",
+          "62cc47a4d6b3dc405cd3d568"
+        ]
+      }
+    }
+  },
+  "result": "mensajes"
+}

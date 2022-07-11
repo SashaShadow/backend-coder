@@ -8,7 +8,6 @@ const empresa = JSON.parse(
 ) 
 
 
-
 const puestoSchema = new normalizr.schema.Entity('puesto')
 
 const areaSchema = new normalizr.schema.Entity('area');
