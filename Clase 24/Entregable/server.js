@@ -34,7 +34,7 @@ app.use(session({
     store: MongoStore.create({
         mongoUrl: "mongodb+srv://Sasha:745431@cluster0.hzrgp.mongodb.net/Ent24?retryWrites=true&w=majority",
         mongoOptions: advancedOptions,
-        ttl: 3600
+        ttl: 60
     }),
     secret: 'fahrenheit',
     resave: true,
