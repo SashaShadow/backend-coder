@@ -64,10 +64,12 @@ passport.use('login', new LocalStrategy((username, password, done) => {
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
   }, (req, username, password, done) => {
+    let errMsg = '';
     return User.findOne({ username })
       .then(user => {
         if (user) {
-          return done(null, false, req.flash('error', 'El nombre de usuario ya existe'))
+          errMsg = 'El nombre de usuario ya existe'
+          return null;
         }
   
         const newUser = new User()
@@ -80,7 +82,10 @@ passport.use('signup', new LocalStrategy({
         return newUser.save()
       })
       .then(user => {
-        return done(null, user)
+        if (!user && errMsg !== '') {
+          return done(null, false, {message: errMsg})
+          }
+          return done(null, user)
       })
       .catch(err => {
         return done(err)
