@@ -1,0 +1,33 @@
+
+.................................................MODO CLUSTER CON EL MODULO CLUSTER DE NODEJS...........................................................
+-Para iniciar el servidor en modo cluster (modulo cluster de node) escribir por comandos node(mon) server.js -m cluster o --MODO cluster
+-Si se quiere iniciar en modo fork pasar directamente node server.js o node server.js -m fork || --MODO fork.
+
+................................................................FOREVER............................................................
+
+-Para iniciar el servidor con forever escribir en la CLI: forever start server.js
+-Para iniciarlo con otro puerto agregar --PORT num o -p num al final.
+-Para iniciarlo en modo cluster agregar -m cluster o --MODO cluster (mismo concepto que en el apartado anterior).
+-Para listar los servidores corriendo con forever: forever list.
+
+.................................................................PM2....................................................................................
+
+-Para iniciar el servidor en modo fork escribir en la CLI: pm2 start server.js --name="name" --watch -- -p 8081 (si es que se desea poner el puerto, sinó escucha por default en 8080)
+-Para iniciar el servidor en modo cluster escribir en CLI: pm2 start server.js --name="name" --watch -i max -- -p 8081 (idem)
+-El parametro --watch se escribe para que la actualizacion del codigo se refleje de forma inmediata y en tiempo real en los procesos.
+-Para listar procesos iniciados con pm2 escribir en la CLI: pm2 list
+-Para finalizar un proceso escribir: pm2 delete name | id 
+-Para finalizar todos los procesos: pm2 delete all
+
+
+.........................................................NGINX.....................................................................
+
+-Para la consigna en relacion a la configuracion con el servidor nginx:
+    *Consultas de /api/random con cluster nativo: ejecutar por cli nodemon server.js -m cluster -p 8081.
+    *Consultas de /api/random con pm2 en los puertos 8082, 8083, 8084 y 8085: 
+    pm2 start server.js --name="8082" --watch -- -p 8082
+    pm2 start server.js --name="8083" --watch -- -p 8083
+    pm2 start server.js --name="8084" --watch -- -p 8084
+    pm2 start server.js --name="8085" --watch -- -p 8085
+    Una vez corriendo todos los procesos descomentar en randomRouter.js la response que devuelve el puerto en formato JSON y verificar en que puerto
+    cae cada consulta.

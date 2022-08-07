@@ -1,0 +1,20 @@
+
+.................................................MODO CLUSTER CON EL MODULO CLUSTER DE NODEJS...........................................................
+-Para iniciar el servidor en modo cluster (modulo cluster de node) escribir por comandos node(mon) server.js -m cluster o --MODO cluster
+-Si se quiere iniciar en modo fork pasar directamente node server.js o node server.js -m fork || --MODO fork.
+
+................................................................FOREVER............................................................
+
+-Para iniciar el servidor con forever escribir en la CLI: forever start server.js
+-Para iniciarlo con otro puerto agregar --PORT num o -p num al final.
+-Para iniciarlo en modo cluster agregar -m cluster o --MODO cluster (mismo concepto que en el apartado anterior).
+-Para listar los servidores corriendo con forever: forever list.
+
+.................................................................PM2....................................................................................
+
+-Para iniciar el servidor en modo fork escribir en la CLI: pm2 start server.js --name="name" --watch -- -p 8081 (si es que se desea poner el puerto, sinó escucha por default en 8080)
+-Para iniciar el servidor en modo cluster escribir en CLI: pm2 start server.js --name="name" --watch -i max -- -p 8081 (idem)
+-El parametro --watch se escribe para que la actualizacion del codigo se refleje de forma inmediata y en tiempo real en los procesos.
+-Para listar procesos iniciados con pm2 escribir en la CLI: pm2 list
+-Para finalizar un proceso escribir: pm2 delete name | id 
+-Para finalizar todos los procesos: pm2 delete 'all'

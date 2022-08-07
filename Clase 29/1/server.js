@@ -13,8 +13,10 @@ const options = {
       p: 'PORT'
     }
   }
-
+  
 const myArgs = minimist(process.argv.slice(2), options)
+
+console.log(myArgs);
 
 const PORT = myArgs.PORT || 8080;  
 
