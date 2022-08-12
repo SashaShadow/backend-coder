@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { logger } from "./logger.js";
+=======
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 
 export const validatePost = () => {
     return (req, res, next) => {
@@ -26,6 +29,7 @@ export const validatePut = () => {
             res.send({error: "El formato del producto no es correcto"})
         }
     }
+<<<<<<< HEAD
 }
 
 export const logger200 = () => {
@@ -41,4 +45,6 @@ export const logger404 = () => {
         logger.warn(`ruta ${req.originalUrl} método ${req.method} no implementada`);
         res.status(404).send({error: -2, descripcion: `ruta ${req.originalUrl} método ${req.method} no implementada`});
       };
+=======
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 }

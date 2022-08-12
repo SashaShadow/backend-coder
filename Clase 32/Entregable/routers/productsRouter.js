@@ -1,5 +1,8 @@
 import {validatePost, validatePut} from "../middlewares.js";
+<<<<<<< HEAD
 import { logger } from "../logger.js";
+=======
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 import productsDAOMongoDB from "../productsDAOMongoDB.js"
 import express from "express";
 const { Router } = express;
@@ -13,7 +16,11 @@ productsRouter.get('', (req, res) => {
     .then(productos => {
       return res.json({productos})
     })
+<<<<<<< HEAD
     .catch(err => {res.send(err); logger.error(err); throw err})
+=======
+    .catch(err => {res.send(err); throw err})
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 })
 
 productsRouter.get('/:id', (req, res) => {
@@ -21,7 +28,11 @@ productsRouter.get('/:id', (req, res) => {
     .then(producto => {
         return res.json({producto})
     })
+<<<<<<< HEAD
     .catch(err => {logger.error(err); throw err; res.send(err);})
+=======
+    .catch(err => {res.send(err); throw err})
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 })
 
 productsRouter.post('', validatePost(), (req, res) => {

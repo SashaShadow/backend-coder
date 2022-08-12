@@ -1,0 +1,94 @@
+Statistical profiling result from bloq-v8.log, (21139 ticks, 1 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  20983   99.3%          /usr/local/bin/node
+     36    0.2%          /usr/lib/x86_64-linux-gnu/libc.so.6
+      1    0.0%          [vdso]
+      1    0.0%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.0%    1.7%  Function: ^emit node:events:475:44
+      1    0.0%    0.8%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.8%  RegExp: (?:^|[\\/])\.\.(?:[\\/]|$)
+      1    0.0%    0.8%  LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1    0.0%    0.8%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      1    0.0%    0.8%  LazyCompile: *fastparse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/parseurl/index.js:95:20
+      1    0.0%    0.8%  Function: ^write_ node:_http_outgoing:730:16
+      1    0.0%    0.8%  Function: ^storeHeader node:_http_outgoing:517:21
+      1    0.0%    0.8%  Function: ^shift node:internal/fixed_queue:108:8
+      1    0.0%    0.8%  Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+      1    0.0%    0.8%  Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      1    0.0%    0.8%  Function: ^isEncoding node:buffer:530:40
+      1    0.0%    0.8%  Function: ^getPathFromURLPosix node:internal/url:1398:29
+      1    0.0%    0.8%  Function: ^digest node:internal/crypto/hash:115:40
+      1    0.0%    0.8%  Function: ^createError /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/http-errors/index.js:49:22
+      1    0.0%    0.8%  Function: ^afterWrite node:internal/streams/writable:487:20
+      1    0.0%    0.8%  Function: ^_write node:internal/streams/writable:283:16
+      1    0.0%    0.8%  Function: ^_finish node:_http_outgoing:909:53
+      1    0.0%    0.8%  Function: ^Readable.on node:internal/streams/readable:874:33
+      1    0.0%    0.8%  Function: ^Readable node:internal/streams/readable:181:18
+
+ [C++]:
+   ticks  total  nonlib   name
+     23    0.1%   19.5%  epoll_pwait@@GLIBC_2.6
+     21    0.1%   17.8%  __write@@GLIBC_2.2.5
+     13    0.1%   11.0%  fwrite@@GLIBC_2.2.5
+     11    0.1%    9.3%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+      7    0.0%    5.9%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      7    0.0%    5.9%  _IO_file_xsputn@@GLIBC_2.2.5
+      4    0.0%    3.4%  __mprotect@@GLIBC_PRIVATE
+      3    0.0%    2.5%  __read@@GLIBC_2.2.5
+      2    0.0%    1.7%  __libc_malloc@@GLIBC_2.2.5
+      1    0.0%    0.8%  std::ostream::flush()@@GLIBCXX_3.4
+      1    0.0%    0.8%  std::locale::id::_M_id() const@@GLIBCXX_3.4
+      1    0.0%    0.8%  std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@@GLIBCXX_3.4
+      1    0.0%    0.8%  pthread_cond_signal@@GLIBC_2.3.2
+      1    0.0%    0.8%  __vsnprintf@@GLIBC_2.2.5
+
+ [Summary]:
+   ticks  total  nonlib   name
+     21    0.1%   17.8%  JavaScript
+     96    0.5%   81.4%  C++
+     40    0.2%   33.9%  GC
+  21021   99.4%          Shared libraries
+      1    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+     13   24.1%    0.1%  fwrite@@GLIBC_2.2.5
+     10   18.5%    0.0%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+     10   18.5%    0.0%  __write@@GLIBC_2.2.5
+      7   13.0%    0.0%  _IO_file_xsputn@@GLIBC_2.2.5
+      5    9.3%    0.0%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      3    5.6%    0.0%  __mprotect@@GLIBC_PRIVATE
+      2    3.7%    0.0%  __libc_malloc@@GLIBC_2.2.5
+      1    1.9%    0.0%  std::ostream::flush()@@GLIBCXX_3.4
+      1    1.9%    0.0%  std::locale::id::_M_id() const@@GLIBCXX_3.4
+      1    1.9%    0.0%  pthread_cond_signal@@GLIBC_2.3.2
+      1    1.9%    0.0%  __vsnprintf@@GLIBC_2.2.5
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  20983   99.3%  /usr/local/bin/node
+  20810   99.2%    /usr/local/bin/node
+  19929   95.8%      Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+  19806   99.4%        Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/server.js:38:23
+  19806  100.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+  19505   98.5%            Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+    301    1.5%            LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+    582    2.8%      LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+    505   86.8%        LazyCompile: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/server.js:38:23
+    364   72.1%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+    364  100.0%            LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+    141   27.9%          LazyCompile: ~handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+    141  100.0%            LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     77   13.2%        LazyCompile: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/server.js:20:23
+     77  100.0%          LazyCompile: ~handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     77  100.0%            LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+

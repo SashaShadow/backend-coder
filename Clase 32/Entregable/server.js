@@ -1,7 +1,10 @@
 import express from "express";
 import session from 'express-session';
 const { Router } = express;
+<<<<<<< HEAD
 import { logger200, logger404 } from "./middlewares.js";
+=======
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 import { db, msgsModel, productsModel, User} from "./dbsConfig.js";
 import contenedorMongo from "./contenedorMongoDB.js";
 import { Server as IOServer } from "socket.io";
@@ -17,6 +20,10 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from "passport-local";
 import { createHash, isValidPassword } from './utils.js';
 import minimist from "minimist";
+<<<<<<< HEAD
+=======
+import compression from 'compression'
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 import "dotenv/config.js";
 
 const numCpus = os.cpus().length
@@ -46,6 +53,10 @@ if (myArgs.MODO === 'cluster') {
         cluster.fork();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
     cluster.on('exit', (worker, code, signal) => {
         console.log(`el worker ${worker.process.pid} murió`)
     });
@@ -70,6 +81,10 @@ const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+<<<<<<< HEAD
+=======
+app.use(compression()); //desactivar o activar para chequear el peso de la ruta info
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 app.use("/api", express.static("./public"));
 app.set("view engine", "ejs"); 
 app.set("views", "./views") 
@@ -243,6 +258,7 @@ router.get('/info', (req, res) => {
   return res.render('pages/info.ejs', {info: process, cpus: numCpus})
 })
 
+<<<<<<< HEAD
 app.use('/api', logger200(), router);
 app.use('/api/random',  logger200(), (req, res, next) => {
   req.port = PORT;
@@ -255,3 +271,15 @@ app.use(logger404());
 
 
 
+=======
+
+app.use('/api', router);
+app.use('/api/random', (req, res, next) => {
+  req.port = PORT;
+  next()
+}, randomRouter);
+app.use('/api/products', productsRouter)
+app.use((req, res, next) => {
+    res.status(404).send({error: -2, descripcion: `ruta ${req.originalUrl} método ${req.method} no implementada`});
+  });
+>>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646

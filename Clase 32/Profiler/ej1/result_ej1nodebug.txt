@@ -1,0 +1,545 @@
+Statistical profiling result from nodebug.log, (2209 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   1647   74.6%          /usr/local/bin/node
+     75    3.4%          /usr/lib/x86_64-linux-gnu/libc.so.6
+      1    0.0%          [vdso]
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+    229   10.4%   47.1%  LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      7    0.3%    1.4%  LazyCompile: *normalizeString node:path:66:25
+      4    0.2%    0.8%  LazyCompile: *normalize node:path:1127:12
+      4    0.2%    0.8%  LazyCompile: *end node:_http_outgoing:833:45
+      3    0.1%    0.6%  LazyCompile: *_write node:internal/streams/writable:283:16
+      2    0.1%    0.4%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      2    0.1%    0.4%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      2    0.1%    0.4%  RegExp: ;\s*charset\s*=
+      2    0.1%    0.4%  RegExp: ; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) *
+      2    0.1%    0.4%  LazyCompile: *send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      2    0.1%    0.4%  Function: ^onDestroy node:internal/streams/destroy:73:21
+      2    0.1%    0.4%  Function: ^hasObserver node:internal/perf/observe:441:21
+      1    0.0%    0.2%  RegExp: ^\/randoms-nodebug\/?$
+      1    0.0%    0.2%  RegExp: ^[\^_`a-zA-Z\-0-9!#$%&'*+.|~]+$
+      1    0.0%    0.2%  LazyCompile: *set /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/application.js:359:23
+      1    0.0%    0.2%  LazyCompile: *parserOnHeadersComplete node:_http_common:77:33
+      1    0.0%    0.2%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      1    0.0%    0.2%  LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1    0.0%    0.2%  LazyCompile: *get node:internal/streams/writable:787:8
+      1    0.0%    0.2%  LazyCompile: *extname node:path:1385:10
+      1    0.0%    0.2%  LazyCompile: *createError /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/http-errors/index.js:49:22
+      1    0.0%    0.2%  LazyCompile: *_flushOutput node:_http_outgoing:951:63
+      1    0.0%    0.2%  LazyCompile: *_addListener node:events:555:22
+      1    0.0%    0.2%  LazyCompile: *SendStream /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:96:21
+      1    0.0%    0.2%  Function: ^write_ node:_http_outgoing:730:16
+      1    0.0%    0.2%  Function: ^validateString node:internal/validators:118:24
+      1    0.0%    0.2%  Function: ^update node:internal/crypto/hash:95:40
+      1    0.0%    0.2%  Function: ^stringify /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:1145:20
+      1    0.0%    0.2%  Function: ^stat node:fs:1467:14
+      1    0.0%    0.2%  Function: ^set /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/application.js:359:23
+      1    0.0%    0.2%  Function: ^realpathSync node:fs:2425:22
+      1    0.0%    0.2%  Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1    0.0%    0.2%  Function: ^process_params /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:338:47
+      1    0.0%    0.2%  Function: ^processPromiseRejections node:internal/process/promises:211:34
+      1    0.0%    0.2%  Function: ^processHeader node:_http_outgoing:501:23
+      1    0.0%    0.2%  Function: ^normalizeParseOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/qs/lib/parse.js:204:59
+      1    0.0%    0.2%  Function: ^noop node:internal/util/debuglog:47:14
+      1    0.0%    0.2%  Function: ^matchHeader node:_http_outgoing:524:21
+      1    0.0%    0.2%  Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1    0.0%    0.2%  Function: ^hasListeners /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:1031:23
+      1    0.0%    0.2%  Function: ^getTimerDuration node:internal/timers:383:26
+      1    0.0%    0.2%  Function: ^fresh /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/parseurl/index.js:153:16
+      1    0.0%    0.2%  Function: ^flow node:internal/streams/readable:1008:14
+      1    0.0%    0.2%  Function: ^finishMaybe node:internal/streams/writable:731:21
+      1    0.0%    0.2%  Function: ^etag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:70:15
+      1    0.0%    0.2%  Function: ^end node:_http_outgoing:833:45
+      1    0.0%    0.2%  Function: ^destroy node:internal/streams/destroy:32:17
+      1    0.0%    0.2%  Function: ^containsDotFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:925:26
+      1    0.0%    0.2%  Function: ^append node:internal/linkedlist:30:16
+      1    0.0%    0.2%  Function: ^_destroy node:internal/streams/destroy:70:18
+      1    0.0%    0.2%  Function: ^Readable.on node:internal/streams/readable:874:33
+      1    0.0%    0.2%  Function: ^Readable node:internal/streams/readable:181:18
+      1    0.0%    0.2%  Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    0.0%    0.2%  Function: ^<anonymous> node:internal/validators:236:42
+      1    0.0%    0.2%  Function: ^<anonymous> node:internal/fs/utils:681:42
+      1    0.0%    0.2%  Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+
+ [C++]:
+   ticks  total  nonlib   name
+     58    2.6%   11.9%  epoll_pwait@@GLIBC_2.6
+     31    1.4%    6.4%  __write@@GLIBC_2.2.5
+     24    1.1%    4.9%  writev@@GLIBC_2.2.5
+     15    0.7%    3.1%  fwrite@@GLIBC_2.2.5
+      9    0.4%    1.9%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+      9    0.4%    1.9%  __mprotect@@GLIBC_PRIVATE
+      7    0.3%    1.4%  pthread_cond_signal@@GLIBC_2.3.2
+      4    0.2%    0.8%  shutdown@@GLIBC_2.2.5
+      4    0.2%    0.8%  _IO_file_xsputn@@GLIBC_2.2.5
+      3    0.1%    0.6%  __read@@GLIBC_2.2.5
+      2    0.1%    0.4%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      2    0.1%    0.4%  __mmap@@GLIBC_PRIVATE
+      2    0.1%    0.4%  __clock_gettime@@GLIBC_PRIVATE
+      1    0.0%    0.2%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      1    0.0%    0.2%  sigemptyset@@GLIBC_2.2.5
+      1    0.0%    0.2%  pthread_cond_broadcast@@GLIBC_2.3.2
+      1    0.0%    0.2%  getrusage@@GLIBC_2.2.5
+      1    0.0%    0.2%  cfree@GLIBC_2.2.5
+      1    0.0%    0.2%  accept4@@GLIBC_2.10
+      1    0.0%    0.2%  __pthread_rwlock_wrlock@GLIBC_2.2.5
+      1    0.0%    0.2%  __pthread_rwlock_unlock@GLIBC_2.2.5
+      1    0.0%    0.2%  __pthread_mutex_destroy@GLIBC_2.2.5
+      1    0.0%    0.2%  __lll_lock_wait_private@@GLIBC_PRIVATE
+      1    0.0%    0.2%  __errno_location@@GLIBC_2.2.5
+
+ [Summary]:
+   ticks  total  nonlib   name
+    305   13.8%   62.8%  JavaScript
+    181    8.2%   37.2%  C++
+    177    8.0%   36.4%  GC
+   1723   78.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+     24   31.2%    1.1%  writev@@GLIBC_2.2.5
+     17   22.1%    0.8%  __write@@GLIBC_2.2.5
+     12   15.6%    0.5%  fwrite@@GLIBC_2.2.5
+      9   11.7%    0.4%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+      4    5.2%    0.2%  _IO_file_xsputn@@GLIBC_2.2.5
+      3    3.9%    0.1%  __mprotect@@GLIBC_PRIVATE
+      2    2.6%    0.1%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      1    1.3%    0.0%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      1    1.3%    0.0%  pthread_cond_signal@@GLIBC_2.3.2
+      1    1.3%    0.0%  cfree@GLIBC_2.2.5
+      1    1.3%    0.0%  __pthread_rwlock_wrlock@GLIBC_2.2.5
+      1    1.3%    0.0%  __pthread_rwlock_unlock@GLIBC_2.2.5
+      1    1.3%    0.0%  __clock_gettime@@GLIBC_PRIVATE
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   1647   74.6%  /usr/local/bin/node
+    979   59.4%    /usr/local/bin/node
+    256   26.1%      Function: ^stringify /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:1145:20
+    256  100.0%        Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+    256  100.0%          LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+    170   66.4%            LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     86   33.6%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     62    6.3%      LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+     41   66.1%        LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     41  100.0%          Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     41  100.0%            Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     21   33.9%        Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     21  100.0%          Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     21  100.0%            Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     59    6.0%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+     57   96.6%        Function: ^Socket._writeGeneric node:net:791:42
+     57  100.0%          Function: ^Socket._writev node:net:823:36
+     57  100.0%            Function: ^doWrite node:internal/streams/writable:398:17
+      2    3.4%        LazyCompile: ~Socket._writeGeneric node:net:791:42
+      1   50.0%          LazyCompile: ~Socket._writev node:net:823:36
+      1  100.0%            LazyCompile: ~doWrite node:internal/streams/writable:398:17
+      1   50.0%          Function: ^Socket._writev node:net:823:36
+      1  100.0%            LazyCompile: ~doWrite node:internal/streams/writable:398:17
+     58    5.9%      Function: ^update node:internal/crypto/hash:95:40
+     58  100.0%        Function: ^entitytag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:39:20
+     58  100.0%          Function: ^etag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:70:15
+     34   58.6%            Function: ^generateETag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/utils.js:273:32
+     24   41.4%            LazyCompile: *send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+     38    3.9%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     33   86.8%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      6   18.2%          Function: ~<anonymous> node:http:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      6   18.2%          Function: ~<anonymous> node:crypto:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    9.1%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    9.1%          Function: ~<anonymous> node:_http_client:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    6.1%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      2  100.0%            LazyCompile: ~get node:crypto:287:8
+      2    6.1%          LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      2  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      2    6.1%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    6.1%          Function: ~<anonymous> node:internal/child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    6.1%          Function: ~<anonymous> node:child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.0%          LazyCompile: ~listenInCluster node:net:1410:25
+      1  100.0%            LazyCompile: ~Server.listen node:net:1453:35
+      1    3.0%          LazyCompile: ~lazyLoadStreams node:fs:2858:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:3001:17
+      1    3.0%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.0%          Function: ~<anonymous> node:internal/crypto/cipher:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.0%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    7.9%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      3  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      3  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    5.3%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1   50.0%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1   50.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     34    3.5%      Function: ^fromStringFast node:buffer:413:24
+     34  100.0%        Function: ^fromString node:buffer:432:20
+     20   58.8%          Function: ^from node:buffer:296:28
+     20  100.0%            Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+     14   41.2%          LazyCompile: *send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+     14  100.0%            Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+     34    3.5%      /usr/local/bin/node
+      4   11.8%        LazyCompile: *header /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:777:29
+      4  100.0%          Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      4  100.0%            LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      4   11.8%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      4  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+      4  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+      3    8.8%        Function: ^expressInit /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/middleware/init.js:29:30
+      2   66.7%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      1   33.3%          LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      2    5.9%        LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:507:36
+      2  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      2  100.0%            LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      2    5.9%        Function: ^header /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:777:29
+      1   50.0%          Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1   50.0%          Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1  100.0%            LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      2    5.9%        Function: ^format /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/content-type/index.js:65:17
+      1   50.0%          LazyCompile: *send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1   50.0%          Function: ^setCharset /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/utils.js:248:41
+      1  100.0%            Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      1    2.9%        LazyCompile: ~toIdentifier /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/toidentifier/index.js:24:23
+      1  100.0%          LazyCompile: ~forEachCode /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/http-errors/index.js:259:38
+      1  100.0%            /usr/local/bin/node
+      1    2.9%        LazyCompile: ~run node:internal/modules/esm/module_job:193:12
+      1  100.0%          /usr/local/bin/node
+      1    2.9%        LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1    2.9%        LazyCompile: ~populateMaps /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/mime-types/index.js:154:23
+      1  100.0%          Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/mime-types/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    2.9%        LazyCompile: ~header /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:777:29
+      1  100.0%          LazyCompile: ~json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1  100.0%            Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      1    2.9%        LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:397:28
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:988:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1128:30
+      1    2.9%        LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%          LazyCompile: ~Socket node:net:285:16
+      1  100.0%            LazyCompile: ~WriteStream node:tty:85:21
+      1    2.9%        LazyCompile: *send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      1  100.0%          Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1  100.0%            LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      1    2.9%        LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      1  100.0%          Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:115:39
+      1  100.0%            LazyCompile: *emit node:events:475:44
+      1    2.9%        LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      1  100.0%          LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+      1    2.9%        Function: ^pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:506:43
+      1  100.0%          Function: ^serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:72:31
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1    2.9%        Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/content-type/index.js:106:16
+      1  100.0%          Function: ^setCharset /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/utils.js:248:41
+      1  100.0%            Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      1    2.9%        Function: ^normalize node:path:1127:12
+      1  100.0%          Function: ^join node:path:1166:7
+      1  100.0%            Function: ^pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:506:43
+      1    2.9%        Function: ^getOwn node:internal/bootstrap/loaders:180:16
+      1  100.0%          Function: ^syncExports node:internal/bootstrap/loaders:287:14
+      1  100.0%            Function: ^<anonymous> node:internal/bootstrap/loaders:273:15
+      1    2.9%        Function: ^_send node:_http_outgoing:319:49
+      1  100.0%          Function: ^write_ node:_http_outgoing:730:16
+      1  100.0%            LazyCompile: *end node:_http_outgoing:833:45
+      1    2.9%        Function: ^ContentType /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/content-type/index.js:219:22
+      1  100.0%          Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/content-type/index.js:106:16
+      1  100.0%            Function: ^setCharset /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/utils.js:248:41
+      1    2.9%        Function: ^<anonymous> node:internal/fs/utils:358:35
+      1  100.0%          Function: ^<anonymous> node:internal/fs/utils:669:38
+      1  100.0%            Function: ^<anonymous> node:internal/fs/utils:681:42
+     33    3.4%      Function: ^compileFunction node:vm:308:25
+     29   87.9%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     28   96.6%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+     16   57.1%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     12   42.9%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    3.4%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      4   12.1%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      4  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      4  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     23    2.3%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     23  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      4   17.4%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      4  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3   13.0%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      3  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      3   13.0%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3   13.0%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    8.7%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    8.7%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    4.3%          LazyCompile: ~setupInspectorHooks node:internal/bootstrap/pre_execution:288:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1    4.3%          LazyCompile: ~get BlockList node:net:1826:16
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1    4.3%          Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.3%          Function: ~<anonymous> node:internal/modules/esm/translators:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.3%          Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    4.3%          Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     22    2.2%      Function: ^writeHead node:_http_server:270:19
+     22  100.0%        Function: ^_implicitHeader node:_http_server:265:68
+     22  100.0%          Function: ^write_ node:_http_outgoing:730:16
+     14   63.6%            Function: ^end node:_http_outgoing:833:45
+      8   36.4%            LazyCompile: *end node:_http_outgoing:833:45
+     19    1.9%      Function: ^stat node:fs:1467:14
+     17   89.5%        Function: ^sendFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:712:51
+     17  100.0%          Function: ^pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:506:43
+     17  100.0%            Function: ^serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:72:31
+      2   10.5%        LazyCompile: *serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:72:31
+      2  100.0%          LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      2  100.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+     19    1.9%      Function: ^expressInit /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/middleware/init.js:29:30
+      9   47.4%        LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      9  100.0%          Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      9  100.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      6   31.6%        Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      6  100.0%          Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      3   50.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      3   50.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      4   21.1%        LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      4  100.0%          LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      4  100.0%            Function: ^query /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/middleware/query.js:39:24
+     16    1.6%      Function: ^Hash node:internal/crypto/hash:58:14
+     16  100.0%        Function: ^createHash node:crypto:129:20
+     16  100.0%          Function: ^entitytag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:39:20
+     16  100.0%            Function: ^etag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:70:15
+     14    1.4%      LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+     13   92.9%        Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:115:39
+     10   76.9%          LazyCompile: *emit node:events:475:44
+     10  100.0%            Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:267:45
+      3   23.1%          Function: ^emit node:events:475:44
+      3  100.0%            Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:267:45
+      1    7.1%        LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:136:31
+      1  100.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/application.js:165:29
+      1  100.0%            Function: ^app /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/express.js:38:21
+     70    4.3%    LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+     43   61.4%      LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     43  100.0%        Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     43  100.0%          Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     43  100.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+     27   38.6%      Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     26   96.3%        Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     26  100.0%          Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     18   69.2%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      8   30.8%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1    3.7%        LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+      1  100.0%          LazyCompile: ~dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     46    2.8%    LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     46  100.0%      Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     46  100.0%        Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     46  100.0%          LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+     46  100.0%            Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:115:39
+     28    1.7%    Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     24   85.7%      Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     24  100.0%        Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     17   70.8%          LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+     17  100.0%            Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:115:39
+      7   29.2%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      7  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      2    7.1%      LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+      1   50.0%        LazyCompile: ~dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+      1  100.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      1   50.0%        Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+      1  100.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      1    3.6%      LazyCompile: ~trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      1  100.0%        Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      1  100.0%          Function: ^process_params /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:338:47
+      1  100.0%            Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+      1    3.6%      Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      1  100.0%        Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      1  100.0%          Function: ^process_params /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:338:47
+      1  100.0%            Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+
+    229   10.4%  LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+    162   70.7%    LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+    162  100.0%      Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+    162  100.0%        Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+    162  100.0%          LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+    162  100.0%            Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:115:39
+     67   29.3%    Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     66   98.5%      Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+     66  100.0%        Function: ^dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+     41   62.1%          LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:177:16
+     41  100.0%            Function: ^error /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:115:39
+     25   37.9%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+     25  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+      1    1.5%      LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:116:16
+      1  100.0%        LazyCompile: ~dispatch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/route.js:98:45
+      1  100.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:280:64
+
+     75    3.4%  /usr/lib/x86_64-linux-gnu/libc.so.6
+     16   21.3%    /usr/local/bin/node
+      1    6.3%      LazyCompile: ~value node:internal/console/constructor:321:20
+      1  100.0%        LazyCompile: ~log node:internal/console/constructor:359:6
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            Script: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:1:1
+      1    6.3%      LazyCompile: ~resume_ node:internal/streams/readable:984:17
+      1  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    6.3%      LazyCompile: ~isEmpty node:internal/fixed_queue:95:10
+      1  100.0%        LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%          LazyCompile: ~defaultTriggerAsyncIdScope node:internal/async_hooks:456:36
+      1  100.0%            LazyCompile: ~setupListenHandle node:net:1325:27
+      1    6.3%      LazyCompile: ~initSocketHandle node:net:254:26
+      1  100.0%        LazyCompile: ~Socket node:net:285:16
+      1  100.0%          LazyCompile: ~onconnection node:net:1587:22
+      1    6.3%      LazyCompile: ~init node:internal/util/debuglog:72:16
+      1  100.0%        LazyCompile: ~debug node:internal/util/debuglog:76:15
+      1  100.0%          LazyCompile: ~logger node:internal/util/debuglog:95:18
+      1  100.0%            LazyCompile: ~set node:internal/modules/esm/module_map:23:6
+      1    6.3%      LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%        Function: ^resume_ node:internal/streams/readable:984:17
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    6.3%      LazyCompile: ~IncomingMessage node:_http_incoming:51:25
+      1  100.0%        LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1    6.3%      LazyCompile: ~GetIntrinsic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/get-intrinsic/index.js:253:39
+      1  100.0%        Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/call-bind/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    6.3%      LazyCompile: *getHeader node:_http_outgoing:590:57
+      1  100.0%        Function: ^res.get /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:811:19
+      1  100.0%          Function: ^json /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:250:25
+      1  100.0%            LazyCompile: *<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:19:29
+      1    6.3%      Function: ^realpathSync node:fs:2425:22
+      1  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+      1    6.3%      Function: ^fresh /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/parseurl/index.js:153:16
+      1  100.0%        Function: ^parseurl /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/parseurl/index.js:35:19
+      1  100.0%          LazyCompile: ~query /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/middleware/query.js:39:24
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1    6.3%      Function: ^decode /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:997:17
+      1  100.0%        Function: ^pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:506:43
+      1  100.0%          Function: ^serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:72:31
+      1  100.0%            LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1    6.3%      Function: ^arrayClone node:events:879:20
+      1  100.0%        Function: ^emit node:events:475:44
+      1  100.0%          Function: ^endReadableNT node:internal/streams/readable:1338:23
+      1  100.0%            LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1    6.3%      Function: ^_addHeaderLine node:_http_incoming:337:24
+      1  100.0%        Function: ^get node:_http_incoming:108:16
+      1  100.0%          Function: ^parserOnIncoming node:_http_server:857:26
+      1  100.0%            Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    6.3%      Function: ^LazyTransform node:internal/streams/lazy_transform:20:23
+      1  100.0%        Function: ^Hash node:internal/crypto/hash:58:14
+      1  100.0%          Function: ^createHash node:crypto:129:20
+      1  100.0%            Function: ^entitytag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:39:20
+      1    6.3%      /usr/local/bin/node
+      1  100.0%        Function: ^<anonymous> node:internal/fs/utils:358:35
+      1  100.0%          Function: ^<anonymous> node:internal/fs/utils:669:38
+      1  100.0%            Function: ^<anonymous> node:internal/fs/utils:681:42
+      1    1.3%    LazyCompile: *writevGeneric node:internal/stream_base_commons:122:23
+      1  100.0%      Function: ^Socket._writeGeneric node:net:791:42
+      1  100.0%        Function: ^Socket._writev node:net:823:36
+      1  100.0%          Function: ^doWrite node:internal/streams/writable:398:17
+      1  100.0%            Function: ^clearBuffer node:internal/streams/writable:529:21
+
+     58    2.6%  epoll_pwait@@GLIBC_2.6
+
+     31    1.4%  __write@@GLIBC_2.2.5
+     17   54.8%    /usr/local/bin/node
+      1    5.9%      LazyCompile: ~stringify node:internal/modules/esm/translators:90:19
+      1  100.0%        LazyCompile: ~moduleStrategy node:internal/modules/esm/translators:112:56
+      1  100.0%          LazyCompile: ~moduleProvider node:internal/modules/esm/loader:322:28
+      1  100.0%            /usr/local/bin/node
+      1    5.9%      LazyCompile: ~processHeader node:_http_outgoing:501:23
+      1  100.0%        LazyCompile: ~_storeHeader node:_http_outgoing:374:22
+      1  100.0%          LazyCompile: ~writeHead node:_http_server:270:19
+      1  100.0%            LazyCompile: ~_implicitHeader node:_http_server:265:68
+      1    5.9%      LazyCompile: ~pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:506:43
+      1  100.0%        LazyCompile: ~serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:72:31
+      1  100.0%          LazyCompile: ~handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/index.js:293:23
+      1    5.9%      LazyCompile: ~lazyrouter /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/application.js:144:37
+      1  100.0%        LazyCompile: ~use /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/application.js:194:23
+      1  100.0%          Script: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:1:1
+      1  100.0%            /usr/local/bin/node
+      1    5.9%      LazyCompile: ~insertGuarded node:internal/timers:325:23
+      1  100.0%        Function: ^unrefActive node:internal/timers:317:21
+      1  100.0%          Function: ^Timeout.refresh node:internal/timers:210:37
+      1  100.0%            Function: ^_unrefTimer node:net:431:52
+      1    5.9%      LazyCompile: ~init /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/application.js:64:25
+      1  100.0%        LazyCompile: ~createApplication /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/express.js:37:27
+      1  100.0%          Script: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Profiler/ej1/server.js:1:1
+      1  100.0%            /usr/local/bin/node
+      1    5.9%      LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.9%      LazyCompile: ~entitytag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:39:20
+      1  100.0%        LazyCompile: ~etag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/etag/index.js:70:15
+      1  100.0%          LazyCompile: ~generateETag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/utils.js:273:32
+      1  100.0%            LazyCompile: ~send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/response.js:111:25
+      1    5.9%      LazyCompile: ~debug node:internal/util/debuglog:76:15
+      1  100.0%        LazyCompile: ~logger node:internal/util/debuglog:95:18
+      1  100.0%          LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%            LazyCompile: ~Socket.read node:net:661:33
+      1    5.9%      LazyCompile: ~cache node:internal/http:26:15
+      1  100.0%        LazyCompile: ~utcDate node:internal/http:21:17
+      1  100.0%          LazyCompile: ~_storeHeader node:_http_outgoing:374:22
+      1  100.0%            LazyCompile: ~writeHead node:_http_server:270:19
+      1    5.9%      LazyCompile: ~SendStream /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:96:21
+      1  100.0%        Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/send/index.js:83:15
+      1  100.0%          LazyCompile: ~serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/serve-static/index.js:72:31
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/express/lib/router/layer.js:86:49
+      1    5.9%      LazyCompile: ~SafeMap node:internal/per_context/primordials:360:16
+      1  100.0%        Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.9%      LazyCompile: ~<anonymous> node:internal/modules/esm/translators:233:36
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1    5.9%      Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1    5.9%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      1    5.9%      Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    5.9%      Function: ^forEachCode /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/http-errors/index.js:259:38
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~populateConstructorExports /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/http-errors/index.js:258:37
+      1  100.0%            Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/node_modules/http-errors/index.js:1:1
+
+     24    1.1%  writev@@GLIBC_2.2.5
+     24  100.0%    LazyCompile: *writevGeneric node:internal/stream_base_commons:122:23
+     24  100.0%      Function: ^Socket._writeGeneric node:net:791:42
+     24  100.0%        Function: ^Socket._writev node:net:823:36
+     24  100.0%          Function: ^doWrite node:internal/streams/writable:398:17
+     21   87.5%            LazyCompile: *end node:_http_outgoing:833:45
+      3   12.5%            Function: ^clearBuffer node:internal/streams/writable:529:21
+
