@@ -1,0 +1,3 @@
+./node_modules/.bin/0x server.js
+
+npm test

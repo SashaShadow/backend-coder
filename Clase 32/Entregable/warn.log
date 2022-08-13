@@ -1,0 +1,11 @@
+[2022-08-12T08:37:23.210] [WARN] todos - ruta / método GET no implementada
+[2022-08-12T08:44:51.727] [WARN] warnOnly - ruta /as método GET no implementada
+[2022-08-12T08:51:14.916] [WARN] warnOnly - ruta /info método GET no implementada
+[2022-08-12T17:05:27.223] [WARN] warnOnly - ruta / método GET no implementada
+[2022-08-12T17:05:38.422] [WARN] warnOnly - ruta /favicon.ico método GET no implementada
+[2022-08-13T11:12:58.002] [WARN] warnOnly - ruta / método GET no implementada
+[2022-08-13T11:15:40.392] [WARN] warnOnly - ruta /favicon.ico método GET no implementada
+[2022-08-13T11:26:00.936] [WARN] warnOnly - ruta /main.js método GET no implementada
+[2022-08-13T11:26:00.942] [WARN] warnOnly - ruta /ejs.js método GET no implementada
+[2022-08-13T11:26:01.757] [WARN] warnOnly - ruta /ejs.js método GET no implementada
+[2022-08-13T11:28:51.173] [WARN] warnOnly - ruta /favicon.ico método GET no implementada

@@ -11,10 +11,14 @@ log4js.configure({
       consola: { appenders: ["miLoggerConsole"], level: "debug" },
       archivo: { appenders: ["warnFile"], level: "warn" },
       archivo2: { appenders: ["errorFile"], level: "error" },
+      warnOnly: { appenders: ["miLoggerConsole", "warnFile"], level: "warn"},
+      errorOnly: { appenders: ["miLoggerConsole", "errorFile"], level: "error"}
     }
    })
 
 export const logger = log4js.getLogger();
+export const loggerWarn = log4js.getLogger("warnOnly");
+export const loggerError = log4js.getLogger("errorOnly")
 // logger.trace("Entering cheese testing");
 // logger.debug("Got cheese.");
 // logger.info("Cheese is Comté.");

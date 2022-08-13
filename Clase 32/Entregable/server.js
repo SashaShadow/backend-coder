@@ -1,10 +1,8 @@
 import express from "express";
 import session from 'express-session';
 const { Router } = express;
-<<<<<<< HEAD
 import { logger200, logger404 } from "./middlewares.js";
-=======
->>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
+import { logger, loggerError } from "./logger.js";
 import { db, msgsModel, productsModel, User} from "./dbsConfig.js";
 import contenedorMongo from "./contenedorMongoDB.js";
 import { Server as IOServer } from "socket.io";
@@ -14,16 +12,13 @@ import randomRouter from './routers/randomRouter.js';
 import flash from 'connect-flash';
 import MongoStore from 'connect-mongo';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
 import cluster from 'cluster';
 import os from 'os';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from "passport-local";
 import { createHash, isValidPassword } from './utils.js';
 import minimist from "minimist";
-<<<<<<< HEAD
-=======
-import compression from 'compression'
->>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 import "dotenv/config.js";
 
 const numCpus = os.cpus().length
@@ -46,34 +41,30 @@ const PORT = myArgs.PORT || 8080;
 
 if (myArgs.MODO === 'cluster') {
   if (cluster.isPrimary) {
-    console.log(`El master con pid numero ${process.pid} esta funcionando`);
+    logger.info(`El master con pid numero ${process.pid} esta funcionando`);
 
 
     for (let i = 0; i < numCpus; i++) {
         cluster.fork();
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
     cluster.on('exit', (worker, code, signal) => {
-        console.log(`el worker ${worker.process.pid} murió`)
+      logger.info(`el worker ${worker.process.pid} murió`)
     });
 
   } else {
 
   const server = httpServer.listen(PORT, () => {
-      console.log(`Servidor http escuchando en el puerto ${server.address().port}`)
+    logger.info(`Servidor http escuchando en el puerto ${server.address().port}`)
   })
-  server.on("error", error => console.log(`Error en servidor ${error}`));
+  server.on("error", error => logger.error(`Error en servidor ${error}`));
   }
 } else if (myArgs.MODO === 'fork' || !myArgs.MODO) {
 
   const server = httpServer.listen(PORT, () => {
-      console.log(`Servidor http escuchando en el puerto ${server.address().port}`)
+      logger.info(`Servidor http escuchando en el puerto ${server.address().port}`)
   })
-  server.on("error", error => console.log(`Error en servidor ${error}`));
+  server.on("error", error => loggerError.error(`Error en servidor ${error}`));
 
 } 
 
@@ -81,10 +72,7 @@ const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-<<<<<<< HEAD
-=======
 app.use(compression()); //desactivar o activar para chequear el peso de la ruta info
->>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646
 app.use("/api", express.static("./public"));
 app.set("view engine", "ejs"); 
 app.set("views", "./views") 
@@ -197,7 +185,6 @@ router.post('/mensajes', async (req, res) => {
  })
 
 router.get("/", (req, res) => {
-    //return res.json({puerto: PORT}) //activar si se quiere verificar en que puertos cae esta ruta con nginx (8080)
     if (req.user) {
         req.session.user = req.user;
         res.render("pages/index.ejs", {user: req.user});
@@ -255,15 +242,18 @@ router.get('/logout', (req, res) => {
    })
 
 router.get('/info', (req, res) => {
+  const information = { OS: process.platform, 
+    nodeversion: process.version, 
+    memoryusage: process.memoryUsage().rss, 
+    execpath: process.title, pid: process.pid,
+    projfolder: process.cwd(), procnum: numCpus};
+  
+  // console.log(information); //comentar o descomentar para hacer los tests
   return res.render('pages/info.ejs', {info: process, cpus: numCpus})
 })
 
-<<<<<<< HEAD
 app.use('/api', logger200(), router);
-app.use('/api/random',  logger200(), (req, res, next) => {
-  req.port = PORT;
-  next()
-}, randomRouter);
+app.use('/api/random',  logger200(), randomRouter);
 app.use('/api/products', logger200(), productsRouter)
 
 app.use(logger404());
@@ -271,15 +261,4 @@ app.use(logger404());
 
 
 
-=======
 
-app.use('/api', router);
-app.use('/api/random', (req, res, next) => {
-  req.port = PORT;
-  next()
-}, randomRouter);
-app.use('/api/products', productsRouter)
-app.use((req, res, next) => {
-    res.status(404).send({error: -2, descripcion: `ruta ${req.originalUrl} método ${req.method} no implementada`});
-  });
->>>>>>> 75a020e7c67eb5347a0b1ced3cfa1f280bbb3646

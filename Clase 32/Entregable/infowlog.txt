@@ -1,0 +1,1023 @@
+Statistical profiling result from wlog.log, (8360 ticks, 8 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   5762   68.9%          /usr/local/bin/node
+    157    1.9%          /usr/lib/x86_64-linux-gnu/libc.so.6
+      4    0.0%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+      1    0.0%          [vdso]
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     53    0.6%    2.2%  RegExp: [ \t]*<%_
+     16    0.2%    0.7%  LazyCompile: *serializeInto /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:553:23
+     16    0.2%    0.7%  LazyCompile: *deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+     14    0.2%    0.6%  LazyCompile: *resolve node:path:1091:10
+     10    0.1%    0.4%  LazyCompile: *normalizeString node:path:66:25
+      9    0.1%    0.4%  RegExp: _%>[ \t]*
+      8    0.1%    0.3%  LazyCompile: *emit node:events:475:44
+      7    0.1%    0.3%  LazyCompile: *scanLine /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:815:22
+      6    0.1%    0.2%  LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      6    0.1%    0.2%  Function: ^deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      5    0.1%    0.2%  LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:177:16
+      5    0.1%    0.2%  LazyCompile: *<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/connect-mongo/build/main/lib/MongoStore.js:236:10
+      4    0.0%    0.2%  LazyCompile: *serializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:260:25
+      4    0.0%    0.2%  LazyCompile: *serializeBinary /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:462:25
+      4    0.0%    0.2%  Function: ^fromStringFast node:buffer:413:24
+      3    0.0%    0.1%  LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+      3    0.0%    0.1%  LazyCompile: *slowCases node:internal/util:165:19
+      3    0.0%    0.1%  LazyCompile: *processWaitQueue /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:426:26
+      3    0.0%    0.1%  LazyCompile: *matchKnownFields node:_http_incoming:231:26
+      3    0.0%    0.1%  LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      3    0.0%    0.1%  LazyCompile: *Readable.read node:internal/streams/readable:394:35
+      3    0.0%    0.1%  Function: ^writeCommand /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:40:17
+      3    0.0%    0.1%  Function: ^get readPreference /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/collection.js:113:23
+      2    0.0%    0.1%  RegExp: ^\/logout\/?$
+      2    0.0%    0.1%  RegExp: \u001b\[\d\d?m
+      2    0.0%    0.1%  RegExp: [&<>'"]
+      2    0.0%    0.1%  RegExp: (<%%|%%>|<%=|<%-|<%_|<%#|<%|%>|-%>|_%>)
+      2    0.0%    0.1%  LazyCompile: *write node:buffer:593:12
+      2    0.0%    0.1%  LazyCompile: *write node:buffer:1051:40
+      2    0.0%    0.1%  LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      2    0.0%    0.1%  LazyCompile: *subarray node:buffer:1116:46
+      2    0.0%    0.1%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      2    0.0%    0.1%  LazyCompile: *handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:136:31
+      2    0.0%    0.1%  LazyCompile: *getEncodingOps node:buffer:679:24
+      2    0.0%    0.1%  LazyCompile: *concat node:buffer:536:32
+      2    0.0%    0.1%  LazyCompile: *command /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:254:12
+      2    0.0%    0.1%  LazyCompile: *_write node:internal/streams/writable:283:16
+      2    0.0%    0.1%  LazyCompile: *_addListener node:events:555:22
+      2    0.0%    0.1%  Function: ^toString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:977:13
+      2    0.0%    0.1%  Function: ^toInteger node:buffer:191:19
+      2    0.0%    0.1%  Function: ^stylizeWithColor node:internal/util/inspect:540:26
+      2    0.0%    0.1%  Function: ^selectServer /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:267:17
+      2    0.0%    0.1%  Function: ^resolveBSONOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/bson.js:53:28
+      2    0.0%    0.1%  Function: ^processPromiseRejections node:internal/process/promises:211:34
+      2    0.0%    0.1%  Function: ^ondata node:internal/streams/readable:752:18
+      2    0.0%    0.1%  Function: ^onMessage /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:159:14
+      2    0.0%    0.1%  Function: ^module.exports /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/utils-merge/index.js:16:36
+      2    0.0%    0.1%  Function: ^getConstructorName node:internal/util/inspect:567:28
+      2    0.0%    0.1%  Function: ^getColorDepth node:internal/tty:106:23
+      2    0.0%    0.1%  Function: ^fromOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/write_concern.js:40:23
+      2    0.0%    0.1%  Function: ^formatWithOptionsInternal node:internal/util/inspect:2048:35
+      2    0.0%    0.1%  Function: ^formatRaw node:internal/util/inspect:820:19
+      2    0.0%    0.1%  Function: ^executeWithServerSelection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/execute_operation.js:76:36
+      2    0.0%    0.1%  Function: ^completeEndSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:138:40
+      2    0.0%    0.1%  Function: ^clearTimeout node:timers:184:22
+      2    0.0%    0.1%  Function: ^clearBuffer node:internal/streams/writable:529:21
+      2    0.0%    0.1%  Function: ^checkBounds node:internal/buffer:52:21
+      2    0.0%    0.1%  Function: ^afterWrite node:internal/streams/writable:487:20
+      2    0.0%    0.1%  Function: ^_write node:internal/streams/writable:283:16
+      2    0.0%    0.1%  Function: ^_unrefTimer node:net:431:52
+      2    0.0%    0.1%  Function: ^UpdateOperation /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/update.js:10:16
+      2    0.0%    0.1%  Function: ^Socket._writeGeneric node:net:791:42
+      2    0.0%    0.1%  Function: ^Long.fromNumber /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:131:32
+      2    0.0%    0.1%  Function: ^<anonymous> node:internal/validators:73:3
+      1    0.0%    0.0%  RegExp: ^\/info\/?$
+      1    0.0%    0.0%  RegExp: ^[a-zA-Z_][a-zA-Z_0-9]*$
+      1    0.0%    0.0%  RegExp: ^[a-zA-Z_$][0-9a-zA-Z_$]*$
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      1    0.0%    0.0%  RegExp: ^((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$
+      1    0.0%    0.0%  RegExp: ^((?:(?:[0-9a-fA-F]{1,4}):){7}(?:(?:[0-9a-fA-F]{1,4})|:)|(?:(?:[0-9a-fA-F]{1,4}):){6}(?:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|:(?:[0-9a-fA-F]{1,4})|:)|(?:(?:[0-9a-fA-F]{1,4}):){5}(?::((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,2}|:)|(?:(?:[0-9a-fA-F]{1,4}):){4}(?:(:(?:[0-9a-fA-F]{1,4})){0,1}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,3}|:)|(?:(?:[0-9a-fA-F]{1,4}):){3}(?:(:(?:[0-9a-fA-F]{1,4})){0,2}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,4}|:)|(?:(?:[0-9a-fA-F]{1,4}):){2}(?:(:(?:[0-9a-fA-F]{1,4})){0,3}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,5}|:)|(?:(?:[0-9a-fA-F]{1,4}):){1}(?:(:(?:[0-9a-fA-F]{1,4})){0,4}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,6}|:)|(?::((?::(?:[0-9a-fA-F]{1,4})){0,5}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(?::(?:[0-9a-fA-F]{1,4})){1,7}|:)))(%[0-9a-zA-Z-.:]{1,})?$
+      1    0.0%    0.0%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.0%  RegExp: ;\s*charset\s*=
+      1    0.0%    0.0%  RegExp: ; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) *
+      1    0.0%    0.0%  RegExp: (?:^|[\\/])\.\.(?:[\\/]|$)
+      1    0.0%    0.0%  RegExp: (<%%|%%>|<%=|<%-|<%_|<%#|<%|%>|-%>|_%>) {1}
+      1    0.0%    0.0%  LazyCompile: *writeInt32LE node:internal/buffer:860:22
+      1    0.0%    0.0%  LazyCompile: *validateString node:internal/validators:118:24
+      1    0.0%    0.0%  LazyCompile: *toString node:buffer:783:46
+      1    0.0%    0.0%  LazyCompile: *remove node:internal/linkedlist:16:16
+      1    0.0%    0.0%  LazyCompile: *readSync node:fs:684:18
+      1    0.0%    0.0%  LazyCompile: *readFileSync node:fs:450:22
+      1    0.0%    0.0%  LazyCompile: *parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/vary/index.js:96:16
+      1    0.0%    0.0%  LazyCompile: *onwrite node:internal/streams/writable:425:17
+      1    0.0%    0.0%  LazyCompile: *now /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:624:13
+      1    0.0%    0.0%  LazyCompile: *normalize node:path:1127:12
+      1    0.0%    0.0%  LazyCompile: *maybePromise /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:398:22
+      1    0.0%    0.0%  LazyCompile: *isUint8Array node:internal/util/types:13:22
+      1    0.0%    0.0%  LazyCompile: *hasAspect /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/operation.js:37:14
+      1    0.0%    0.0%  LazyCompile: *get node:internal/streams/duplex:94:8
+      1    0.0%    0.0%  LazyCompile: *exports.escapeXML /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/utils.js:96:30
+      1    0.0%    0.0%  LazyCompile: *command /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server.js:152:12
+      1    0.0%    0.0%  LazyCompile: *clearTimeout node:timers:184:22
+      1    0.0%    0.0%  LazyCompile: *_copyActual node:buffer:243:21
+      1    0.0%    0.0%  LazyCompile: *_copy node:buffer:201:15
+      1    0.0%    0.0%  LazyCompile: *Long.add /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:252:35
+      1    0.0%    0.0%  LazyCompile: *Long /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:59:18
+      1    0.0%    0.0%  LazyCompile: *Hash node:internal/crypto/hash:58:14
+      1    0.0%    0.0%  Function: ^writevGeneric node:internal/stream_base_commons:122:23
+      1    0.0%    0.0%  Function: ^writeHead node:_http_server:270:19
+      1    0.0%    0.0%  Function: ^write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:462:15
+      1    0.0%    0.0%  Function: ^vary /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/vary/index.js:133:15
+      1    0.0%    0.0%  Function: ^value node:internal/console/constructor:321:20
+      1    0.0%    0.0%  Function: ^value node:internal/console/constructor:300:20
+      1    0.0%    0.0%  Function: ^validateOffset node:buffer:112:24
+      1    0.0%    0.0%  Function: ^updateSessionFromResponse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:727:35
+      1    0.0%    0.0%  Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      1    0.0%    0.0%  Function: ^translatePeerCertificate node:_tls_common:125:34
+      1    0.0%    0.0%  Function: ^toString node:buffer:783:46
+      1    0.0%    0.0%  Function: ^timestampLevelAndCategory /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/layouts.js:42:35
+      1    0.0%    0.0%  Function: ^stat node:internal/modules/cjs/loader:151:14
+      1    0.0%    0.0%  Function: ^slowCases node:internal/util:165:19
+      1    0.0%    0.0%  Function: ^setStreamTimeout node:internal/stream_base_commons:237:26
+      1    0.0%    0.0%  Function: ^setHeader node:_http_outgoing:574:57
+      1    0.0%    0.0%  Function: ^session /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:179:26
+      1    0.0%    0.0%  Function: ^serializeInto /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:553:23
+      1    0.0%    0.0%  Function: ^serializeBinary /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:462:25
+      1    0.0%    0.0%  Function: ^serialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:124:19
+      1    0.0%    0.0%  Function: ^restore /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:631:17
+      1    0.0%    0.0%  Function: ^readPreferenceServerSelector /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server_selection.js:188:38
+      1    0.0%    0.0%  Function: ^readFileSync node:fs:450:22
+      1    0.0%    0.0%  Function: ^processWaitQueue /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:574:26
+      1    0.0%    0.0%  Function: ^processIncomingData /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1    0.0%    0.0%  Function: ^popAsyncContext node:internal/async_hooks:554:25
+      1    0.0%    0.0%  Function: ^parseTemplateText /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:761:31
+      1    0.0%    0.0%  Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie/index.js:48:15
+      1    0.0%    0.0%  Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie-parser/node_modules/cookie/index.js:49:15
+      1    0.0%    0.0%  Function: ^originalurl /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/parseurl/index.js:65:22
+      1    0.0%    0.0%  Function: ^onwrite node:internal/streams/writable:425:17
+      1    0.0%    0.0%  Function: ^onWriteComplete node:internal/stream_base_commons:80:25
+      1    0.0%    0.0%  Function: ^onParsePathComplete node:internal/url:592:29
+      1    0.0%    0.0%  Function: ^now /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:624:13
+      1    0.0%    0.0%  Function: ^normalize node:path:1127:12
+      1    0.0%    0.0%  Function: ^nop node:internal/streams/writable:73:13
+      1    0.0%    0.0%  Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/send/index.js:728:17
+      1    0.0%    0.0%  Function: ^memoryUsage node:internal/process/per_thread:168:23
+      1    0.0%    0.0%  Function: ^makeUpdateStatement /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/update.js:157:29
+      1    0.0%    0.0%  Function: ^isValid /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/read_preference.js:149:12
+      1    0.0%    0.0%  Function: ^isUint8Array /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/utils.js:60:22
+      1    0.0%    0.0%  Function: ^isRegExp /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/utils.js:72:18
+      1    0.0%    0.0%  Function: ^insertGuarded node:internal/timers:325:23
+      1    0.0%    0.0%  Function: ^initialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/passport/lib/middleware/initialize.js:51:29
+      1    0.0%    0.0%  Function: ^incRefCount node:internal/timers:299:21
+      1    0.0%    0.0%  Function: ^header /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:777:29
+      1    0.0%    0.0%  Function: ^handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+      1    0.0%    0.0%  Function: ^getStatsFromBinding node:internal/fs/utils:531:29
+      1    0.0%    0.0%  Function: ^getHeader node:_http_outgoing:590:57
+      1    0.0%    0.0%  Function: ^get readConcern /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/collection.js:103:20
+      1    0.0%    0.0%  Function: ^get node:internal/streams/readable:1270:8
+      1    0.0%    0.0%  Function: ^get node:internal/streams/readable:1202:18
+      1    0.0%    0.0%  Function: ^get node:internal/console/constructor:203:14
+      1    0.0%    0.0%  Function: ^get hasDataBearingServers /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology_description.js:231:30
+      1    0.0%    0.0%  Function: ^get description /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:148:20
+      1    0.0%    0.0%  Function: ^get description /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:74:20
+      1    0.0%    0.0%  Function: ^get /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/debug/src/common.js:125:9
+      1    0.0%    0.0%  Function: ^generateETag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/utils.js:273:32
+      1    0.0%    0.0%  Function: ^fromString node:buffer:432:20
+      1    0.0%    0.0%  Function: ^fromString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:370:22
+      1    0.0%    0.0%  Function: ^fromOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/explain.js:24:23
+      1    0.0%    0.0%  Function: ^fresh /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/parseurl/index.js:153:16
+      1    0.0%    0.0%  Function: ^formatValue node:internal/util/inspect:745:21
+      1    0.0%    0.0%  Function: ^formatProperty node:internal/util/inspect:1810:24
+      1    0.0%    0.0%  Function: ^findOne /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/collection.js:218:12
+      1    0.0%    0.0%  Function: ^finalhandler /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/finalhandler/index.js:77:23
+      1    0.0%    0.0%  Function: ^expressInit /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/middleware/init.js:29:30
+      1    0.0%    0.0%  Function: ^exports.shallowCopyFromList /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/utils.js:145:40
+      1    0.0%    0.0%  Function: ^exports.renderFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:441:31
+      1    0.0%    0.0%  Function: ^existsSync node:fs:290:20
+      1    0.0%    0.0%  Function: ^execute /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/find.js:30:12
+      1    0.0%    0.0%  Function: ^equals /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server_description.js:118:11
+      1    0.0%    0.0%  Function: ^end /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:250:27
+      1    0.0%    0.0%  Function: ^emit node:events:475:44
+      1    0.0%    0.0%  Function: ^deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:175:21
+      1    0.0%    0.0%  Function: ^debug /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/send/node_modules/debug/src/debug.js:65:17
+      1    0.0%    0.0%  Function: ^debug /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/debug/src/common.js:66:17
+      1    0.0%    0.0%  Function: ^createHmac node:crypto:161:20
+      1    0.0%    0.0%  Function: ^configForCategory /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/categories.js:173:27
+      1    0.0%    0.0%  Function: ^concat node:buffer:536:32
+      1    0.0%    0.0%  Function: ^compression /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/compression/index.js:59:31
+      1    0.0%    0.0%  Function: ^authenticate /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/passport/lib/middleware/authenticate.js:94:31
+      1    0.0%    0.0%  Function: ^attempt /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/passport/lib/middleware/authenticate.js:180:22
+      1    0.0%    0.0%  Function: ^asString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/date-format/lib/index.js:29:18
+      1    0.0%    0.0%  Function: ^append node:internal/linkedlist:30:16
+      1    0.0%    0.0%  Function: ^alignPool node:buffer:159:19
+      1    0.0%    0.0%  Function: ^adjustOffset node:buffer:1099:22
+      1    0.0%    0.0%  Function: ^addChunk node:internal/streams/readable:304:18
+      1    0.0%    0.0%  Function: ^_storeHeader node:_http_outgoing:374:22
+      1    0.0%    0.0%  Function: ^_copyActual node:buffer:243:21
+      1    0.0%    0.0%  Function: ^_addHeaderLines node:_http_incoming:199:25
+      1    0.0%    0.0%  Function: ^__append :8:20
+      1    0.0%    0.0%  Function: ^Writable.write node:internal/streams/writable:333:36
+      1    0.0%    0.0%  Function: ^Timeout node:internal/timers:167:17
+      1    0.0%    0.0%  Function: ^Session /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/session/session.js:24:17
+      1    0.0%    0.0%  Function: ^ReadableState node:internal/streams/readable:78:23
+      1    0.0%    0.0%  Function: ^Readable.pipe node:internal/streams/readable:654:35
+      1    0.0%    0.0%  Function: ^Msg /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:469:16
+      1    0.0%    0.0%  Function: ^Module._resolveLookupPaths node:internal/modules/cjs/loader:667:38
+      1    0.0%    0.0%  Function: ^JSONCookies /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie-parser/index.js:103:22
+      1    0.0%    0.0%  Function: ^Hash node:internal/crypto/hash:58:14
+      1    0.0%    0.0%  Function: ^FastBuffer node:internal/buffer:958:14
+      1    0.0%    0.0%  Function: ^Cookie /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/session/cookie.js:25:46
+      1    0.0%    0.0%  Function: ^ConnectionCheckedOutEvent /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool_events.js:115:16
+      1    0.0%    0.0%  Function: ^CommandOperation /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/command.js:14:16
+      1    0.0%    0.0%  Function: ^ClientSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:45:16
+      1    0.0%    0.0%  Function: ^Binary /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/binary.js:26:20
+      1    0.0%    0.0%  Function: ^BinMsg /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:546:16
+      1    0.0%    0.0%  Function: ^AbstractOperation /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/operation.js:25:16
+      1    0.0%    0.0%  Function: ^<anonymous> node:internal/crypto/util:114:46
+      1    0.0%    0.0%  Function: ^<anonymous> node:buffer:349:36
+      1    0.0%    0.0%  Function: ^<anonymous> node:_http_outgoing:558:44
+      1    0.0%    0.0%  Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Entregable/server.js:244:21
+      1    0.0%    0.0%  Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Entregable/middlewares.js:32:12
+      1    0.0%    0.0%  Function: ^<anonymous> :1:20
+      1    0.0%    0.0%  Function: ^<anonymous> :1:1
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server.js:210:101
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/connect.js:53:28
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:472:32
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:271:27
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:63:44
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/request.js:467:36
+      1    0.0%    0.0%  Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+
+ [C++]:
+   ticks  total  nonlib   name
+   1643   19.7%   67.4%  epoll_pwait@@GLIBC_2.6
+    174    2.1%    7.1%  __write@@GLIBC_2.2.5
+     28    0.3%    1.1%  __read@@GLIBC_2.2.5
+     27    0.3%    1.1%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+     18    0.2%    0.7%  __libc_malloc@@GLIBC_2.2.5
+     17    0.2%    0.7%  __mprotect@@GLIBC_PRIVATE
+     15    0.2%    0.6%  fwrite@@GLIBC_2.2.5
+     12    0.1%    0.5%  __open@@GLIBC_2.2.5
+      8    0.1%    0.3%  pthread_cond_signal@@GLIBC_2.3.2
+      5    0.1%    0.2%  cfree@GLIBC_2.2.5
+      4    0.0%    0.2%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      4    0.0%    0.2%  __pthread_rwlock_unlock@GLIBC_2.2.5
+      4    0.0%    0.2%  __pthread_mutex_lock@GLIBC_2.2.5
+      4    0.0%    0.2%  _IO_file_xsputn@@GLIBC_2.2.5
+      3    0.0%    0.1%  syscall@@GLIBC_2.2.5
+      3    0.0%    0.1%  epoll_ctl@@GLIBC_2.3.2
+      3    0.0%    0.1%  __munmap@@GLIBC_PRIVATE
+      2    0.0%    0.1%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      2    0.0%    0.1%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      2    0.0%    0.1%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+      2    0.0%    0.1%  operator new(unsigned long)@@GLIBCXX_3.4
+      2    0.0%    0.1%  __pthread_rwlock_wrlock@GLIBC_2.2.5
+      2    0.0%    0.1%  __pthread_once@GLIBC_2.2.5
+      2    0.0%    0.1%  __madvise@@GLIBC_PRIVATE
+      1    0.0%    0.0%  std::ostream::flush()@@GLIBCXX_3.4
+      1    0.0%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      1    0.0%    0.0%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@@GLIBCXX_3.4.18
+      1    0.0%    0.0%  __vsnprintf@@GLIBC_2.2.5
+      1    0.0%    0.0%  __pthread_rwlock_tryrdlock@GLIBC_2.2.5
+      1    0.0%    0.0%  __pthread_mutex_unlock@GLIBC_2.2.5
+      1    0.0%    0.0%  __mmap@@GLIBC_PRIVATE
+      1    0.0%    0.0%  __lll_lock_wait_private@@GLIBC_PRIVATE
+      1    0.0%    0.0%  __libc_realloc@@GLIBC_2.2.5
+      1    0.0%    0.0%  __errno_location@@GLIBC_2.2.5
+      1    0.0%    0.0%  __clock_gettime@@GLIBC_PRIVATE
+      1    0.0%    0.0%  _IO_padn@@GLIBC_2.2.5
+
+ [Summary]:
+   ticks  total  nonlib   name
+    430    5.1%   17.7%  JavaScript
+   1998   23.9%   82.0%  C++
+    328    3.9%   13.5%  GC
+   5924   70.9%          Shared libraries
+      8    0.1%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    146   56.4%    1.7%  __write@@GLIBC_2.2.5
+     24    9.3%    0.3%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+     15    5.8%    0.2%  fwrite@@GLIBC_2.2.5
+     12    4.6%    0.1%  __open@@GLIBC_2.2.5
+     12    4.6%    0.1%  __libc_malloc@@GLIBC_2.2.5
+     10    3.9%    0.1%  __mprotect@@GLIBC_PRIVATE
+      4    1.5%    0.0%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      4    1.5%    0.0%  _IO_file_xsputn@@GLIBC_2.2.5
+      3    1.2%    0.0%  syscall@@GLIBC_2.2.5
+      3    1.2%    0.0%  pthread_cond_signal@@GLIBC_2.3.2
+      3    1.2%    0.0%  cfree@GLIBC_2.2.5
+      2    0.8%    0.0%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      2    0.8%    0.0%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      2    0.8%    0.0%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+      2    0.8%    0.0%  operator new(unsigned long)@@GLIBCXX_3.4
+      2    0.8%    0.0%  __read@@GLIBC_2.2.5
+      2    0.8%    0.0%  __pthread_rwlock_wrlock@GLIBC_2.2.5
+      2    0.8%    0.0%  __pthread_rwlock_unlock@GLIBC_2.2.5
+      2    0.8%    0.0%  __pthread_mutex_lock@GLIBC_2.2.5
+      1    0.4%    0.0%  std::ostream::flush()@@GLIBCXX_3.4
+      1    0.4%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      1    0.4%    0.0%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@@GLIBCXX_3.4.18
+      1    0.4%    0.0%  __pthread_rwlock_tryrdlock@GLIBC_2.2.5
+      1    0.4%    0.0%  __madvise@@GLIBC_PRIVATE
+      1    0.4%    0.0%  __errno_location@@GLIBC_2.2.5
+      1    0.4%    0.0%  __clock_gettime@@GLIBC_PRIVATE
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   5762   68.9%  /usr/local/bin/node
+   3110   54.0%    /usr/local/bin/node
+    377   12.1%      Function: ^compileFunction node:vm:308:25
+    375   99.5%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    373   99.5%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+    363   97.3%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     10    2.7%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+    226    7.3%      Function: ^memoryUsage node:internal/process/per_thread:168:23
+    155   68.6%        Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Entregable/server.js:244:21
+    155  100.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+    154   99.4%            Function: ^next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/route.js:116:16
+     71   31.4%        Function: ^<anonymous> :1:20
+     71  100.0%          Function: ^anonymous /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:695:59
+     70   98.6%            Function: ^tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+      1    1.4%            LazyCompile: ~tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+    198    6.4%      /usr/local/bin/node
+     42   21.2%        LazyCompile: *scanLine /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:815:22
+     24   57.1%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+     15   62.5%            LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      9   37.5%            /usr/local/bin/node
+     18   42.9%          LazyCompile: *<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+     11   61.1%            /usr/local/bin/node
+      7   38.9%            LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+     12    6.1%        Function: ^command /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:254:12
+     11   91.7%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server.js:204:42
+      7   63.6%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:269:23
+      4   36.4%            LazyCompile: *processWaitQueue /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:426:26
+      1    8.3%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:25:32
+      8    4.0%        Function: ^exports.escapeRegExpChars /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/utils.js:41:38
+      8  100.0%          Function: ^createRegex /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:560:25
+      8  100.0%            Function: ^Template /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:509:18
+      7    3.5%        /usr/local/bin/node
+      4   57.1%          Function: ^isValid /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/read_preference.js:133:19
+      4  100.0%            Function: ^isValid /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/read_preference.js:149:12
+      3   42.9%          LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      6    3.0%        Function: ^expressInit /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/middleware/init.js:29:30
+      3   50.0%          LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      3  100.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:177:16
+      3   50.0%          Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+      3  100.0%            Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      5    2.5%        LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      5    2.5%        LazyCompile: *exports.escapeXML /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/utils.js:96:30
+      5  100.0%          Function: ^<anonymous> :1:20
+      5  100.0%            Function: ^anonymous /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:695:59
+      5    2.5%        Function: ^stripSemi /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:364:19
+      5  100.0%          LazyCompile: *scanLine /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:815:22
+      3   60.0%            LazyCompile: *<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      2   40.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      5    2.5%        Function: ^removeColors node:internal/util:76:22
+      5  100.0%          Function: ^isBelowBreakLength node:internal/util/inspect:1878:28
+      5  100.0%            Function: ^reduceToSingleString node:internal/util/inspect:1902:30
+      5    2.5%        Function: ^pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/send/index.js:506:43
+      5  100.0%          Function: ^serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/serve-static/index.js:72:31
+      3   60.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+      2   40.0%            LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      5    2.5%        Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie/index.js:48:15
+      5  100.0%          Function: ^getcookie /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:529:19
+      5  100.0%            Function: ^session /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:179:26
+      5    2.5%        Function: ^clone /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:562:17
+      5  100.0%          Function: ^completeEndSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:138:40
+      5  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:133:52
+      4    2.0%        LazyCompile: *command /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:254:12
+      3   75.0%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server.js:204:42
+      3  100.0%            LazyCompile: *processWaitQueue /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:426:26
+      1   25.0%          Function: ^executeScram /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:74:22
+      1  100.0%            Function: ^auth /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:39:9
+      4    2.0%        Function: ^header /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:777:29
+      3   75.0%          Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:111:25
+      3  100.0%            Function: ^done /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:1033:27
+      1   25.0%          Function: ^contentType /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:619:32
+      1  100.0%            Function: ^send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:111:25
+      4    2.0%        Function: ^fromString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:370:22
+      4  100.0%          Function: ^ns /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:348:12
+      4  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:442:42
+      4    2.0%        Function: ^databaseNamespace /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:430:27
+      4  100.0%          Function: ^Msg /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:469:16
+      4  100.0%            Function: ^command /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:254:12
+      4    2.0%        Function: ^asString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/date-format/lib/index.js:29:18
+      4  100.0%          Function: ^timestampLevelAndCategory /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/layouts.js:42:35
+      4  100.0%            Function: ^colouredLayout /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/layouts.js:73:24
+      3    1.5%        LazyCompile: *Template /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:509:18
+      3  100.0%          Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      3  100.0%            Function: ^handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+      3    1.5%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2   66.7%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      2  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1   33.3%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      3    1.5%        Function: ^exports.escapeXML /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/utils.js:96:30
+      3  100.0%          Function: ^<anonymous> :1:20
+      3  100.0%            Function: ^anonymous /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:695:59
+      3    1.5%        Function: ^FastBuffer node:internal/buffer:958:14
+      2   66.7%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      2  100.0%            Function: ^createPool node:buffer:151:20
+      1   33.3%          Function: ^alloc node:buffer:360:30
+      1  100.0%            Function: ^serialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:124:19
+      3    1.5%        Function: ^<anonymous> node:internal/fs/utils:358:35
+      3  100.0%          Function: ^<anonymous> node:internal/fs/utils:669:38
+      3  100.0%            Function: ^<anonymous> node:internal/fs/utils:681:42
+      3    1.5%        Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:78:43
+      3  100.0%          LazyCompile: ~prepareHandshakeDocument /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:146:34
+      3  100.0%            LazyCompile: ~performInitialHandshake /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:62:33
+      2    1.0%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      2  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1   50.0%            LazyCompile: ~parseSslOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:229:25
+      1   50.0%            LazyCompile: ~lookupAndConnect node:net:1017:26
+      2    1.0%        LazyCompile: ~checkServer /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      2  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/monitor.js:229:12
+      2  100.0%            LazyCompile: ~executeAndReschedule /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:702:34
+      2    1.0%        LazyCompile: *parseTemplateText /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:761:31
+      2  100.0%          LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      2  100.0%            Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      2    1.0%        LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:177:16
+      1   50.0%          Function: ^compression /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/compression/index.js:59:31
+      1  100.0%            LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      1   50.0%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/connect-flash/lib/flash.js:18:18
+      1  100.0%            LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      2    1.0%        Function: ^translatePeerCertificate node:_tls_common:125:34
+      1   50.0%          Function: ^translatePeerCertificate node:_tls_common:125:34
+      1  100.0%            Function: ^TLSSocket.getPeerCertificate node:_tls_wrap:986:50
+      1   50.0%          Function: ^TLSSocket.getPeerCertificate node:_tls_wrap:986:50
+      1  100.0%            Function: ^onConnectSecure node:_tls_wrap:1518:25
+      2    1.0%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1   50.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1   50.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2    1.0%        Function: ^createRegex /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:560:25
+      2  100.0%          Function: ^Template /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:509:18
+      2  100.0%            Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      2    1.0%        Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      2  100.0%          LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      2  100.0%            Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+    163    5.2%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+    163  100.0%        Function: ^Socket._writeGeneric node:net:791:42
+    163  100.0%          Function: ^Socket._writev node:net:823:36
+    159   97.5%            Function: ^doWrite node:internal/streams/writable:398:17
+      4    2.5%            LazyCompile: ~doWrite node:internal/streams/writable:398:17
+     71    2.3%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+     71  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+     71  100.0%          Function: ^Socket._writeGeneric node:net:791:42
+     71  100.0%            Function: ^Socket._write node:net:828:35
+     55    1.8%      Function: ^initialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/passport/lib/middleware/initialize.js:51:29
+     35   63.6%        LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+     35  100.0%          LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:177:16
+     35  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:485:38
+     20   36.4%        Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+     20  100.0%          Function: ^trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+     14   70.0%            LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:177:16
+      6   30.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:280:64
+     55    1.8%      Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+     55  100.0%        Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+     54   98.2%          Function: ^handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+     34   63.0%            Function: ^includeFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:309:21
+     20   37.0%            Function: ^tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+      1    1.8%          LazyCompile: ~handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+      1  100.0%            LazyCompile: ~tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+     53    1.7%      LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+     53  100.0%        Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+     53  100.0%          Function: ^handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+     27   50.9%            Function: ^tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+     26   49.1%            Function: ^includeFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:309:21
+     53    1.7%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     41   77.4%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      8   19.5%          Function: ~<anonymous> node:crypto:1:1
+      8  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5   12.2%          Function: ~<anonymous> node:http:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4    9.8%          Function: ~<anonymous> node:tls:1:1
+      4  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    7.3%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    7.3%          Function: ~<anonymous> node:_http_client:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    4.9%          LazyCompile: ~lazyLoadStreams node:fs:2858:25
+      2  100.0%            LazyCompile: ~get ReadStream node:fs:3001:17
+      2    4.9%          Function: ~<anonymous> node:internal/child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    4.9%          Function: ~<anonymous> node:child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:287:8
+      1    2.4%          LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1    2.4%          Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/crypto/cipher:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:dns:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:dgram:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:assert:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      8   15.1%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      8  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      8  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      4    7.5%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      3   75.0%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      3  100.0%            LazyCompile: ~builtinStrategy node:internal/modules/esm/translators:254:58
+      1   25.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+     39    1.3%      LazyCompile: *deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+     24   61.5%        LazyCompile: *deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+     12   50.0%          LazyCompile: *deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      5   41.7%            LazyCompile: *parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:578:10
+      5   41.7%            LazyCompile: *deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      2   16.7%            Function: ^deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:36:21
+      8   33.3%          LazyCompile: *parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:578:10
+      8  100.0%            Function: ^onMessage /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:159:14
+      4   16.7%          Function: ^deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:36:21
+      4  100.0%            Function: ^deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:175:21
+      8   20.5%        LazyCompile: *parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:578:10
+      8  100.0%          Function: ^onMessage /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:159:14
+      8  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:63:44
+      7   17.9%        Function: ^deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:36:21
+      7  100.0%          Function: ^deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:175:21
+      7  100.0%            Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:578:10
+     37    1.2%      LazyCompile: *scanLine /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:815:22
+     24   64.9%        Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+     17   70.8%          LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+     17  100.0%            Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      7   29.2%          /usr/local/bin/node
+      7  100.0%            Function: ^generateSource /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:721:28
+     13   35.1%        LazyCompile: *<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      9   69.2%          /usr/local/bin/node
+      9  100.0%            Function: ^generateSource /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:721:28
+      4   30.8%          LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      4  100.0%            Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+
+   1643   19.7%  epoll_pwait@@GLIBC_2.6
+
+    174    2.1%  __write@@GLIBC_2.2.5
+     74   42.5%    /usr/local/bin/node
+      6    8.1%      /usr/local/bin/node
+      1   16.7%        LazyCompile: ~setup /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:128:15
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/configuration.js:51:21
+      1  100.0%            /usr/local/bin/node
+      1   16.7%        LazyCompile: ~parseOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%          LazyCompile: ~MongoClient /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/mongo_client.js:60:16
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/connection.js:793:31
+      1   16.7%        LazyCompile: ~executeWithoutEncryptedFieldsCheck /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/create_collection.js:74:39
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/create_collection.js:39:10
+      1  100.0%            LazyCompile: ~execute /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/create_collection.js:38:12
+      1   16.7%        LazyCompile: ~check node:tls:171:15
+      1  100.0%          LazyCompile: ~wildcard node:tls:319:22
+      1  100.0%            /usr/local/bin/node
+      1   16.7%        Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/logger.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1   16.7%        Function: ^value node:internal/console/constructor:300:20
+      1  100.0%          Function: ^value node:internal/console/constructor:321:20
+      1  100.0%            Function: ^log node:internal/console/constructor:359:6
+      1    1.4%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      LazyCompile: ~validate_config /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%        LazyCompile: ~exports.find /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%          Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bcrypt/bcrypt.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.4%      LazyCompile: ~toUSVString node:internal/util:59:21
+      1  100.0%        LazyCompile: ~set search node:internal/url:903:13
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:397:28
+      1    1.4%      LazyCompile: ~setcookie /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:655:19
+      1  100.0%        LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:220:28
+      1  100.0%          LazyCompile: ~writeHead /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/on-headers/index.js:28:29
+      1  100.0%            LazyCompile: ~_implicitHeader node:_http_server:265:68
+      1    1.4%      LazyCompile: ~sendLogEventToAppender /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/log4js.js:36:32
+      1  100.0%        LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/clustering.js:25:21
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~sendToListeners /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/clustering.js:24:25
+      1    1.4%      LazyCompile: ~send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:111:25
+      1  100.0%        LazyCompile: ~done /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:1033:27
+      1  100.0%          LazyCompile: ~tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+      1  100.0%            LazyCompile: ~exports.renderFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:441:31
+      1    1.4%      LazyCompile: ~resolve /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/view.js:146:42
+      1  100.0%        LazyCompile: ~lookup /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/view.js:104:40
+      1  100.0%          LazyCompile: ~View /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/view.js:52:14
+      1  100.0%            LazyCompile: ~render /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/application.js:548:29
+      1    1.4%      LazyCompile: ~remotePort node:net:760:46
+      1  100.0%        LazyCompile: ~streamIdentifier /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:451:26
+      1  100.0%          LazyCompile: ~Connection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:40:16
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1    1.4%      LazyCompile: ~reduceToSingleString node:internal/util/inspect:1902:30
+      1  100.0%        LazyCompile: ~formatRaw node:internal/util/inspect:820:19
+      1  100.0%          Function: ^formatValue node:internal/util/inspect:745:21
+      1  100.0%            Function: ^inspect node:internal/util/inspect:292:17
+      1    1.4%      LazyCompile: ~realpathSync node:fs:2425:22
+      1  100.0%        LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:397:28
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:988:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1128:30
+      1    1.4%      LazyCompile: ~readableAddChunk node:internal/streams/readable:236:26
+      1  100.0%        LazyCompile: ~Readable.push node:internal/streams/readable:227:35
+      1  100.0%          LazyCompile: ~writeCommand /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:40:17
+      1  100.0%            LazyCompile: ~write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:462:15
+      1    1.4%      LazyCompile: ~randomBytes node:internal/crypto/random:91:21
+      1  100.0%        LazyCompile: ~uuidV4 /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:438:16
+      1  100.0%          LazyCompile: ~ServerSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:540:16
+      1  100.0%            LazyCompile: ~acquire /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:611:12
+      1    1.4%      LazyCompile: ~prepare /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:16:12
+      1  100.0%        LazyCompile: ~prepareHandshakeDocument /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:146:34
+      1  100.0%          LazyCompile: ~performInitialHandshake /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1    1.4%      LazyCompile: ~performInitialHandshake /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1  100.0%        LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1  100.0%          LazyCompile: ~callback /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:261:31
+      1  100.0%            LazyCompile: ~connectHandler /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:305:28
+      1    1.4%      LazyCompile: ~patch /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/graceful-fs/graceful-fs.js:102:16
+      1  100.0%        Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/graceful-fs/graceful-fs.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~passwordDigest /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:182:24
+      1  100.0%        LazyCompile: ~continueScramConversation /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1  100.0%            LazyCompile: ~onMessage /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:159:14
+      1    1.4%      LazyCompile: ~onceWrapper node:events:636:21
+      1  100.0%        LazyCompile: ~emit node:events:475:44
+      1  100.0%          LazyCompile: ~emitConstructNT node:internal/streams/destroy:304:25
+      1  100.0%            LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.4%      LazyCompile: ~onWriteComplete node:internal/stream_base_commons:80:25
+      1    1.4%      LazyCompile: ~onParseError node:internal/url:552:22
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          Function: ^URL node:internal/url:621:14
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1128:30
+      1    1.4%      LazyCompile: ~onEofChunk node:internal/streams/readable:533:20
+      1  100.0%        Function: ^readableAddChunk node:internal/streams/readable:236:26
+      1  100.0%          Function: ^Readable.push node:internal/streams/readable:227:35
+      1  100.0%            LazyCompile: ~parserOnMessageComplete node:_http_common:147:33
+      1    1.4%      LazyCompile: ~module.exports /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/qs/lib/parse.js:239:27
+      1  100.0%        Function: ^parseExtendedQueryString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/utils.js:289:34
+      1  100.0%          Function: ^query /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/middleware/query.js:39:24
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+      1    1.4%      LazyCompile: ~module.exports /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/getFunctionName.js:5:26
+      1  100.0%        Function: ^clone /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/clone.js:29:15
+      1  100.0%          Function: ^cloneObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/clone.js:119:21
+      1  100.0%            Function: ^clone /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/clone.js:29:15
+      1    1.4%      LazyCompile: ~log /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/logger.js:82:6
+      1  100.0%        Function: ^Logger.<computed> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/logger.js:148:43
+      1  100.0%          Function: ^<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Entregable/middlewares.js:32:12
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+      1    1.4%      LazyCompile: ~hrtime node:internal/process/per_thread:79:16
+      1  100.0%        Function: ^now /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:624:13
+      1  100.0%          LazyCompile: ~wake /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:657:18
+      1  100.0%            LazyCompile: ~requestCheck /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/monitor.js:97:17
+      1    1.4%      LazyCompile: ~get_runtime_abi /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:76:25
+      1  100.0%        LazyCompile: ~module.exports.evaluate /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:277:35
+      1  100.0%          LazyCompile: ~exports.find /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%            Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bcrypt/bcrypt.js:1:1
+      1    1.4%      LazyCompile: ~get isMongoClient /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/mongo_client.js:87:30
+      1  100.0%        LazyCompile: ~AbstractCursor /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:50:16
+      1  100.0%          LazyCompile: ~FindCursor /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/find_cursor.js:29:16
+      1  100.0%            LazyCompile: ~find /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/collection.js:235:9
+      1    1.4%      LazyCompile: ~get address /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:85:16
+      1  100.0%        LazyCompile: ~ConnectionPoolMonitoringEvent /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool_events.js:11:16
+      1  100.0%          LazyCompile: ~ConnectionCheckOutStartedEvent /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool_events.js:90:16
+      1  100.0%            LazyCompile: ~checkOut /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:126:13
+      1    1.4%      LazyCompile: ~formatRaw node:internal/util/inspect:820:19
+      1  100.0%        LazyCompile: ~formatValue node:internal/util/inspect:745:21
+      1  100.0%          LazyCompile: ~formatProperty node:internal/util/inspect:1810:24
+      1  100.0%            LazyCompile: ~formatRaw node:internal/util/inspect:820:19
+      1    1.4%      LazyCompile: ~etag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/etag/index.js:70:15
+      1  100.0%        LazyCompile: ~generateETag /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/utils.js:273:32
+      1  100.0%          LazyCompile: ~send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:111:25
+      1  100.0%            LazyCompile: ~done /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:1033:27
+      1    1.4%      LazyCompile: ~enable /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/node_modules/debug/src/debug.js:138:16
+      1  100.0%        Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/node_modules/debug/src/node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~emit node:events:475:44
+      1  100.0%        LazyCompile: ~connect /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:158:12
+      1  100.0%          LazyCompile: ~createTopology /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/connect.js:44:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/connect.js:32:67
+      1    1.4%      LazyCompile: ~deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%        LazyCompile: ~deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%          LazyCompile: ~deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:36:21
+      1  100.0%            LazyCompile: ~deserialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:175:21
+      1    1.4%      LazyCompile: ~createDebug /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/node_modules/debug/src/debug.js:63:21
+      1  100.0%        Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/route.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~createAppender /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:74:24
+      1  100.0%        LazyCompile: ~getAppender /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:59:21
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:139:41
+      1  100.0%            /usr/local/bin/node
+      1    1.4%      LazyCompile: ~continueScramConversation /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%        LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1  100.0%          LazyCompile: ~onMessage /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:159:14
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:63:44
+      1    1.4%      LazyCompile: ~connect node:_tls_wrap:1599:35
+      1  100.0%        LazyCompile: ~makeConnection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:248:24
+      1  100.0%          Function: ^connect /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%            LazyCompile: ~createConnection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection_pool.js:373:26
+      1    1.4%      LazyCompile: ~clientFirstMessageBare /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:51:32
+      1  100.0%        LazyCompile: ~makeFirstMessage /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:61:26
+      1  100.0%          LazyCompile: ~executeScram /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:74:22
+      1  100.0%            LazyCompile: ~auth /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/auth/scram.js:39:9
+      1    1.4%      LazyCompile: ~cleanupCursor /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:539:23
+      1  100.0%        Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:442:42
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/find_cursor.js:54:79
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:410:13
+      1    1.4%      LazyCompile: ~_write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:31:11
+      1  100.0%        LazyCompile: ~writeOrBuffer node:internal/streams/writable:365:23
+      1  100.0%          LazyCompile: ~_write node:internal/streams/writable:283:16
+      1  100.0%            LazyCompile: ~Writable.write node:internal/streams/writable:333:36
+      1    1.4%      LazyCompile: ~_initialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/find_cursor.js:48:16
+      1  100.0%        LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:428:12
+      1  100.0%          LazyCompile: ~next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:492:14
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:181:52
+      1    1.4%      LazyCompile: ~_destroy node:_http_incoming:176:55
+      1  100.0%        LazyCompile: ~_destroy node:internal/streams/destroy:70:18
+      1  100.0%          Function: ^destroy node:internal/streams/destroy:32:17
+      1  100.0%            Function: ^endReadableNT node:internal/streams/readable:1338:23
+      1    1.4%      LazyCompile: ~WriteStream$open /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/graceful-fs/graceful-fs.js:327:29
+      1  100.0%        LazyCompile: ~_construct node:internal/fs/streams:42:20
+      1  100.0%          LazyCompile: ~constructNT node:internal/streams/destroy:250:21
+      1  100.0%            LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.4%      LazyCompile: ~Timeout node:internal/timers:167:17
+      1  100.0%        Function: ^setUnrefTimeout node:internal/timers:372:25
+      1  100.0%          LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%            LazyCompile: ~write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:462:15
+      1    1.4%      LazyCompile: ~TLSSocket.getPeerCertificate node:_tls_wrap:986:50
+      1  100.0%        LazyCompile: ~onConnectSecure node:_tls_wrap:1518:25
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            LazyCompile: ~TLSSocket._finishInit node:_tls_wrap:920:43
+      1    1.4%      LazyCompile: ~Socket.end node:net:630:32
+      1  100.0%        LazyCompile: ~socketOnEnd node:_http_server:607:21
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            Function: ^endReadableNT node:internal/streams/readable:1338:23
+      1    1.4%      LazyCompile: ~Socket._destroy node:net:689:37
+      1  100.0%        Function: ^_destroy node:internal/streams/destroy:70:18
+      1  100.0%          Function: ^destroy node:internal/streams/destroy:32:17
+      1  100.0%            LazyCompile: ~finish node:internal/streams/writable:745:16
+      1    1.4%      LazyCompile: ~SecureContext node:_tls_common:75:23
+      1  100.0%        LazyCompile: ~createSecureContext node:_tls_common:99:29
+      1  100.0%          LazyCompile: ~connect node:_tls_wrap:1599:35
+      1  100.0%            LazyCompile: ~makeConnection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connect.js:248:24
+      1    1.4%      LazyCompile: ~Schema.plugin /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/schema.js:1698:35
+      1  100.0%        LazyCompile: ~applyPlugins /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/schema/applyPlugins.js:3:39
+      1  100.0%          LazyCompile: ~Mongoose._applyPlugins /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/index.js:672:44
+      1  100.0%            LazyCompile: ~Mongoose.model /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/index.js:507:36
+      1    1.4%      LazyCompile: ~Readable.removeListener node:internal/streams/readable:904:45
+      1  100.0%        LazyCompile: ~onceWrapper node:events:636:21
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            LazyCompile: ~afterConnect node:net:1141:22
+      1    1.4%      LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%        LazyCompile: ~flow node:internal/streams/readable:1008:14
+      1  100.0%          LazyCompile: ~resume_ node:internal/streams/readable:984:17
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.4%      LazyCompile: ~Long.toNumber /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:734:40
+      1  100.0%        Function: ^deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%          Function: ^deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%            Function: ^deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      1    1.4%      LazyCompile: ~Long.isLong /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:236:28
+      1  100.0%        LazyCompile: ~Long.compare /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:291:39
+      1  100.0%          LazyCompile: ~Long.comp /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:311:36
+      1  100.0%            LazyCompile: ~Long.greaterThanOrEqual /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/long.js:477:50
+      1    1.4%      LazyCompile: ~ClientSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:45:16
+      1  100.0%        Function: ^startSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:330:17
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/execute_operation.js:16:48
+      1  100.0%            Function: ^maybePromise /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:398:22
+      1    1.4%      LazyCompile: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Entregable/server.js:64:42
+      1  100.0%        LazyCompile: ~onceWrapper node:events:636:21
+      1  100.0%          LazyCompile: ~emit node:events:475:44
+      1  100.0%            LazyCompile: ~emitListeningNT node:net:1403:25
+      1    1.4%      LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/model.js:1683:52
+      1  100.0%        LazyCompile: ~promiseOrCallback /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1  100.0%          LazyCompile: ~Mongoose._promiseOrCallback /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/index.js:1222:49
+      1  100.0%            LazyCompile: ~ensureIndexes /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/model.js:1673:45
+      1    1.4%      LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/request.js:467:36
+      1  100.0%        LazyCompile: ~send /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:111:25
+      1  100.0%          LazyCompile: ~done /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/response.js:1033:27
+      1  100.0%            LazyCompile: ~tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+      1    1.4%      LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~generateSource /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:721:28
+      1  100.0%            LazyCompile: ~compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      1    1.4%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.4%      Function: ~<anonymous> node:internal/crypto/webcrypto:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1    1.4%      Function: ~<anonymous> node:dns:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%            Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1    1.4%      Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:tls:1:1
+      1    1.4%      Function: ~<anonymous> :1:20
+      1  100.0%        LazyCompile: ~anonymous /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:695:59
+      1  100.0%          LazyCompile: ~tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+      1  100.0%            LazyCompile: ~exports.renderFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:441:31
+      1    1.4%      Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/sift/lib/index.js:138:50
+      1  100.0%        Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/sift/lib/index.js:5:19
+      1  100.0%          Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/sift/lib/index.js:1:11
+      1  100.0%            Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/sift/lib/index.js:1:1
+      1    1.4%      Function: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ^setRequestTimeout node:_http_server:767:27
+      1    1.4%      Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.4%      Function: ^onStreamRead node:internal/stream_base_commons:167:22
+      1    1.4%      Function: ^emit node:events:475:44
+      1  100.0%        LazyCompile: ~<anonymous> node:net:707:24
+     72   41.4%    LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+     68   94.4%      LazyCompile: *_write node:internal/streams/writable:283:16
+     68  100.0%        Function: ^Writable.write node:internal/streams/writable:333:36
+     43   63.2%          Function: ^ondata node:internal/streams/readable:752:18
+     39   90.7%            LazyCompile: *readableAddChunk node:internal/streams/readable:236:26
+      4    9.3%            LazyCompile: *emit node:events:475:44
+     25   36.8%          Function: ^value node:internal/console/constructor:258:20
+     25  100.0%            Function: ^log node:internal/console/constructor:359:6
+      4    5.6%      Function: ^_write node:internal/streams/writable:283:16
+      4  100.0%        Function: ^Writable.write node:internal/streams/writable:333:36
+      3   75.0%          Function: ^ondata node:internal/streams/readable:752:18
+      3  100.0%            LazyCompile: *emit node:events:475:44
+      1   25.0%          Function: ^value node:internal/console/constructor:258:20
+      1  100.0%            Function: ^log node:internal/console/constructor:359:6
+
+    157    1.9%  /usr/lib/x86_64-linux-gnu/libc.so.6
+     60   38.2%    /usr/local/bin/node
+     17   28.3%      /usr/local/bin/node
+     10   58.8%        LazyCompile: *scanLine /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:815:22
+      5   50.0%          LazyCompile: *<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      4   80.0%            /usr/local/bin/node
+      1   20.0%            LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      5   50.0%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:742:32
+      3   60.0%            LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      2   40.0%            /usr/local/bin/node
+      1    5.9%        LazyCompile: *serializeInto /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:553:23
+      1  100.0%          Function: ^serialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:124:19
+      1  100.0%            Function: ^serializeBson /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:531:18
+      1    5.9%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    5.9%        Function: ^pipe /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/send/index.js:506:43
+      1  100.0%          Function: ^serveStatic /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/serve-static/index.js:72:31
+      1  100.0%            LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      1    5.9%        Function: ^fromString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:370:22
+      1  100.0%          Function: ^ns /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:348:12
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cursor/abstract_cursor.js:442:42
+      1    5.9%        Function: ^createRegex /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:560:25
+      1  100.0%          Function: ^Template /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:509:18
+      1  100.0%            Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      1    5.9%        Function: ^clearBuffer node:internal/streams/writable:529:21
+      1  100.0%          Function: ^Writable.uncork node:internal/streams/writable:341:37
+      1  100.0%            Function: ^end node:_http_outgoing:833:45
+      1    5.9%        Function: ^<anonymous> node:internal/fs/utils:358:35
+      1  100.0%          Function: ^<anonymous> node:internal/fs/utils:669:38
+      1  100.0%            Function: ^<anonymous> node:internal/fs/utils:681:42
+      6   10.0%      Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      6  100.0%        Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      6  100.0%          Function: ^handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+      3   50.0%            Function: ^tryHandleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:254:24
+      3   50.0%            Function: ^includeFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:309:21
+      3    5.0%      LazyCompile: *FastBuffer node:internal/buffer:958:14
+      2   66.7%        Function: ^alloc node:buffer:360:30
+      2  100.0%          Function: ^serialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:124:19
+      2  100.0%            Function: ^serializeBson /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:531:18
+      1   33.3%        Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%          Function: ^createPool node:buffer:151:20
+      1  100.0%            Function: ^allocate node:buffer:398:18
+      2    3.3%      LazyCompile: ~realpathSync node:fs:2425:22
+      2  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      2  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2    3.3%      LazyCompile: *compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:571:21
+      2  100.0%        Function: ^compile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:381:35
+      2  100.0%          Function: ^handleCache /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:210:21
+      2  100.0%            Function: ^includeFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:309:21
+      2    3.3%      Function: ^tryDecode /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie-parser/node_modules/cookie/index.js:196:19
+      2  100.0%        Function: ^parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie-parser/node_modules/cookie/index.js:49:15
+      2  100.0%          Function: ^cookieParser /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie-parser/index.js:44:32
+      2  100.0%            LazyCompile: *trim_prefix /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:293:23
+      2    3.3%      Function: ^_copyActual node:buffer:243:21
+      1   50.0%        Function: ^concat node:buffer:536:32
+      1  100.0%          Function: ^writeCommand /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:40:17
+      1  100.0%            Function: ^write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:462:15
+      1   50.0%        Function: ^_copy node:buffer:201:15
+      1  100.0%          Function: ^copy node:buffer:775:16
+      1  100.0%            LazyCompile: *deserializeObject /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/deserializer.js:65:27
+      1    1.7%      LazyCompile: ~value node:internal/console/constructor:258:20
+      1  100.0%        Function: ^log node:internal/console/constructor:359:6
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~<anonymous> file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2032/Entregable/server.js:244:21
+      1    1.7%      LazyCompile: ~toString node:buffer:783:46
+      1  100.0%        LazyCompile: ~readFileSync node:fs:450:22
+      1  100.0%          LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1    1.7%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    1.7%      LazyCompile: ~resolveOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:740:24
+      1  100.0%        LazyCompile: ~collection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/db.js:192:15
+      1  100.0%          LazyCompile: ~NativeCollection.onOpen /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:45:45
+      1  100.0%            LazyCompile: ~_setClient /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/connection.js:848:20
+      1    1.7%      LazyCompile: ~read /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:877:9
+      1  100.0%        Function: ^peek /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:873:9
+      1  100.0%          Function: ^processIncomingData /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1  100.0%            Function: ^_write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:31:11
+      1    1.7%      LazyCompile: ~promiseOrCallback /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1  100.0%        LazyCompile: ~Mongoose._promiseOrCallback /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/index.js:1222:49
+      1  100.0%          LazyCompile: ~createCollection /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/model.js:1375:51
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/model.js:1315:5
+      1    1.7%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.7%      LazyCompile: ~parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/nopt/lib/nopt.js:242:16
+      1  100.0%        LazyCompile: ~nopt /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/nopt/lib/nopt.js:26:15
+      1  100.0%          LazyCompile: ~parseOpts /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:144:37
+      1  100.0%            LazyCompile: ~Run /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:78:13
+      1    1.7%      LazyCompile: ~parse /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/cookie/index.js:48:15
+      1  100.0%        Function: ^getcookie /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:529:19
+      1  100.0%          Function: ^session /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express-session/index.js:179:26
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+      1    1.7%      LazyCompile: ~monitorHasAnotherHello /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:110:36
+      1  100.0%        Function: ^processIncomingData /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1  100.0%          Function: ^_write /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/message_stream.js:31:11
+      1  100.0%            Function: ^writeOrBuffer node:internal/streams/writable:365:23
+      1    1.7%      LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      1  100.0%        LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1  100.0%          LazyCompile: ~moduleProvider node:internal/modules/esm/loader:322:28
+      1  100.0%            /usr/local/bin/node
+      1    1.7%      LazyCompile: ~createAppender /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:74:24
+      1  100.0%        LazyCompile: ~getAppender /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:59:21
+      1  100.0%          LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/log4js/lib/appenders/index.js:139:41
+      1  100.0%            /usr/local/bin/node
+      1    1.7%      LazyCompile: ~compareTopologyVersion /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server_description.js:184:32
+      1  100.0%        LazyCompile: ~isStaleServerDescription /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:644:34
+      1  100.0%          LazyCompile: ~serverUpdateHandler /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:360:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:520:53
+      1    1.7%      LazyCompile: ~_copy node:buffer:201:15
+      1  100.0%        Function: ^copy node:buffer:775:16
+      1  100.0%          LazyCompile: ~serialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:124:19
+      1  100.0%            LazyCompile: ~serializeBson /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:531:18
+      1    1.7%      LazyCompile: ~SchemaType /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/schematype.js:42:20
+      1  100.0%        LazyCompile: ~SchemaString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/schema/string.js:25:22
+      1  100.0%          LazyCompile: ~Schema.interpretAsType /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/schema.js:1074:44
+      1  100.0%            LazyCompile: ~Schema.path /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/schema.js:809:33
+      1    1.7%      LazyCompile: ~DTRACE_HTTP_SERVER_RESPONSE node:internal/dtrace:9:33
+      1  100.0%        LazyCompile: ~_finish node:_http_server:204:52
+      1  100.0%          LazyCompile: ~end node:_http_outgoing:833:45
+      1  100.0%            LazyCompile: ~end /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/compression/index.js:92:28
+      1    1.7%      LazyCompile: ~ConnectionString /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb-connection-string-url/lib/index.js:82:16
+      1  100.0%        LazyCompile: ~parseOptions /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%          LazyCompile: ~MongoClient /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/mongo_client.js:60:16
+      1  100.0%            LazyCompile: ~<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongoose/lib/connection.js:793:31
+      1    1.7%      LazyCompile: *serializeInto /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/parser/serializer.js:553:23
+      1  100.0%        Function: ^serialize /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/bson/lib/bson.js:124:19
+      1  100.0%          Function: ^serializeBson /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:531:18
+      1  100.0%            Function: ^makeDocumentSegment /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/commands.js:523:24
+      1    1.7%      LazyCompile: *next /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:177:16
+      1  100.0%        Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:136:31
+      1  100.0%          Function: ^router /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/index.js:46:18
+      1  100.0%            Function: ^handle /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/router/layer.js:86:49
+      1    1.7%      Function: ^setRequestTimeout node:_http_server:767:27
+      1    1.7%      Function: ^processCiphers node:internal/tls/secure-context:91:24
+      1  100.0%        LazyCompile: ~configSecureContext node:internal/tls/secure-context:120:29
+      1  100.0%          Function: ^createSecureContext node:_tls_common:99:29
+      1  100.0%            Function: ^connect node:_tls_wrap:1599:35
+      1    1.7%      Function: ^makeFindCommand /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/find.js:55:25
+      1  100.0%        LazyCompile: *<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/operations/execute_operation.js:145:61
+      1  100.0%          Function: ^processWaitQueue /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:574:26
+      1  100.0%            Function: ^selectServer /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/topology.js:267:17
+      1    1.7%      Function: ^getHeader node:_http_outgoing:590:57
+      1  100.0%        Function: ^shouldCompress /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/compression/index.js:254:25
+      1  100.0%          Function: ^onResponseHeaders /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/compression/index.js:140:47
+      1  100.0%            Function: ^writeHead /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/on-headers/index.js:28:29
+      1    1.7%      Function: ^get serverSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:85:22
+      1  100.0%        Function: ^applySession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:664:22
+      1  100.0%          LazyCompile: *command /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/cmap/connection.js:254:12
+      1  100.0%            Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sdam/server.js:204:42
+      1    1.7%      Function: ^exports.renderFile /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/ejs/lib/ejs.js:441:31
+      1  100.0%        Function: ^render /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/view.js:133:40
+      1  100.0%          Function: ^tryRender /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/application.js:655:19
+      1  100.0%            Function: ^render /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/express/lib/application.js:548:29
+      1    1.7%      Function: ^clone /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:562:17
+      1  100.0%        Function: ^completeEndSession /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:138:40
+      1  100.0%          Function: ^<anonymous> /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/sessions.js:133:52
+      1  100.0%            LazyCompile: *maybePromise /home/sashashadow/Escritorio/Coding/backend-coder/Clase 32/Entregable/node_modules/mongodb/lib/utils.js:398:22
+      8    5.1%    LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+      8  100.0%      LazyCompile: *_write node:internal/streams/writable:283:16
+      8  100.0%        Function: ^Writable.write node:internal/streams/writable:333:36
+      6   75.0%          Function: ^ondata node:internal/streams/readable:752:18
+      4   66.7%            LazyCompile: *readableAddChunk node:internal/streams/readable:236:26
+      2   33.3%            LazyCompile: *emit node:events:475:44
+      2   25.0%          Function: ^value node:internal/console/constructor:258:20
+      2  100.0%            Function: ^log node:internal/console/constructor:359:6
+      2    1.3%    LazyCompile: *realpathSync node:fs:2425:22
+      2  100.0%      Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      2  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1   50.0%          Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   50.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+

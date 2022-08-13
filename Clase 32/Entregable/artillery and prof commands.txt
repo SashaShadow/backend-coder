@@ -1,0 +1,12 @@
+
+node --prof server.js
+
+artillery quick --count 50 -n 20 "http://localhost:8080/api/info" > infowlog.txt
+
+artillery quick --count 50 -n 20 "http://localhost:8080/api/info" > infowolog.txt
+
+
+node --prof-process wlog.log > infowlog.txt
+
+
+node --prof-process wolog.log > infowolog.txt

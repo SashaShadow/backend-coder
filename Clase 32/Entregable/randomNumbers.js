@@ -1,14 +1,14 @@
-import minimist from "minimist";
+// import minimist from "minimist";
 
-const options = {
-    alias: {
-      c: 'CANTIDAD'
-    }
-  }
+// const options = {
+//     alias: {
+//       c: 'CANTIDAD'
+//     }
+//   }
 
-const args = minimist(process.argv.slice(2), options); 
+// const args = minimist(process.argv.slice(2), options); 
 
-const random = (cant) => {
+export const random = (cant) => {
     let numArr = [];
 
     for (let i = 0; i < cant; i++) {
@@ -18,7 +18,7 @@ const random = (cant) => {
     return numArr;
 }
 
-const calc = (args) => {
+export const calc = (args) => {
     let x = [];
 
     for (let i = 0; i < args.length; i++) {
@@ -36,9 +36,9 @@ const calc = (args) => {
 }
 
 
-process.on('message', nums => {
-    console.log("arrancando")
- })
+// process.on('message', nums => {
+//     console.log("arrancando")
+//  })
 
-  process.send(calc(random(args.CANTIDAD)))
+//   process.send(calc(random(args.CANTIDAD)))
  
