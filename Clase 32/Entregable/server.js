@@ -3,8 +3,6 @@ import session from 'express-session';
 const { Router } = express;
 import { logger200, logger404 } from "./middlewares.js";
 import { logger, loggerError } from "./logger.js";
-import { db, msgsModel, productsModel, User} from "./dbsConfig.js";
-import contenedorMongo from "./contenedorMongoDB.js";
 import { Server as IOServer } from "socket.io";
 import { Server as HttpServer } from "http";
 import productsRouter from "./routers/productsRouter.js";
@@ -16,8 +14,10 @@ import compression from 'compression';
 import cluster from 'cluster';
 import os from 'os';
 import passport from 'passport';
-import { Strategy as LocalStrategy } from "passport-local";
-import { createHash, isValidPassword } from './utils.js';
+import { login, signup, serialize, deSerialize } from './auth/auth.js';
+import { loginRoute, loginPost, signupRoute, signupPost, logout } from './auth/routes.js';
+import { getMsgs, postMsgs } from './chat/msgRoutes.js';
+import { ioSockets } from './sockets/sockets.js';
 import minimist from "minimist";
 import "dotenv/config.js";
 
@@ -34,15 +34,20 @@ const myArgs = minimist(process.argv.slice(2), options)
 const app = express()
 const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
-
 const router = Router();
 
 const PORT = myArgs.PORT || 8080;
 
+const serverUp = () => {
+  const server = httpServer.listen(PORT, () => {
+    logger.info(`Servidor http escuchando en el puerto ${server.address().port}`)
+  })
+  server.on("error", error => loggerError.error(`Error en servidor ${error}`));
+}
+
 if (myArgs.MODO === 'cluster') {
   if (cluster.isPrimary) {
     logger.info(`El master con pid numero ${process.pid} esta funcionando`);
-
 
     for (let i = 0; i < numCpus; i++) {
         cluster.fork();
@@ -53,19 +58,10 @@ if (myArgs.MODO === 'cluster') {
     });
 
   } else {
-
-  const server = httpServer.listen(PORT, () => {
-    logger.info(`Servidor http escuchando en el puerto ${server.address().port}`)
-  })
-  server.on("error", error => logger.error(`Error en servidor ${error}`));
+    serverUp();
   }
 } else if (myArgs.MODO === 'fork' || !myArgs.MODO) {
-
-  const server = httpServer.listen(PORT, () => {
-      logger.info(`Servidor http escuchando en el puerto ${server.address().port}`)
-  })
-  server.on("error", error => loggerError.error(`Error en servidor ${error}`));
-
+  serverUp();
 } 
 
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true}
@@ -94,96 +90,19 @@ app.use(passport.session())
 app.use(flash())
 
 //PASSPORT STRATEGIES
-passport.use('login', new LocalStrategy((username, password, done) => {
-    return User.findOne({ username })
-      .then(user => {
-        if (!user) {
-          return done(null, false, { message: 'Usuario inexistente' })
-        }
-  
-        if (!isValidPassword(user.password, password)) {
-          return done(null, false, { message: 'Contraseña incorrecta' })
-        }
-        
-        return done(null, user)
-      })
-      .catch(err => done(err))
-  }))
-
-passport.use('signup', new LocalStrategy({
-    passReqToCallback: true
-  }, (req, username, password, done) => {
-    let errMsg = '';
-    return User.findOne({ username })
-      .then(user => {
-        if (user) {
-          errMsg = 'El nombre de usuario ya existe'
-          return null;
-        }
-  
-        const newUser = new User()
-        newUser.username = username
-        newUser.password = createHash(password)
-        newUser.email = req.body.email
-
-        req.session.user = newUser;
-  
-        return newUser.save()
-      })
-      .then(user => {
-        if (!user && errMsg !== '') {
-          return done(null, false, {message: errMsg})
-          }
-          return done(null, user)
-      })
-      .catch(err => {
-        return done(err)
-      })
-   }))
-
-const myChat = new contenedorMongo(db, msgsModel);
-const myApi = new contenedorMongo(db, productsModel)
+login();
+signup();
+serialize();
+deSerialize();
 
 //SOCKETS
-io.on("connection", async socket => { 
-    console.log("Un nuevo cliente se ha conectado");
- 
-    socket.emit("Mensajes", await myChat.getElems());
-    socket.emit("Productos", await myApi.getElems());
-
-    const data = await myChat.getElems();
-
-    socket.on("new-message", async data => { 
-        data.time = new Date().toLocaleString();
-        io.sockets.emit("MensajeIndividual", data)
-    })
-
-    socket.on("nuevo-producto", async data => {
-        const prods = await myApi.getElems();
-        data.id = prods[prods.length - 1].id + 1;
-        io.sockets.emit("ProductoIndividual", data)
-    })
-})
-
-passport.serializeUser((user, done) => {
-    done(null, user.id)
-  })
-  
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-      done(err, user)
-    })
-  })
+ioSockets(io);
 
 //RUTAS MENSAJES CHAT
-router.get('/mensajes', async (req, res) => {
-    return res.json(await myChat.getElems(req, res))
- })
+router.get('/mensajes', getMsgs())
+router.post('/mensajes', postMsgs())
 
-router.post('/mensajes', async (req, res) => {
-    return await myChat.postElem(req, res)
- })
-
+//HOME
 router.get("/", (req, res) => {
     if (req.user) {
         req.session.user = req.user;
@@ -193,54 +112,14 @@ router.get("/", (req, res) => {
     }
 });
 
-
 // RUTAS AUTH
-router.get('/login', (req, res) => {
+router.get('/login', loginRoute())
+router.post('/login', loginPost())
+router.get('/signup', signupRoute())
+router.post('/signup', signupPost())
+router.get('/logout', logout())
 
-    if (req.user) {
-        return res.redirect('/api/')
-    } else {
-        res.render("pages/login.ejs", { message: req.flash('error')})
-    }
-})
-
-router.post('/login', passport.authenticate('login', {
-    successRedirect: '/api',
-    failureRedirect: '/api/login',
-    failureFlash: true
-  }))
-
-router.get('/signup', (req, res) => {
-    if (req.user) {
-        return res.redirect('/api/')
-    } else {
-        res.render("pages/signup.ejs", { message: req.flash('error') })
-    }
-})
-
-router.post('/signup', passport.authenticate('signup', {
-    successRedirect: '/api',
-    failureRedirect: '/api/signup',
-    failureFlash: true
-  }))
-
-
-router.get('/logout', (req, res) => {
-
-    const nameRemanent = req.user; 
-
-    if (nameRemanent) {
-        return req.session.destroy(err => {
-            if (!err) {
-              return res.render("pages/logout.ejs", {name: nameRemanent})
-            }
-            return res.send({ error: err })
-          })
-    } else {
-        return res.render("pages/expired.ejs")
-    }  
-   })
-
+//INFO (XD)
 router.get('/info', (req, res) => {
   const information = { OS: process.platform, 
     nodeversion: process.version, 
@@ -255,10 +134,4 @@ router.get('/info', (req, res) => {
 app.use('/api', logger200(), router);
 app.use('/api/random',  logger200(), randomRouter);
 app.use('/api/products', logger200(), productsRouter)
-
 app.use(logger404());
-
-
-
-
-
