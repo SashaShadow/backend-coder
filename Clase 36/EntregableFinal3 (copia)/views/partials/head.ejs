@@ -1,0 +1,19 @@
+
+    <% if (user) { %>
+        <div class="Welcome">
+            <div class="WText">Bienvenido <%= user.username %>
+                <p>Email:<%= user.email %></p>
+            </div>
+            <img class="profilePhoto" src="<%= user.photo %>"/>
+            
+            <div class="Menu">
+                <a href="/api/">Home</a>
+                <a href="/api/cart/<%= user._id %>">Carrito</a>
+                <a href="/api/profile">Mi perfil</a>
+                <a href="/api/logout"  class="logout"><button class="logoutButton">Cerrar sesión</button></a>
+            </div>
+        </div>
+
+    <% } %>
+    <script src="/socket.io/socket.io.js"></script>
+    
