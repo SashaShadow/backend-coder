@@ -1,0 +1,4 @@
+-Relación entre usuario y carritos / evitar que cualquier usuario vea todos los carritos.
+-Foto de perfil y multer: evitar que se suba si el usuario no se crea? Se puede posibilitar que recien
+se suba cuando el usuario este creado?
+-Mejor forma de validar el numero de forma internacional?
