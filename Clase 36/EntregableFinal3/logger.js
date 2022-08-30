@@ -19,9 +19,3 @@ log4js.configure({
 export const logger = log4js.getLogger();
 export const loggerWarn = log4js.getLogger("warnOnly");
 export const loggerError = log4js.getLogger("errorOnly")
-// logger.trace("Entering cheese testing");
-// logger.debug("Got cheese.");
-// logger.info("Cheese is Comté.");
-// logger.warn("Cheese is quite smelly.");
-// logger.error("Cheese is too ripe!");
-// logger.fatal("Cheese was breeding ground for listeria.");

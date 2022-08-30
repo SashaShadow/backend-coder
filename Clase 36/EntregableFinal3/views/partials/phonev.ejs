@@ -14,32 +14,26 @@
       .then((resp) => callback(resp.country));
     }
 
-    const phoneInputField = document.querySelector("#phonev");
+    let input = document.querySelector("#phone");
+    let output = document.querySelector("#phoneOut");
 
-    const phoneInput = window.intlTelInput(phoneInputField, {
-      initialCountry: "auto",
+    let iti = window.intlTelInput(input, {
       geoIpLookup: getIp,
+      initialCountry: "auto",
       utilsScript:
         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      nationalMode: true,
     });
 
-    const info = document.querySelector(".alert-info");
-    const error = document.querySelector(".alert-error");
+    const handleChange = () => {
+      let text = (iti.isValidNumber()) ? "OK: " + iti.getNumber() : "Ingresa un número de teléfono válido";
+      let textNode = document.createTextNode(text);
+      iti.isValidNumber() ? input.value = iti.getNumber() : null;
+      output.innerHTML = "";
+      output.appendChild(textNode);
+    };
 
-    const process = (event) => {
-      event.preventDefault();
-
-      const phoneNumber = phoneInput.getNumber();
-
-      info.style.display = "none";
-      error.style.display = "none";
-
-      if (phoneInput.isValidNumber()) {
-        info.style.display = "";
-        info.innerHTML = `Número de telefono en el formato E.164: <strong>${phoneNumber}</strong>`;
-      } else {
-        error.style.display = "";
-        error.innerHTML = `Número de telefono invalido.`;
-      }
-    }
+    input.addEventListener('change', handleChange);
+    input.addEventListener('keyup', handleChange);
+    
 </script>

@@ -1,4 +1,4 @@
-import { logger, loggerWarn } from "./logger.js";
+import { logger, loggerWarn, loggerError } from "./logger.js";
 import twilio from 'twilio';
 import { User } from './dbsConfig.js';
 import "dotenv/config.js";
@@ -10,8 +10,7 @@ const client = twilio(accountSid, authToken)
 
 export const validateAdmin = () => {
     return (req, res, next) => {
-        console.log(req.user)
-        if (!req.user.admin) {
+        if (!req.user || !req.user.admin) {
             return res.json({Error: 'No tienes acceso a esta ruta'})
         }
         next()
@@ -29,8 +28,8 @@ export const validateNumber = () => {
         phoneError = false;
         req.session.phoneError = '';
       })
-      .catch(err => console.log(err))
-      .finally(() => {
+      .catch(err => loggerError.error(err))
+      .finally(_ => {
           if (phoneError) {
             req.session.phoneError = 'Numero invalido'
           } 
@@ -54,8 +53,7 @@ export const validatePost = () => {
     return (req, res, next) => {
         const productoNuevo = req.body;
         if (productoNuevo.name && productoNuevo.price && productoNuevo.photo && 
-            productoNuevo.desc && productoNuevo.code && productoNuevo.stock && 
-            Object.keys(productoNuevo).length === 6) {
+            productoNuevo.desc && productoNuevo.code && productoNuevo.stock) {
                 next();
         } else {
             return res.status(400).send({ error: "parametros incorrectos" });
@@ -82,8 +80,7 @@ export const validateAddToCart = () => {
     return (req, res, next) => {
         const product = req.body;
         if (product.name && product.price && product.photo && 
-            product.desc && product.code && product.stock &&
-            Object.keys(product).length === 6) {
+            product.desc && product.code && product.stock) {
                 next();
         } else {
             return res.status(400).send({error: "parametros incorrectos"})

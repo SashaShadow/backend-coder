@@ -7,6 +7,9 @@ import { Server as IOServer } from "socket.io";
 import { Server as HttpServer } from "http";
 import productsRouter from "./routers/productsRouter.js";
 import cartRouter from "./routers/cartsRouter.js";
+import orderRouter from "./routers/orderRouter.js";
+import { cartStorage } from "./routers/cartsRouter.js"; 
+import { productsStorage } from "./routers/productsRouter.js";
 import randomRouter from './routers/randomRouter.js';
 import { upload } from './multer.js';
 import flash from 'connect-flash';
@@ -23,6 +26,12 @@ import { getMsgs, postMsgs } from './chat/msgRoutes.js';
 import { ioSockets } from './sockets/sockets.js';
 import minimist from "minimist";
 import "dotenv/config.js";
+import twilio from 'twilio';
+
+const accountSid = process.env.ACCOUNTSID;
+const authToken = process.env.AUTHTOKEN;
+
+const client = twilio(accountSid, authToken)
 
 const numCpus = os.cpus().length
 
@@ -110,7 +119,10 @@ router.post('/mensajes', postMsgs())
 router.get("/", (req, res) => {
     if (req.user) {
         req.session.user = req.user;
-        res.render("pages/index.ejs", {user: req.user});
+        return productsStorage.getElems(req, res)
+      .then(products => {
+        res.render("pages/index.ejs", {user: req.user, products: JSON.parse(JSON.stringify(products))});
+      }).catch(err => {loggerError.error(err); throw err})
     } else {
         res.redirect('/api/login')
     }
@@ -122,6 +134,29 @@ router.get("/profile", (req, res) => {
     } else {
       res.redirect('/api/login')
     }
+})
+
+router.get('/mycart/:id', async (req, res) => {
+  if (req.user) {
+    return cartStorage.getCarts(req, res)
+    .then(carts=> {
+        res.render("pages/cart.ejs", {user: JSON.stringify(req.user), carts: carts});
+    })
+    .catch(err => {loggerError.error(err); throw err})
+  } else {
+    res.redirect('/api/login')
+  }
+})
+
+router.get('/validate', (req, res) => {
+  const newPhone = req.query.phone;
+
+  client.lookups.v1.phoneNumbers(newPhone)
+      .fetch({type: ['carrier']})
+      .then(phoneNum => {
+        res.json({phoneNum});
+      })
+      .catch(err => res.json(err))
 })
 
 // RUTAS AUTH
@@ -147,4 +182,5 @@ app.use('/api', logger200(), router);
 app.use('/api/random',  logger200(), randomRouter);
 app.use('/api/products', logger200(), productsRouter);
 app.use('/api/cart', cartRouter); 
+app.use('/api/orders', orderRouter);
 app.use(logger404());

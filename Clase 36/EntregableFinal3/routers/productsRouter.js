@@ -4,7 +4,7 @@ import productsDAOMongoDB from "../productsDAOMongoDB.js"
 import express from "express";
 const { Router } = express;
 const productsRouter = Router()
-const productsStorage = new productsDAOMongoDB();
+export const productsStorage = new productsDAOMongoDB();
 
 export default productsRouter;
 

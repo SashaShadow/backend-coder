@@ -181,7 +181,8 @@
             height: 15rem;
         }
 
-        /* validacion telefonos css */
+        /* Validacion telefonos css ................................*/
+
         .container2 {
         text-align: center;
         /* max-width: 800px; */
@@ -237,4 +238,101 @@
         border-color: #ebccd1;
         }
 
+        /* Product Cards ...............................................*/
+
+        .ProdVal {
+            display: inline;
+            text-align: center;
+        }
+
+        /* Carts Styles ............................................... */
+
+        .NewCart {
+            color:#428BCA;
+            text-decoration: none;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .NewCart:hover {
+            color:#ffffff;
+        }
+
+        .CartsContainer {
+            display: grid;
+            grid-template-rows: auto;
+            grid-auto-flow: row;
+            justify-self: center;
+            align-self: center;
+            margin-top: 7rem;
+            width: 85vw;
+            height:fit-content;
+            background-color:rgba(210, 156, 240, 0.561);
+            grid-gap: 1rem;
+        }
+
+        .Cart {
+            display: grid;
+            grid-template-columns: 0.2fr 1fr;
+            min-height: 20rem;
+            max-height: fit-content;
+            border-style: solid;
+            border-color: white;
+            margin: 1rem 1rem 1rem 1rem;
+        }
+
+        .DeleteProd {
+            cursor: pointer;
+            color:tomato;
+        }
+
+        .DeleteProd:hover {
+            color:red;
+        }
+
+        .CartInfo {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+            border-style: dotted;
+            border-color: #31708f;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Product img {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        .AddCont {
+            display: flex;
+        }
+        
+        .AddToCart {
+            cursor: pointer;
+        }
+
+        .AddToCart:hover {
+            color:violet;
+        }
+
+        .NewOrder {
+            cursor: pointer;
+            color:aquamarine;
+        }
+
+        .NewOrder:hover {
+            color:#ffffff;
+        }
+        
     </style>

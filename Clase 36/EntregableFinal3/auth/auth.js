@@ -2,7 +2,9 @@ import passport from 'passport';
 import process from 'process';
 import { Strategy as LocalStrategy } from "passport-local";
 import { createHash, isValidPassword } from '../utils.js';
-import { User } from '../dbsConfig.js';
+import { User, cartModel } from '../dbsConfig.js';
+import { cartStorage } from '../routers/cartsRouter.js';
+import { logger, loggerError } from "../logger.js";
 import "dotenv/config.js";
 import { createTransport } from 'nodemailer';
 
@@ -44,7 +46,6 @@ export const signup = () => {
         return User.findOne({$or: [{username: username}, {email: req.body.email}, {phone: req.body.phone}]})
           .then(user => {
             if (user) {
-              console.log(user);
               errMsg = 'El nombre de usuario, email o el numero teléfonico ya se encuentran registrados en otra cuenta'
               return null;
             }
@@ -60,6 +61,8 @@ export const signup = () => {
             }
       
             const newUser = new User()
+            const newCart = new cartModel();
+
             newUser.username = username
             newUser.password = createHash(password)
             newUser.email = req.body.email
@@ -68,6 +71,7 @@ export const signup = () => {
             newUser.address = req.body.address
             newUser.phone = req.body.phone
             newUser.photo = `${req.session.img}`
+            newUser.cart = newCart;
     
             req.session.user = newUser;
 
@@ -92,7 +96,7 @@ export const signup = () => {
                 try {
                   transporter.sendMail(mailOptions)
                 } catch (err) {
-                  console.log(err)
+                  loggerError.error(err)
                 }
             // });
       

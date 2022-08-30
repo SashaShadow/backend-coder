@@ -5,7 +5,7 @@ import { validateAddToCart, validateAdmin } from "../middlewares.js";
 
 const { Router } = express;
 const cartRouter = Router()
-const cartStorage = new cartsDAOMongoDB();
+export const cartStorage = new cartsDAOMongoDB();
 
 export default cartRouter;
 
@@ -15,14 +15,6 @@ cartRouter.get('', validateAdmin(), async (req, res) => {
         return res.json({carritos})
     })
     .catch(err => {res.send(err); loggerError.error(err); throw err})
-})
-
-cartRouter.get('/:id', async (req, res) => {
-    return cartStorage.getCarts(req, res)
-    .then(carritos => {
-        return res.json({carritos})
-    })
-    .catch(err => {loggerError.error(err); throw err})
 })
 
 cartRouter.get('/:id/products', (req, res) => {
@@ -42,7 +34,7 @@ cartRouter.post('/:id/products', validateAddToCart(), async (req, res) => {
 })
 
 
-cartRouter.delete('/:id', (req, res) => {
+cartRouter.delete('/:id', validateAdmin(), (req, res) => {
     return cartStorage.deleteElem(req, res);
 })
 

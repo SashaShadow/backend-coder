@@ -74,22 +74,48 @@
                 <tbody id="element"></tbody>
             </table>
         </div>
-
         <% } %>
 
         <% if (!user.admin) { %>
-
             <h2>Productos</h2>
             <div class="ProdContainer">
-                
-
+                <% for (let i = 0; i < products.length; i++) { %>
+                    <div class="Card"> 
+                        <h3><%= products[i].name %></h3>
+                        <img src="<%= products[i].photo %>"/>
+                        <div class="ProdVal"><h4>Precio: <%= products[i].price %></h4><h4>Stock: <%= products[i].stock %></h4></div>
+                        <div class="AddCont">
+                            <h4 class="AddToCart" onclick="addToCart(`<%= user._id %>`, `<%= Object.values(products[i])%>`)">Agregar al carrito</h4>
+                            <select id="<%= products[i].code %>">
+                                <% for (let j = 1; j < products[i].stock + 1; j++) { %>
+                                    <option class="quantity" value=" <%= j%> "><%= j %></option>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                <% } %>
             </div>
-
-
-
         <% } %>
  
     <script src="main.js"></script>
     <script src="ejs.js"></script>
+    <script>
+
+        const addToCart = (userId, product) => {
+            product = product.split(",")
+            
+            const quantity = $(`#${product[5]}`).find("option:selected").val();
+
+            const newProd = {name: product[1], price: product[2], photo: product[4]};
+
+            return fetch(`http://localhost:8080/api/cart/${userId}/products`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({"name": product[1], "price": product[2], "photo": product[4],
+                "desc": product[6], "stock": product[3], "code": product[5], "quantity": Number(quantity)}),
+            })
+            .then(_ => window.location.replace(`http://localhost:8080/api/mycart/${userId}`))
+        }
+    </script>
 </body>
 </html>

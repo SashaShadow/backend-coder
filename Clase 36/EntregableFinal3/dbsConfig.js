@@ -35,11 +35,30 @@ const cartSchema = new mongoose.Schema({
         photo: {type: String, required: true},
         code: {type: String, required: true, max: 10},
         desc: {type: String, required: true, max: 100},
+        quantity: {type: Number, required: true}
     }]},
     owner: {type: String, required: true},
 }, { timestamps: true })
 
 export const cartModel = mongoose.model("Carts", cartSchema);
+
+const orderSchema = new mongoose.Schema({
+    client: {type: {
+        username: {type: String, required: true, max: 30},
+        email: {type: String, required: true},
+        name: {type: String, required: true},
+        phone: {type: Number, required: true}, 
+        address: {type: String, required: true, max: 40},
+    }},
+    order: {type: {
+        products: {type: Array, required: true},
+        total: {type: Number, required: true},
+        orderNo: {type: String, required: true}
+    }},
+    owner: {type: String, required: true}
+})
+
+export const Order = mongoose.model("Order", orderSchema);
 
 const userSchema = new mongoose.Schema({
     username: {type: String, required: true, max: 30},

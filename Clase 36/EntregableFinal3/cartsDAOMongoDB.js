@@ -10,7 +10,6 @@ class CartDAOMongoDB extends contenedorMongoDB {
       return this.db
         .then(_ => this.model.findOne({_id: req.params.id}))
         .then(data => {
-            console.log(data)
             return res.json({Productos: [data.products]})
         })
         .catch(err => {res.send(err); throw err})
@@ -18,11 +17,9 @@ class CartDAOMongoDB extends contenedorMongoDB {
 
     async getCarts(req, res) {
       return this.db
-      .then(_ => this.model.find({owner: req.params.id}))
+      .then(_ => this.model.findOne({owner: req.params.id}))
       .then(data => {
-        console.log(data);
         return data;
-        // return res.json({Carritos: [data.carritos]})
       })
       .catch(err => {res.send(err); throw err})
     }
@@ -31,11 +28,23 @@ class CartDAOMongoDB extends contenedorMongoDB {
       const productoNuevo = req.body;
 
       return this.db
-        .then(_ => this.model.findOne({_id: req.params.id}))
-        .then(data => {
-            data.products.push(productoNuevo)
-            data.save();
-            console.log(data)
+        .then(_ => this.model.findOne({owner: req.params.id})) 
+        .then(data => { 
+            if (data) {
+              const found = data.products.find(product => product.code === productoNuevo.code);
+              if (found) {
+                found.quantity += productoNuevo.quantity;  
+                data.save();
+              } else {
+                data.products.push(productoNuevo)
+                data.save();
+              }
+            } else {
+              const newCart = new this.model();
+              newCart.owner = req.params.id;
+              newCart.products.push(productoNuevo);
+              return this.db.then(_ => newCart.save())
+            }
         })
         .then(_=> {
           res.json({Mensaje: "Producto agregado al carrito"})
@@ -45,7 +54,7 @@ class CartDAOMongoDB extends contenedorMongoDB {
 
     async deleteCartProd(req, res) {
       return this.db
-        .then(_ => this.model.findOne({_id: req.params.id}))
+        .then(_ => this.model.findOne({owner: req.params.id}))
         .then(cart=> {
            cart.products.id(req.params.id_prod).remove()
            cart.save();

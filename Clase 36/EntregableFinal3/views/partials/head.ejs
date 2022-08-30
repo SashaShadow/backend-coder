@@ -4,11 +4,11 @@
             <div class="WText">Bienvenido <%= user.username %>
                 <p>Email:<%= user.email %></p>
             </div>
-            <img class="profilePhoto" src="<%= user.photo %>"/>
+            <img class="profilePhoto" src="/api/<%= user.photo %>"/>
             
             <div class="Menu">
                 <a href="/api/">Home</a>
-                <a href="/api/cart/<%= user._id %>">Carrito</a>
+                <a href="/api/mycart/<%= user._id %>">Carrito</a>
                 <a href="/api/profile">Mi perfil</a>
                 <a href="/api/logout"  class="logout"><button class="logoutButton">Cerrar sesión</button></a>
             </div>
@@ -16,4 +16,4 @@
 
     <% } %>
     <script src="/socket.io/socket.io.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -12,6 +12,7 @@
   "type": "module",
   "dependencies": {
     "0x": "^5.4.0",
+    "artillery": "^2.0.0-23",
     "autocannon": "^7.9.0",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",

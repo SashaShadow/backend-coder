@@ -56,9 +56,9 @@
                     </div>
 
                     <div class="form-outline form-white mb-4">
-                      <input id="phone" type="tel" name="phone" class="form-control form-control-lg" size="20" placeholder='Teléfono formato E.164' required/>
+                      <input id="phone" type="tel" name="phone" class="form-control form-control-lg" size="20" required/>
                       <!-- <input type="tel" name="phone" class="form-control form-control-lg" size="20" required/> -->
-                      <label class="form-label" for="phone">Teléfono</label>
+                      <label class="form-label" for="phone" id="phoneOut">Ingresa un número telefónico</label>
                     </div>
 
                     <div class="mb-3">
@@ -81,7 +81,7 @@
         </div>
     </form>
 
-    <div class="alert alert-info" style="display: none;"></div>
+    <!-- <div class="alert alert-info" style="display: none;"></div>
     <div class="alert alert-error" style="display: none"></div>
 
     <div class="container2">
@@ -91,7 +91,7 @@
         <input id="phonev" type="tel" name="phone" />
         <input type="submit" class="btn" value="Verify" />
       </form>
-    </div>
+    </div> -->
 
     <%- include("../partials/phonev.ejs"); %>
 </body>

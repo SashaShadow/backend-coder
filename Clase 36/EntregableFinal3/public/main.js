@@ -6,6 +6,7 @@ const chatButton = document.querySelector("#chatButton");
 const chatForm = document.querySelector(".chatForm");
 const prodForm = document.querySelector(".myForm");
 const chatUser = document.querySelector(".chatUser");
+const newCartButton = document.querySelector(".NewCart");
 
 chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -121,25 +122,5 @@ socket.on("ProductoIndividual", async data => {
 
     element.innerHTML += templateRendered;
 })
-
-const getProds = async () => {
-    const products = await fetch('http://localhost:8080/api/products/')
-    const productsResults = await products.json();
-
-    console.log(productsResults.productos);
-
-    const prodCards = productsResults.productos.map(prod => {
-        return `
-        <div class="Card"> 
-            <h3>${prod.name}</h3>
-            <img src="${prod.photo}"/>
-            <h3>Precio: ${prod.price}</h3>
-        </div>`
-    }).join(" ")
-    document.querySelector('.ProdContainer').innerHTML = prodCards;
-}
-
-
-getProds();
 
 
