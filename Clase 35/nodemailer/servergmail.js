@@ -13,7 +13,7 @@ const transporter = createTransport({
    port: 587,
    auth: {
        user: 'caballerosasha@gmail.com',
-       pass: 'roxgzlrnsugjywyo'
+       pass: ''
    }
 });
 

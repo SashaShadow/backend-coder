@@ -6,8 +6,8 @@ const app = express()
  
 app.listen(PORT, () => { console.log(`Servidor express escuchando en el puerto ${PORT}`);})
 
-const accountSid = 'ACaa4ead39f5a98762271be36901f8b629'
-const authToken = '7154da50a7bda744bf38e8dc32e393e5'
+const accountSid = ''
+const authToken = ''
 
 const client = twilio(accountSid, authToken)
 
