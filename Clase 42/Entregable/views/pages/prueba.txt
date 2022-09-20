@@ -1,0 +1,3 @@
+
+ <!-- <% productsTotal.push(carts.products[i].name) %>
+                                <% productsTotal.push(carts.products[i].quantity) %> -->
