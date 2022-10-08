@@ -79,7 +79,7 @@ app.use(cors());
 app.use(compression()); 
 app.use("/api", express.static("./public"));
 app.set("view engine", "ejs"); 
-app.set("views", "./views") 
+app.set("views", "./views"); 
 app.use(cookieParser());
 app.use(session({
     store: MongoStore.create({
@@ -104,10 +104,6 @@ deSerialize();
 
 //SOCKETS
 ioSockets(io);
-
-//RUTAS MENSAJES CHAT
-// router.get('/mensajes', getMsgs)
-// router.post('/mensajes', postMsgs)
 
 //HOME, PROFILE AND CART (EJS RENDERS)
 router.get("/", home);

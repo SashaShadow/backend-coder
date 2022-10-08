@@ -1,0 +1,25 @@
+[2022-10-05T20:51:56.269] [ERROR] errorOnly - CastError: Cast to ObjectId failed for value "ahre" (type string) at path "_id" for model "Products"
+    at model.Query.exec (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/query.js:4891:21)
+    at model.Query.Query.then (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/query.js:4990:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  messageFormat: undefined,
+  stringValue: '"ahre"',
+  kind: 'ObjectId',
+  value: 'ahre',
+  path: '_id',
+  reason: BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new BSONTypeError (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/bson/lib/error.js:41:28)
+      at new ObjectId (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/bson/lib/objectid.js:67:23)
+      at castObjectId (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/cast/objectid.js:25:12)
+      at ObjectId.cast (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/schema/objectid.js:246:12)
+      at ObjectId.SchemaType.applySetters (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/schematype.js:1201:12)
+      at ObjectId.SchemaType._castForQuery (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/schematype.js:1648:15)
+      at ObjectId.SchemaType.castForQuery (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/schematype.js:1636:15)
+      at ObjectId.SchemaType.castForQueryWrapper (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/schematype.js:1612:20)
+      at cast (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/cast.js:347:32)
+      at model.Query.Query.cast (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 46/Koa/node_modules/mongoose/lib/query.js:5319:12),
+  valueType: 'string'
+}
+[2022-10-05T21:02:57.374] [ERROR] errorOnly - TypeError: ctx.response.status is not a function
+    at file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2046/Koa/controllers/products.controller.js:26:29
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
