@@ -14,7 +14,7 @@ export class MessagesController {
     }
 
     @Post()
-    async createMessage(message: Msg): Promise<Msg> {
+    async createMessage(message: CreateMessageDTO): Promise<Msg> {
         return this.messagesService.createMessage(message);
     }
 }

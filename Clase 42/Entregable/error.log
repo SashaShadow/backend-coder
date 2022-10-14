@@ -1168,3 +1168,22 @@
       at model.Query.Query.cast (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 42/Entregable/node_modules/mongoose/lib/query.js:5202:12),
   valueType: 'string'
 }
+[2022-10-11T19:03:39.393] [ERROR] errorOnly - TypeError: Cannot read properties of undefined (reading 'name')
+    at new ProductDTO (file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/dtos/productDTO.js:3:29)
+    at ProductRepository.getProduct (file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/repository/productRepository.js:19:21)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-10-11T19:08:29.086] [ERROR] errorOnly - TypeError: Cannot read properties of undefined (reading 'name')
+    at new ProductDTO (file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/dtos/productDTO.js:3:29)
+    at ProductRepository.getProduct (file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/repository/productRepository.js:19:21)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-10-11T19:08:37.827] [ERROR] errorOnly - TypeError: Cannot read properties of undefined (reading 'name')
+    at new ProductDTO (file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/dtos/productDTO.js:3:29)
+    at ProductRepository.getProduct (file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/repository/productRepository.js:19:21)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-10-11T19:25:46.685] [ERROR] errorOnly - TypeError: this.model.findAll is not a function
+    at file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/daos/orderDAOMongoDB.js:11:31
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-10-11T19:25:49.165] [ERROR] errorOnly - TypeError: this.model.findAll is not a function
+    at file:///home/sashashadow/Escritorio/Coding/backend-coder/Clase%2042/Entregable/daos/orderDAOMongoDB.js:11:31
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

@@ -7,7 +7,7 @@ export const orderStorage = myDAO.getOrderDAO();
 const orderService = new OrderService(orderStorage);
 
 export const getOrders = async (req, res) => {
-    return orderService.getElems()
+    return orderService.getOrders()
     .then(ordenes => {
         return res.json({ordenes})
     })

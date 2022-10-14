@@ -6,14 +6,6 @@ class OrderDAOMongoDB extends contenedorMongoDB {
       super(db, Order)
     }
 
-    async getOrders() {
-      return this.db
-        .then(_ => this.model.findAll())
-        .then(data => {
-            return data;
-        })
-    }
-
     async createOrder(orderData) {
         const newOrder = new this.model(orderData);
         return this.db

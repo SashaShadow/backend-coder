@@ -23,7 +23,7 @@ class OrderService {
     }
 
     async getOrders() {
-        return this.repository.getOrders()
+        return this.repository.getElems()
     }
 
     async createOrder(orderData) {

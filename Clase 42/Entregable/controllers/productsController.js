@@ -12,7 +12,7 @@ export const getProducts = async (req, res) => {
     })
     .catch(err => {
         loggerError.error(err);
-        res.status(404).json({error: err.toString()}) 
+        res.status(404).json({error: 'No se ha encontrado ningún producto'}) 
     });
 }
 
@@ -24,7 +24,7 @@ export const getProduct = async (req, res) => {
     })
     .catch(err => {
         loggerError.error(err);
-        res.status(404).json({error: err.toString()}) 
+        res.status(404).json({error: 'No se ha encontrado dicho producto'}); 
     });
 }
 
