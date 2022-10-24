@@ -1,7 +1,7 @@
 import express from "express";
 import session from 'express-session';
 const { Router } = express;
-import { logger200, logger404, validateNumber, uploadFile } from "./middlewares/middlewares.js";
+import { logger200, logger404, validateNumber, jwt } from "./middlewares/middlewares.js";
 import { logger, loggerError } from "./utils/logger.js";
 import { Server as IOServer } from "socket.io";
 import { Server as HttpServer } from "http";
@@ -9,29 +9,27 @@ import productsRouter from "./routers/productsRouter.js";
 import cartRouter from "./routers/cartsRouter.js";
 import orderRouter from "./routers/orderRouter.js";
 import messagesRouter from "./routers/msgsRoute.js";
-import { cart, home, profile } from "./controllers/mvcController.js";
-import { upload } from './utils/multer.js';
+import authRouter from "./auth/jwtRoutes.js";
+import { jwtLogic } from "./auth/jwtAuth.js";
+import { cart, home, profile, info, numCpus, orders, messages } from "./controllers/mvcController.js";
 import flash from 'connect-flash';
 import MongoStore from 'connect-mongo';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cluster from 'cluster';
-import os from 'os';
 import cors from 'cors';
 import passport from 'passport';
-import { login, signup, serialize, deSerialize } from './auth/auth.js';
-import { loginRoute, loginPost, signupRoute, signupPost, logout } from './auth/routes.js';
+import { login, signup, serialize, deSerialize } from './auth/sessionAuth.js';
+import { loginRoute, loginPost, signupRoute, signupPost, logout } from './auth/sessionRoutes.js';
 import { ioSockets } from './sockets/sockets.js';
 import minimist from "minimist";
 import "dotenv/config.js";
-
-const numCpus = os.cpus().length
 
 const options = {
   alias: {
     p: 'PORT',
     m: 'MODO',
-    d: 'DAO'
+    t: 'TEST'
   }
 }
 
@@ -42,7 +40,7 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 const router = Router();
 
-const PORT = myArgs.PORT || process.env.PORT || 8080;
+const PORT = process.env.PORT || myArgs.PORT || 8080;
 
 const serverUp = () => {
   const server = httpServer.listen(PORT, () => {
@@ -76,7 +74,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use(compression()); 
-app.use("/api", express.static("./public"));
+app.use("/shop/", express.static("./public"));
 app.set("view engine", "ejs"); 
 app.set("views", "./views") 
 app.use(cookieParser());
@@ -84,9 +82,9 @@ app.use(session({
     store: MongoStore.create({
     mongoUrl: process.env.MONGODB,
     mongoOptions: advancedOptions,
-    ttl: 600
+    ttl: process.env.EXPTIME
   }),
-    secret: 'fahrenheit',
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true
 }))
@@ -100,24 +98,30 @@ login();
 signup();
 serialize();
 deSerialize();
+jwtLogic();
 
 //SOCKETS
 ioSockets(io);
 
 //HOME, PROFILE AND CART (EJS RENDERS)
 router.get("/", home);
+router.get("/products/:category?", home);
 router.get("/profile", profile);
+router.get("/orders", orders);
+router.get("/messages", messages)
 router.get('/mycart/:id', cart);
+router.get('/info', info);
 
 // RUTAS AUTH
 router.get('/login', loginRoute())
 router.post('/login', loginPost())
 router.get('/signup', signupRoute())
-router.post('/signup', upload.single('photo'), uploadFile(), validateNumber(), signupPost())
+router.post('/signup', validateNumber(), signupPost())
 router.get('/logout', logout())
 
-app.use('/api', logger200(), router);
-app.use('/api/products', logger200(), productsRouter);
+app.use('/shop', logger200(), router);
+app.use('/api', authRouter);
+app.use('/api/products', jwt, logger200(), productsRouter); 
 app.use('/api/cart', cartRouter); 
 app.use('/api/orders', orderRouter);
 app.use('/api/mensajes', messagesRouter);

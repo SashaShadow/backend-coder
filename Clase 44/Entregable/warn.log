@@ -80,3 +80,4 @@
 [2022-09-29T22:56:33.033] [WARN] warnOnly - ruta /api/nop método GET no implementada
 [2022-09-29T22:58:12.881] [WARN] warnOnly - ruta /api/nop método GET no implementada
 [2022-09-29T22:58:23.711] [WARN] warnOnly - ruta /api/nop método GET no implementada
+[2022-10-17T23:14:21.489] [WARN] warnOnly - ruta /favicon.ico método GET no implementada

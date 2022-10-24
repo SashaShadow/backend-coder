@@ -4,10 +4,11 @@ import ProductsTestDAOMongoDB from "../daos/productsTestDAOMongoDB.js";
 import cartsDAOMongoDB from "../daos/cartsDAOMongoDB.js";
 import OrderDAOMongoDB from "../daos/orderDAOMongoDB.js"
 import MessageDAOMongoDB from "../daos/messagesDAOMongoDB.js";
+import "dotenv/config.js";
 
 const options = {
     alias: {
-      d: 'DAO'
+      t: 'TEST'
     }
   }
 
@@ -20,14 +21,14 @@ let cartInstance = null;
 
 class DAOFactory {
     constructor() {
-        this.db = myArgs.DAO || 'mongo';
+        this.db = myArgs.TEST || process.env.TEST || 'si';
     }
 
     getProdDAO() {
         if (!prodInstance) {
-            if (this.db === 'mongo') {
+            if (this.db === 'no') {
                 prodInstance = new ProductsDAOMongoDB();
-            } else if (this.db === 'test') {
+            } else if (this.db === 'si') {
                 prodInstance = new ProductsTestDAOMongoDB();
             }
         }
@@ -36,8 +37,10 @@ class DAOFactory {
 
     getCartDAO() {
         if (!cartInstance) {
-            if (this.db === 'mongo') {
+            if (this.db === 'no') {
                 cartInstance = new cartsDAOMongoDB();
+            } else {
+                cartInstance = new cartsDAOMongoDB(); //simbólico, ya que solo hay tests de productos
             }
         }
         return cartInstance;
@@ -45,8 +48,10 @@ class DAOFactory {
 
     getMsgDAO() {
         if (!msgInstance) {
-            if (this.db === 'mongo') {
+            if (this.db === 'no') {
                 msgInstance = new MessageDAOMongoDB();
+            } else {
+                msgInstance = new MessageDAOMongoDB(); //simbólico, ya que solo hay tests de productos
             }
         } 
         return msgInstance;
@@ -54,8 +59,10 @@ class DAOFactory {
 
     getOrderDAO() {
         if (!orderInstance) {
-            if (this.db === 'mongo') {
+            if (this.db === 'no') {
                 orderInstance = new OrderDAOMongoDB();
+            } else {
+                orderInstance = new OrderDAOMongoDB(); //simbólico, ya que solo hay tests de productos
             }
         }
         return orderInstance  

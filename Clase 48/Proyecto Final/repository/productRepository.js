@@ -19,6 +19,11 @@ class ProductRepository {
         return dto;
     }
 
+    async getProductsByCategory(category) {
+        const productos = await this.dao.getProductsByCategory(category);
+        return productos.map(dto => new ProductDTO(dto));
+    }
+
     async createProduct(product) {
         return await this.dao.postElem(product);
     }

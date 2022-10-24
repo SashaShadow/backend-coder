@@ -1,5 +1,13 @@
 const socket = io.connect();
 
+let script = document.createElement('script');
+script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+let script2 = document.createElement('script');
+script2.src = 'https://unpkg.com/ejs@3.1.6/ejs.min.js';
+document.getElementsByTagName('head')[0].appendChild(script2);
+
 const element = document.querySelector("#element");
 const myButton = document.querySelector("#myButton");
 const chatButton = document.querySelector("#chatButton");
@@ -8,22 +16,10 @@ const prodForm = document.querySelector(".myForm");
 const chatUser = document.querySelector(".chatUser");
 const newCartButton = document.querySelector(".NewCart");
 
-chatForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    return fetch(`http://localhost:8080/api/mensajes/`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(
-            {"author": 
-                {"alias": chatUser.innerHTML,}, 
-            "text": e.target.text.value, 
-            "time": new Date().toLocaleString()}),})
-})
-
 if (prodForm) {
     prodForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        return fetch(`http://localhost:8080/api/products/`, {
+        return fetch(`/api/products/`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({"name": event.target.name.value, "price":event.target.price.value,
@@ -41,16 +37,35 @@ const render = (data) => {
         document.querySelector(".ChatMsgs").innerHTML = html;
 }
 
+const scrollToBottom = (node) => {
+	node.scrollTop = node.scrollHeight;
+}
+
 const addMessage = () => {
     const mensaje = {
         alias: chatUser.innerHTML,
         text: document.querySelector("#text").value,
     }
     socket.emit("new-message", mensaje);
+    scrollToBottom(document.querySelector(".ChatMsgs"));
     return false;
 }
 
-chatForm.addEventListener("submit", () => addMessage());
+if (chatForm) {
+    chatForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        return fetch(`/api/mensajes/`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(
+                {"author": 
+                    {"alias": chatUser.innerHTML,}, 
+                "text": e.target.text.value, 
+                "time": new Date().toLocaleString()}),})
+    })
+    chatForm.addEventListener("submit", () => addMessage());
+}
+
 
 const addProducto = () => {
     const producto = {
@@ -77,7 +92,7 @@ socket.on("MensajeIndividual", data => {
 `});
 
 const getTemplate = async () => {
-    const template = await fetch("http://localhost:8080/api/template.html");
+    const template = await fetch("/shop/template.html");
     const templateData = await template.text();
     return templateData;
 }
@@ -98,7 +113,6 @@ socket.on("Productos", async data => {
     element ? element.innerHTML = templateRendered : null;
 });
 
-
 socket.on("ProductoIndividual", async data => {
     const templateData = await getTemplate();
     const template = ejs.compile(templateData);
@@ -112,5 +126,4 @@ socket.on("ProductoIndividual", async data => {
     
     element.innerHTML += templateRendered;
 })
-
 
