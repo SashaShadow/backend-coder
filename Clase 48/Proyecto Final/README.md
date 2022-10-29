@@ -1,42 +1,42 @@
 # RUTAS API.
 ## PRODUCTOS.
 
-GET (ALL) /api/products
-GET (ID) /api/products/:id
-GET (BY CATEGORY) /api/products/category/:category
-POST /api/products
-PUT /api/products/:id
-DELETE /api/products/:id
+- GET (ALL) /api/products
+- GET (ID) /api/products/:id
+- GET (BY CATEGORY) /api/products/category/:category
+- POST /api/products
+- PUT /api/products/:id
+- DELETE /api/products/:id
 
 ## MENSAJES (chat general).
 
-GET (ALL) /api/mensajes
-GET (BY ALIAS/USERNAME) /api/mensajes/:alias
-POST /api/mensajes
+- GET (ALL) /api/mensajes
+-  GET (BY ALIAS/USERNAME) /api/mensajes/:alias
+- POST /api/mensajes
 
 ## MENSAJES (mensajeria con el admin)
 
-GET (ALL) /api/msgsto
-GET (BY ALIAS/USERNAME) /api/msgsto/:alias
-POST /api/msgsto
+- GET (ALL) /api/msgsto
+- GET (BY ALIAS/USERNAME) /api/msgsto/:alias
+- POST /api/msgsto
 
 ## CARRITOS
 Al crearse un usuario se crea un carrito con el id del mismo en el campo "owner".
 La id del carrito pasa a ser el numero de orden cuando se confirma la orden. 
 Entonces el carrito se elimina y para crear uno nuevo el usuario debe agregar productos.
 
-GET (ALL) /api/cart
-GET (products of cart) /api/cart/:id/products
-POST (new cart) /api/cart
-POST (add product to cart) /api/cart/:id/products
-DELETE /api/cart/:id
-DELETE (product from cart) /api/cart/:id/products/:id_prod
+- GET (ALL) /api/cart
+- GET (products of cart) /api/cart/:id/products
+- POST (new cart) /api/cart
+- POST (add product to cart) /api/cart/:id/products
+- DELETE /api/cart/:id
+- DELETE (product from cart) /api/cart/:id/products/:id_prod
 
 ## ORDENES
 Su numero de orden es la id del carrito de donde provienen.
 
-GET (ALL) /api/orders
-POST (NEW ORDER) /api/orders
+- GET (ALL) /api/orders
+- POST (NEW ORDER) /api/orders
 
 ## MODELOS
 Cabe aclarar que los modelos de estos anteriores elementos tienen un formato levemente distinto al planteado en las consignas.
