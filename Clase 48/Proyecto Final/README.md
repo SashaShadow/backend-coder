@@ -44,6 +44,7 @@ Los mismos pueden verse en el archivo dbConfig.js de la carpeta dbmodels.
 
 # TESTING
 Están habilitados los tests de las rutas de productos. Para lo mismo hay que iniciar el servidor con el flag --t si o -TEST si. 
+Esto hará que se utilice un DAO especial de productos para el testeo.
 La mayor parte de las rutas están protegidas con JSON WEB TOKEN, sin embargo al iniciar el servidor en testeo, el jwt se deshabilitará,
 pudiendo realizar las operaciones crud.
 El resto de las rutas no tienen tests, pero se les desactiva el JWT.

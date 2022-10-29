@@ -5,11 +5,11 @@
 -Revisar formulario de registro, que se requiere y que no. Se suma doble campo de password para confirmar. LISTO.
 -Revisar los 404 y los errores generados manualmente. LISTO.
 -Variable de entorno para desarrollo y produccion: ver que cambia en cada caso o si es simbolico. LISTO
--Readme para mi formato de rutas.
+-Readme para mi formato de rutas. LISTO
 
 Hacer al final...
 -Sockets: canal dividido entre preguntas y respuestas, 
 -Mensajes: revisar modelo, se suma tipo (usuario vs sistema).
--Mensajes: responder mensajes segun el mail del usuario. Vista.
+-Mensajes: responder mensajes segun el username del usuario. Vista. LISTO
 -Ruta para mensajes propios filtrando por email. LISTO (filtra por alias/username)
 -Vista del chat, hacer mas linda. LISTO
