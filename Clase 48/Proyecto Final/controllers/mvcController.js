@@ -2,6 +2,7 @@ import { loggerError } from "../utils/logger.js";
 import { productService } from "./productsController.js";
 import { cartService } from "./cartController.js";
 import { messageService } from "./messagesController.js";
+import { User, msgToModel } from "../dbmodels/dbsConfig.js";
 import os from 'os';
 import { orderService } from "./orderController.js";
 export const numCpus = os.cpus().length
@@ -76,6 +77,17 @@ export const messages = async (req, res) => {
       loggerError.error(err);
       res.render("pages/error.ejs", {error: err.toString()}); 
     })
+  } else {
+    res.redirect('/shop/login')
+  }
+}
+
+export const chatToAdmin = async (req, res) => {
+  if (req.user) {
+    const users = req.user.admin ? await User.find({admin: {$ne: true}}) : await User.find({admin: {$eq: true}});
+    const msgs = await msgToModel.find({$or: [{author: req.user.username}, {to: req.user.username}]})
+    console.log(msgs);
+    res.render("pages/msgto.ejs", {user: req.user, users: users, msgs: msgs})
   } else {
     res.redirect('/shop/login')
   }

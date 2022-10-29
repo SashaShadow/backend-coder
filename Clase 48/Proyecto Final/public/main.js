@@ -14,6 +14,7 @@ const chatButton = document.querySelector("#chatButton");
 const chatForm = document.querySelector(".chatForm");
 const prodForm = document.querySelector(".myForm");
 const chatUser = document.querySelector(".chatUser");
+const myUser = document.querySelector(".myUser");
 const newCartButton = document.querySelector(".NewCart");
 
 if (prodForm) {
@@ -65,7 +66,6 @@ if (chatForm) {
     })
     chatForm.addEventListener("submit", () => addMessage());
 }
-
 
 const addProducto = () => {
     const producto = {

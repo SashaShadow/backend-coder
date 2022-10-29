@@ -9,9 +9,10 @@ import productsRouter from "./routers/productsRouter.js";
 import cartRouter from "./routers/cartsRouter.js";
 import orderRouter from "./routers/orderRouter.js";
 import messagesRouter from "./routers/msgsRoute.js";
+import messagesToRouter from "./routers/msgsToRoute.js";
 import authRouter from "./auth/jwtRoutes.js";
 import { jwtLogic } from "./auth/jwtAuth.js";
-import { cart, home, profile, info, numCpus, orders, messages } from "./controllers/mvcController.js";
+import { cart, home, profile, info, numCpus, orders, messages, chatToAdmin } from "./controllers/mvcController.js";
 import flash from 'connect-flash';
 import MongoStore from 'connect-mongo';
 import cookieParser from 'cookie-parser';
@@ -108,7 +109,8 @@ router.get("/", home);
 router.get("/products/:category?", home);
 router.get("/profile", profile);
 router.get("/orders", orders);
-router.get("/messages", messages)
+router.get("/messages", messages);
+router.get("/mp", chatToAdmin);
 router.get('/mycart/:id', cart);
 router.get('/info', info);
 
@@ -125,4 +127,5 @@ app.use('/api/products', jwt, logger200(), productsRouter);
 app.use('/api/cart', cartRouter); 
 app.use('/api/orders', orderRouter);
 app.use('/api/mensajes', messagesRouter);
+app.use('/api/msgsto', messagesToRouter);
 app.use(logger404());

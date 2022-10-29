@@ -1,7 +1,7 @@
 Lo que se necesita para establecer esta vista de mensajeria:
 
 -Si el usuario es común:
-    -Validar la sesión y que el usuario no sea admin.
+    -Validar la sesión y que el usuario no sea admin. LISTO
     -Si es asi la vista desplegará por un lado un lateral (grid) donde irán los mensajes recibidos. Podrá figura el nombre de la otra parte.
     -En el mismo pueden estar simplificados y que se les pueda hacer click para que aparezcan en grande en el otro lado del grid.
     -Una vez desplegado el mensaje (de existir) se puede tambien dar un input para responder a dicho usuario que envió el mensaje.

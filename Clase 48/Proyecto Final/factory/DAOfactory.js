@@ -4,6 +4,7 @@ import ProductsTestDAOMongoDB from "../daos/productsTestDAOMongoDB.js";
 import cartsDAOMongoDB from "../daos/cartsDAOMongoDB.js";
 import OrderDAOMongoDB from "../daos/orderDAOMongoDB.js"
 import MessageDAOMongoDB from "../daos/messagesDAOMongoDB.js";
+import MessageToDAOMongoDB from "../daos/messageToDAOMongoDB.js";
 import "dotenv/config.js";
 
 const options = {
@@ -18,6 +19,7 @@ let prodInstance = null;
 let msgInstance = null;
 let orderInstance = null;
 let cartInstance = null;
+let msgToInstance = null;
 
 class DAOFactory {
     constructor() {
@@ -55,6 +57,17 @@ class DAOFactory {
             }
         } 
         return msgInstance;
+    }
+
+    getMsgToDAO() {
+        if (!msgToInstance) {
+            if (this.db === 'no') {
+                msgToInstance = new MessageToDAOMongoDB();
+            } else {
+                msgInstance = new MessageToDAOMongoDB(); //simbólico, ya que solo hay tests de productos
+            }
+        } 
+        return msgToInstance;
     }
 
     getOrderDAO() {

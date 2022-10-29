@@ -10,6 +10,7 @@
 <body>
     
         <% if (user.admin) { %>
+            <a href="/shop/mp" class="adminButton">Chatea con los usuarios</a>
             <div class="Subcontainer">
                 <h2>Ingrese un nuevo producto</h2>
                 <form enctype="application/json" class="myForm">
@@ -58,6 +59,7 @@
         <% } %>
 
         <% if (!user.admin) { %>
+            <a href="/shop/mp" class="adminButton">Chatea con el admin</a>
             <div class="Categories">
                 <h3><a href="/shop/products">Todos los productos</a></h3>
                 <h3><a href="/shop/products/man">Hombre</a></h3>
@@ -91,7 +93,7 @@
         <% } %>
         <img class="Banner" src="https://res.cloudinary.com/ddi5wmffy/image/upload/v1666473186/Captura_desde_2022-10-22_18-11-56_swpoxm.png"/>
         <div class="ChatGroup">
-            <h2>Chat</h2>
+            <h2>Chat general</h2>
             <div class="ChatMsgs">
             </div>
             <div class="Chat">
@@ -106,6 +108,14 @@
                 </form>   
             </div>
         </div>
+
+        <footer>
+            <div class="InfoFooter">
+                <h4>Sitio desarrollado por Sasha Rodriguez Carlomagno</h4>
+                <h4><a href="https://sasharcarlomagno.vercel.app/">Portfolio</a></h4>
+                <h4><a href="https://www.linkedin.com/in/sasha-rodriguez-carlomagno/">Linkedin</a></h4>
+            </div>
+        </footer>
 
     <script src="/shop/ejs.js"></script>
     <script type="text/javascript" src="/shop/main.js" defer></script>

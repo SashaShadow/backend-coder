@@ -1,4 +1,4 @@
-import { db, msgsModel, productsModel } from "../dbmodels/dbsConfig.js";
+import { db, msgsModel } from "../dbmodels/dbsConfig.js";
 import { productService } from "../controllers/productsController.js";
 import contenedorMongo from "../contenedores/contenedorMongoDB.js";
 

@@ -15,7 +15,7 @@
             justify-content: center;
         }
 
-        .chatUser {
+        .chatUser, .myUser {
             display: none;
         }
 
@@ -75,7 +75,8 @@
 
         .WText {
             color: rgb(232, 225, 239);
-            justify-content: flex-start;
+            justify-content: center;
+            align-self: center;
         }
 
         .Menu {
@@ -87,6 +88,8 @@
         .Menu a {
             text-decoration: none;
             color: rgb(232, 225, 239);
+            justify-content: center;
+            align-self: center;
         }
 
         .Menu a:hover {
@@ -508,5 +511,117 @@
             color: green;
         }
 
-        
+        /*............ Mensajes al admin ................ */
+
+        .MsgsToContainer {
+            display: grid;
+            grid-template-columns: 0.3fr 1fr;
+            grid-template-areas: "iz de";
+            width: 85vw;
+            height: 70vh;
+            margin: 1rem auto 2rem;
+            background-color: rgba(216, 169, 216, 0.381);
+            padding: 1rem 1rem 1rem 1rem;
+        }
+
+        .MsgsTo {
+            display: grid;
+            grid-auto-flow: row;
+            grid-area: iz;
+            overflow-y: scroll;
+            padding: 1rem 2rem 1rem 1rem;
+            margin: 0 0 1rem 0;
+            cursor: pointer;
+        }
+
+        .MsgsToView {
+            display: grid;
+            overflow-y: scroll;
+            grid-template-rows: 1fr 0.2fr;
+            grid-template-areas: "arr" "aba";
+        }
+
+        .MsgToForm {
+            grid-area: aba;
+            padding-left: 1rem;
+        }
+
+        .MsgsToTitle {
+            margin: 7rem 0 0 10rem;
+        }
+
+        .Msgs {
+            overflow-y: scroll;
+            background-color: #fdfdfdc0;
+            margin: 1rem 1rem 0 1.8rem;    
+        }
+
+        .msgInput {
+            display: flex;
+            flex-direction: row;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        .UserCard {
+            border-style: solid;
+            border-color: #3276b188;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .adminButton {
+            box-shadow:inset 0px 1px 0px 0px #e184f3;
+            background:linear-gradient(to bottom, #c123de 5%, #e285f5 100%);
+            background-color:#c123de;
+            border-radius:6px;
+            border:1px solid #a511c0;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-size:15px;
+            font-weight:bold;
+            padding:6px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #9b14b3;
+            width: max-content;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+        }
+        .adminButton:hover {
+            background:linear-gradient(to bottom, #e285f5 5%, #c123de 100%);
+            background-color:#e285f5;
+            text-decoration: none;
+        }
+
+        .InfoFooter {
+            background: rgb(0, 0, 0);
+            position: static;
+            width: 100vw;
+            height: 5rem;
+            margin: 2rem 0 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .InfoFooter h4, a {
+            padding: 1rem;
+            color:rgb(82, 47, 82);
+        }
+
+        .InfoFooter h4:hover, a:hover {
+            color:white;
+        }
+
+        .InfoFooter a {
+            text-decoration: none;
+        }
+       
+
     </style>

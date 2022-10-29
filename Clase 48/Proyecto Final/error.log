@@ -1632,3 +1632,8 @@
     at RawTask.call (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 48/Proyecto Final/node_modules/asap/asap.js:40:19)
     at flush (/home/sashashadow/Escritorio/Coding/backend-coder/Clase 48/Proyecto Final/node_modules/asap/raw.js:50:29)
     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[2022-10-24T21:33:47.886] [ERROR] errorOnly - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-10-25T08:24:26.034] [ERROR] errorOnly - ValidationError: author: Path `author` is required.
+[2022-10-26T16:15:44.532] [ERROR] errorOnly - ValidationError: to: Path `to` is required.
+[2022-10-26T16:17:07.120] [ERROR] errorOnly - ValidationError: to: Path `to` is required.
+[2022-10-26T17:17:17.411] [ERROR] errorOnly - ValidationError: author: Path `author` is required.

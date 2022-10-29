@@ -3,7 +3,7 @@ import "dotenv/config.js";
 const myReq = request(`http://localhost:${process.env.PORT}`);
 import { expect } from 'chai';
 
-//ASEGURARSE ANTES DE INICIAR LOS TESTS DE INICIAR EL SERVER CON EL COMANDO --t si (TEST si) PARA UTILIZAR EL DAO PARA TESTING.
+//ASEGURARSE ANTES DE INICIAR LOS TESTS DE INICIAR EL SERVER CON EL COMANDO --t si (-TEST si) PARA UTILIZAR EL DAO PARA TESTING.
 //LA COLECCIÓN TEST ESTÁ VACIA AL INICIO Y SOLO SE MANEJA UN PRODUCTO QUE SE AGREGA Y ELIMINA CON LOS MISMOS TESTS.
 
 describe('Tests a los metodos CRUD de los productos', function() {

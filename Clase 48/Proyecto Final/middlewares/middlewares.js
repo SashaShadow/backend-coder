@@ -17,15 +17,6 @@ const authToken = process.env.AUTHTOKEN;
 
 const client = twilio(accountSid, authToken)
 
-// export const validateAdmin = () => {
-//     return (req, res, next) => {
-//         if (!req.user || !req.user.admin) {
-//             return res.status(403).json({Error: 'No tienes acceso a esta ruta'})
-//         }
-//         next()
-//     }
-// }
-
 const mockMiddleware = () => {
     return (req, res, next) => {
         next();
